@@ -1,0 +1,368 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Container utility */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #eaeaea;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #966d4a;
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  /* Background image is inserted via img.hero-bg */
+  background: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 60px; /* space for fixed header */
+}
+
+/* Hero background image styling */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Slightly transparent overlay to allow the dark flatlay to show through */
+  background-color: rgba(250, 250, 250, 0.1);
+  /* subtle overlay to improve text readability */
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: whitesmoke;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9)
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color:whitesmoke;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1.2)
+}
+
+
+
+.btn-primary {
+  background-color: #966d4a;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #7b5739;
+}
+
+/* Sections spacing */
+section {
+  padding: 80px 0;
+}
+
+/* About section */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1 1 300px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2f2f2f;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.about-image {
+  flex: 1 1 300px;
+}
+
+/* Values section */
+.values {
+  background-color: #fff;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.values-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #2f2f2f;
+}
+
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.value {
+  flex: 1 1 250px;
+  background-color: #faf7f4;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.value h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #322a25;
+}
+
+.value p {
+  color: #555;
+}
+
+/* Offers section */
+.offers-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.offers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.offer {
+  flex: 1 1 280px;
+  background-color: #f7f5f3;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.offer h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #322a25;
+}
+
+.offer ul {
+  list-style: disc inside;
+  color: #555;
+}
+
+.offer li + li {
+  margin-top: 8px;
+}
+
+/* Gallery section */
+.gallery-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Contact section */
+.contact {
+  background-color: #fff;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2f2f2f;
+}
+
+.contact-container p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button[type='submit'] {
+  align-self: flex-start;
+}
+
+/* Footer */
+footer {
+  background-color: #f4f2ef;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 15px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .values-grid,
+  .offers-grid {
+    flex-direction: column;
+  }
+  .about-container {
+    flex-direction: column;
+  }
+  .about-image,
+  .about-text {
+    flex: 1 1 100%;
+  }
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

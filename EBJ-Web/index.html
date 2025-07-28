@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Brand Japan – Sustainable Luxury</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header and navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <!-- Main logo for the site -->
+          <img src="images/EBJ Logo.jpg" alt="Eco Brand Japan logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#values">Values</a></li>
+            <li><a href="#offers">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero section with background image from Marketing folder -->
+    <section class="hero">
+      <!-- Background image inserted as img so that mobile browsers reliably load it -->
+      <img class="hero-bg" src="images/8.jpg" alt="Luxury flatlay background" />
+      <div class="hero-content">
+        <h1>Sustainable Luxury Reimagined</h1>
+        <p>
+          Pre‑owned designer bags with new life, honesty and circular vision.
+        </p>
+        <a href="#contact" class="btn-primary">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="about">
+      <div class="container about-container">
+        <div class="about-text">
+          <h2>Who We Are</h2>
+          <p>
+          Founded in 2012, Eco Brand Japan sources and curates luxury
+            handbags and accessories from iconic houses like Hermès, Chanel,
+            Louis Vuitton and more, giving premium pieces a new chapter. We
+            operate within the circular economy, respecting each bag’s
+            craftsmanship and ensuring authenticity at every step.
+          </p>
+          <p>
+            With a team of experienced experts, we authenticate, restore and
+            prepare items so that they can bring joy across generations. Our
+            collection is hand‑selected for quality and rarity, making it
+            possible for you to own a piece of fashion history responsibly.
+          </p>
+        </div>
+        <div class="about-image">
+          <img
+            src="images/IMG_3435.jpg"
+            alt="Close‑up of luxury bag and chain from Marketing shoot"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Values section -->
+    <section id="values" class="values">
+      <div class="container values-container">
+        <h2>Our Promise</h2>
+        <div class="values-grid">
+          <div class="value">
+            <h3>Authenticity</h3>
+            <p>
+              Every item we offer is thoroughly vetted by specialists. Our
+              commitment to transparency means you receive only genuine
+              pieces and honest descriptions.
+            </p>
+          </div>
+          <div class="value">
+            <h3>Sustainability</h3>
+            <p>
+              We believe luxury should not be disposable. By keeping
+              beautiful creations in circulation, we honour the materials and
+              craftsmanship that went into them.
+            </p>
+          </div>
+          <div class="value">
+            <h3>Respect &amp; Trust</h3>
+            <p>
+              Our relationships with suppliers and clients are built on
+              respect and trust. We aim to make buying and selling pre‑owned
+              luxury a pleasant, transparent experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services/Offers section -->
+    <section id="offers" class="offers">
+      <div class="container offers-container">
+          <h2>How We Work</h2>
+          <div class="offers-grid">
+            <div class="offer">
+              <h3>For Suppliers</h3>
+              <ul>
+                <li>Purchase of slow‑moving inventory</li>
+                <li>Catalogue creation &amp; inventory planning</li>
+                <li>Authentication &amp; quality control</li>
+              </ul>
+            </div>
+            <div class="offer">
+              <h3>For Distributors</h3>
+              <ul>
+                <li>Access to thousands of authenticated items</li>
+                <li>Curated selections and consignment support</li>
+                <li>Multilingual assistance &amp; global shipping</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Gallery section to showcase product highlights -->
+    <section class="gallery">
+      <div class="container gallery-container">
+        <h2>Highlights</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="images/IMG_0758-Edit.jpg"
+              alt="Gray Birkin"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/IMG_9065.jpg"
+              alt="Two black YSL bags from Marketing folder"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="contact">
+      <div class="container contact-container">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you. Send us a message using the form below.</p>
+        <form
+          action="mailto:info@ecobrandjapan.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <p>&copy; 2025 Eco Brand Japan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
