@@ -416,3 +416,13 @@ footer {
     display: inline;
   }
 }
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  .header-container .logo {
+    display: none;
+  }
+  .nav-toggle {
+    white-space: normal;
+  }
+}
