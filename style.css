@@ -5,10 +5,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --header-height: 60px;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -39,8 +35,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid #eaeaea;
   z-index: 100;
 }
@@ -75,8 +70,7 @@ nav a:hover {
 
 /* Hero section */
 .hero {
-  height: calc(100vh - var(--header-height));
-  margin-top: var(--header-height);
+  height: 100vh;
   /* Background image is inserted via img.hero-bg */
   background: none;
   position: relative;
@@ -84,6 +78,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-top: 60px; /* space for fixed header */
 }
 
 /* Hero background image styling */
