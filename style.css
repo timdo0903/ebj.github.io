@@ -88,6 +88,15 @@ nav a {
   transition: color 0.2s ease;
 }
 
+/* Language toggle labels */
+.lang-switch .mobile-label {
+  display: none;
+}
+
+.lang-switch .desktop-label {
+  display: inline;
+}
+
 nav a:hover {
   color: var(--accent-color);
 }
@@ -399,5 +408,11 @@ footer {
   .header-container {
     flex-direction: row;
     justify-content: space-between;
+  }
+  .lang-switch .desktop-label {
+    display: none;
+  }
+  .lang-switch .mobile-label {
+    display: inline;
   }
 }
