@@ -69,6 +69,12 @@ header {
   width: auto;
 }
 
+@media (min-width: 769px) {
+  .logo img {
+    height: 60px;
+  }
+}
+
 @media (max-width: 768px) {
   .logo.hidden {
     display: none;
@@ -118,6 +124,12 @@ nav a:hover {
   justify-content: center;
   text-align: center;
   padding-top: 60px; /* space for fixed header */
+}
+
+@media (min-width: 769px) {
+  .hero {
+    padding-top: 80px; /* more space for larger desktop header */
+  }
 }
 
 /* Hero background image styling */
