@@ -2,7 +2,7 @@
   "name": "ebj-website",
   "version": "1.0.0",
   "description": "Static website for Eco Brand Japan",
-  "scripts": {},
+  "scripts": {"test": "node test.js"},
   "dependencies": {},
   "devDependencies": {}
 }
