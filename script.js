@@ -4,9 +4,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('#navbar');
+  const logo = document.querySelector('.logo');
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
+      const open = nav.classList.toggle('open');
+      if (logo) {
+        logo.classList.toggle('hidden', open);
+      }
     });
   }
 
