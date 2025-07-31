@@ -1,4 +1,4 @@
-# timdo0903.github.io
+# ebj.github.io
 
 EBJ Website
 www.ecobrandjapan.com
