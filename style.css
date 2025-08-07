@@ -56,22 +56,23 @@ header {
   z-index: 100;
 }
 
+/* Header layout and logo sizing */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  
+  padding: 0 20px; /* add horizontal padding so logo isn't flush with edges */
 }
 
 .logo img {
-  height: 50px;
-  width: auto;
+  max-width: 350px; /* default smaller logo size */
+  width: 100%;
+  height: auto;
 }
 
 @media (min-width: 769px) {
   .logo img {
-    height: 80px;
+    max-width: 700px; /* allow a larger logo on wider screens */
   }
 }
 
@@ -370,7 +371,7 @@ footer {
   .header-container {
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 10px 20px; /* maintain horizontal padding on small screens */
   }
   .lang-switch .desktop-label {
     display: none;
