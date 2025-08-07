@@ -72,7 +72,7 @@ header {
   align-items: center;
   /* vertical padding reduces logo dominance and horizontal padding
      keeps content away from the edges */
-  padding: 10px 20px;
+  padding: 5px 10px;
 }
 
 /*
@@ -394,7 +394,7 @@ footer {
   .header-container {
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 20px; /* maintain horizontal padding on small screens */
+    padding: 5px 10px; /* maintain horizontal padding on small screens */
   }
   .lang-switch .desktop-label {
     display: none;
