@@ -329,62 +329,6 @@ section {
   transform: scale(1.05);
 }
 
-/* Contact section */
-.contact {
-  background-color: #fff;
-}
-
-.contact-container {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-container h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #2f2f2f;
-}
-
-.contact-container p {
-  margin-bottom: 30px;
-  color: #555;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.form-group label {
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: #444;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.form-group textarea {
-  resize: vertical;
-}
-
-button[type='submit'] {
-  align-self: flex-start;
-}
-
 /* Footer */
 footer {
   background-color: #f4f2ef;
