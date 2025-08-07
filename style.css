@@ -65,14 +65,14 @@ header {
 }
 
 .logo img {
-  max-width: 350px; /* default smaller logo size */
+  max-width: 200px; /* default smaller logo size */
   width: 100%;
   height: auto;
 }
 
 @media (min-width: 769px) {
   .logo img {
-    max-width: 700px; /* allow a larger logo on wider screens */
+    max-width: 400px; /* allow a larger logo on wider screens */
   }
 }
 
