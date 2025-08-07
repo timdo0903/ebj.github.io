@@ -370,6 +370,8 @@ footer {
   }
   nav#navbar.open {
     display: flex;
+    /* Add vertical padding when the mobile menu is expanded */
+    padding: 10px 0;
   }
   .nav-toggle {
     display: block;
