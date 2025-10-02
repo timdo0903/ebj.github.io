@@ -566,6 +566,90 @@ footer {
   gap: 40px;
 }
 
+.job-content .application-section {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+}
+
+.application-section h2 {
+  margin-bottom: 12px;
+}
+
+.application-form {
+  margin-top: 24px;
+  display: grid;
+  gap: 24px;
+}
+
+.application-form .form-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.application-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.application-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.application-form label {
+  font-weight: 600;
+  color: #322a25;
+}
+
+.application-form input[type='text'],
+.application-form input[type='email'],
+.application-form input[type='tel'],
+.application-form input[type='file'],
+.application-form textarea {
+  border: 1px solid #d6cec7;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.application-form input[type='text']:focus,
+.application-form input[type='email']:focus,
+.application-form input[type='tel']:focus,
+.application-form input[type='file']:focus,
+.application-form textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(150, 109, 74, 0.18);
+  outline: none;
+}
+
+.application-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.application-form .button {
+  justify-self: start;
+}
+
+.form-status {
+  min-height: 1.5em;
+  font-weight: 500;
+  color: #322a25;
+}
+
+.form-status.success {
+  color: #2f8f4e;
+}
+
+.form-status.error {
+  color: #b93b3b;
+}
+
 .job-content article h2 {
   margin-bottom: 15px;
 }
