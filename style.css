@@ -465,6 +465,13 @@ footer {
   gap: 15px;
 }
 
+.job-card-meta {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(0, 0, 0, 0.65);
+}
+
 .job-card .button {
   margin-top: auto;
 }
