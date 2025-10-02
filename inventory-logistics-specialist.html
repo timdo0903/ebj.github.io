@@ -55,13 +55,11 @@
           </p>
           <div class="job-actions">
             <a class="button button-secondary" href="career.html#open-roles">Back to Careers</a>
-            <button class="button disabled" type="button" disabled aria-disabled="true">
-              Applications Opening Soon
-            </button>
+            <a class="button" href="#apply">Apply Now</a>
           </div>
           <p class="job-status">
-            Applications are paused while we upgrade our hiring tools. Save this page and return
-            soon to submit your details once the portal opens.
+            Ready to grow with us? Submit your application below and our hiring team will review it
+            shortly.
           </p>
         </div>
       </section>
@@ -152,6 +150,71 @@
             <p class="note">
               Applicants living in Tokyo will be given priority. If you plan to relocate to the Greater Tokyo Area, please mention it in your cover letter.
             </p>
+          </article>
+
+          <article id="apply" class="application-section">
+            <h2>Submit Your Application</h2>
+            <p>
+              Please share your details along with a current resume and cover letter. Accepted
+              formats include PDF, DOC or DOCX files.
+            </p>
+            <form
+              id="inventory-logistics-application-form"
+              class="application-form"
+              action="https://formsubmit.co/tim@ecobrandjp.com"
+              method="POST"
+              enctype="multipart/form-data"
+              data-ajax-endpoint="https://formsubmit.co/ajax/tim@ecobrandjp.com"
+            >
+              <input type="hidden" name="_subject" value="Inventory &amp; Logistics Specialist Application" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="applicant-name">Full Name</label>
+                  <input type="text" id="applicant-name" name="Name" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="applicant-email">Email</label>
+                  <input type="email" id="applicant-email" name="Email" autocomplete="email" required />
+                </div>
+                <div class="form-group full-width">
+                  <label for="applicant-phone">Phone Number (optional)</label>
+                  <input type="tel" id="applicant-phone" name="Phone" autocomplete="tel" />
+                </div>
+                <div class="form-group full-width">
+                  <label for="applicant-resume">Resume</label>
+                  <input
+                    type="file"
+                    id="applicant-resume"
+                    name="Resume"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                </div>
+                <div class="form-group full-width">
+                  <label for="applicant-cover-letter">Cover Letter</label>
+                  <input
+                    type="file"
+                    id="applicant-cover-letter"
+                    name="Cover Letter"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                </div>
+                <div class="form-group full-width">
+                  <label for="applicant-message">Additional Information (optional)</label>
+                  <textarea
+                    id="applicant-message"
+                    name="Additional Details"
+                    rows="4"
+                    placeholder="Share preferred start dates, relocation plans or other notes."
+                  ></textarea>
+                </div>
+              </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <button class="button" type="submit">Submit Application</button>
+            </form>
           </article>
 
           <div class="job-detail-actions">
