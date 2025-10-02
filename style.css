@@ -600,10 +600,12 @@ footer {
 @media (max-width: 768px) {
   nav#navbar {
     display: none;
-    flex-direction: column;
+    width: 100%;
   }
   nav#navbar.open {
     display: flex;
+    justify-content: flex-end;
+    flex: 1 1 auto;
     /* Add vertical padding when the mobile menu is expanded */
     padding: 10px 0;
   }
@@ -611,9 +613,12 @@ footer {
     display: block;
   }
   nav ul {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
+    row-gap: 8px;
   }
   .hero h1 {
     font-size: 2.2rem;
