@@ -164,11 +164,20 @@
               action="https://formsubmit.co/tim@ecobrandjp.com"
               method="POST"
               enctype="multipart/form-data"
-              data-ajax-endpoint="https://formsubmit.co/ajax/tim@ecobrandjp.com"
             >
               <input type="hidden" name="_subject" value="Inventory &amp; Logistics Specialist Application" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_next"
+                data-next-path="inventory-logistics-specialist.html?submitted=true#apply"
+              />
+              <input
+                type="hidden"
+                name="_error"
+                data-error-path="inventory-logistics-specialist.html?error=true#apply"
+              />
               <div class="form-grid">
                 <div class="form-group">
                   <label for="applicant-name">Full Name</label>
