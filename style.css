@@ -137,6 +137,11 @@ nav a:hover {
   color: var(--accent-color);
 }
 
+nav a.current {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
 /* Hero section */
 .hero {
   height: 100vh;
@@ -362,6 +367,225 @@ footer {
   color: #555;
 }
 
+/* Career and jobs */
+.career-hero {
+  position: relative;
+  margin-top: 70px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.career-hero img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.career-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+  background: rgba(34, 29, 26, 0.45);
+}
+
+.career-hero-content h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.career-hero-content p {
+  max-width: 640px;
+  font-size: 1.05rem;
+}
+
+.career-intro {
+  padding: 80px 0 40px;
+}
+
+.intro-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.intro-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.intro-card h2 {
+  margin-bottom: 20px;
+}
+
+.intro-card ul {
+  padding-left: 20px;
+  display: grid;
+  gap: 12px;
+  list-style: disc;
+}
+
+.job-listings {
+  padding: 40px 0 80px;
+}
+
+.job-listings-intro {
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+
+.job-card-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.job-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+.button:hover {
+  background: var(--accent-color-dark);
+  transform: translateY(-2px);
+}
+
+.button.button-secondary {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.button.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.button.disabled,
+.button[disabled] {
+  background: #9f9f9f;
+  cursor: not-allowed;
+  transform: none;
+  border-color: transparent;
+}
+
+.job-detail {
+  margin-top: 70px;
+}
+
+.job-hero {
+  padding: 80px 0 40px;
+  background: linear-gradient(135deg, rgba(50, 42, 37, 0.92), rgba(150, 109, 74, 0.92)),
+    url('images/career.jpg') center/cover;
+  color: #ffffff;
+}
+
+.job-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.job-status {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.job-meta {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.job-summary {
+  max-width: 720px;
+  margin-bottom: 25px;
+  font-size: 1.05rem;
+}
+
+.job-body {
+  background: #fafafa;
+  padding: 60px 0 100px;
+}
+
+.job-content {
+  display: grid;
+  gap: 40px;
+}
+
+.job-content article h2 {
+  margin-bottom: 15px;
+}
+
+.job-content ul {
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  list-style: disc;
+}
+
+.job-content .note {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.job-detail-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.back-link {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.back-link:hover {
+  color: var(--accent-color-dark);
+}
+
+@media (min-width: 768px) {
+  .intro-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .job-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   nav#navbar {
@@ -377,6 +601,8 @@ footer {
     display: block;
   }
   nav ul {
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
   }
   .hero h1 {
@@ -392,6 +618,29 @@ footer {
   .about-image,
   .about-text {
     flex: 1 1 100%;
+  }
+  .career-hero {
+    margin-top: 60px;
+  }
+  .career-hero img {
+    height: 220px;
+  }
+  .career-hero-content {
+    position: static;
+    background: #322a25;
+  }
+  .intro-card,
+  .job-card {
+    padding: 24px;
+  }
+  .job-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .job-hero {
+    padding: 60px 0 30px;
+  }
+  .job-summary {
+    font-size: 1rem;
   }
   .header-container {
     flex-direction: row;
