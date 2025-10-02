@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('#navbar');
   const logo = document.querySelector('.logo');
   if (toggle && nav) {
+    toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (logo) {
         logo.classList.toggle('hidden', open);
       }
