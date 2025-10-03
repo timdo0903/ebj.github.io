@@ -372,13 +372,31 @@ footer {
   position: relative;
   margin-top: 70px;
   border-bottom: 1px solid #eaeaea;
+  overflow: hidden;
+  min-height: 420px;
 }
 
 .career-hero img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 320px;
+  height: 100%;
+  min-height: 420px;
   object-fit: cover;
-  filter: brightness(0.85);
+  filter: brightness(0.8);
+}
+
+.career-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      120deg,
+      rgba(24, 19, 16, 0.72) 0%,
+      rgba(24, 19, 16, 0.55) 45%,
+      rgba(24, 19, 16, 0.1) 100%
+    );
+  z-index: 1;
 }
 
 .career-hero-content {
@@ -387,21 +405,59 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  color: #ffffff;
-  background: rgba(34, 29, 26, 0.45);
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  padding: clamp(2rem, 4vw, 4rem);
+  color: #f8f2ec;
+  font-family: 'Poppins', sans-serif;
+  z-index: 2;
 }
 
 .career-hero-content h1 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  margin-bottom: 0;
+  font-family: 'Playfair Display', serif;
+  color: #fdf5ec;
 }
 
 .career-hero-content p {
-  max-width: 640px;
+  max-width: 540px;
   font-size: 1.05rem;
+  color: rgba(255, 249, 244, 0.92);
+}
+
+.career-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(248, 240, 232, 0.85);
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.career-hero-tag::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-color);
+}
+
+.button-on-image {
+  background: var(--accent-color);
+  color: #ffffff;
+  box-shadow: 0 18px 35px rgba(50, 42, 37, 0.35);
+}
+
+.button-on-image:hover {
+  background: var(--accent-color-dark);
 }
 
 .career-intro {
@@ -765,13 +821,20 @@ footer {
   }
   .career-hero {
     margin-top: 60px;
+    min-height: 360px;
   }
   .career-hero img {
-    height: 220px;
+    min-height: 360px;
   }
   .career-hero-content {
-    position: static;
-    background: #322a25;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    padding: 2.5rem 1.75rem;
+  }
+  .career-hero-tag {
+    justify-content: center;
   }
   .intro-card,
   .job-card {
