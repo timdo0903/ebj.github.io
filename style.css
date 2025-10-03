@@ -178,6 +178,10 @@ nav a.current {
   padding: 0 20px;
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(18px, 3vw, 28px);
+  text-align: left;
 }
 
 .hero-home {
@@ -194,6 +198,52 @@ nav a.current {
       rgba(24, 19, 16, 0.35) 100%
     );
   z-index: -1;
+}
+
+.hero.hero-ja {
+  min-height: clamp(520px, 90vh, 780px);
+}
+
+.hero.hero-ja .hero-content {
+  max-width: 840px;
+  padding: clamp(48px, 8vw, 96px) clamp(24px, 7vw, 72px);
+}
+
+.hero.hero-ja .hero-headline {
+  display: grid;
+  gap: clamp(14px, 2.5vw, 28px);
+  padding: clamp(28px, 5vw, 48px);
+  border-radius: 32px;
+  background: rgba(20, 16, 13, 0.58);
+  box-shadow: 0 28px 55px rgba(18, 14, 11, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.hero.hero-ja .hero-headline h1 {
+  text-wrap: balance;
+}
+
+.hero.hero-ja .hero-subtitle {
+  font-size: clamp(1.05rem, 2.6vw, 1.5rem);
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  color: rgba(255, 250, 245, 0.95);
+  text-shadow: 0 14px 32px rgba(12, 9, 7, 0.55);
+}
+
+@media (max-width: 600px) {
+  .hero.hero-ja {
+    min-height: 100vh;
+  }
+
+  .hero.hero-ja .hero-content {
+    padding: clamp(36px, 12vw, 64px) clamp(18px, 8vw, 46px);
+  }
+
+  .hero.hero-ja .hero-headline {
+    padding: clamp(22px, 9vw, 36px);
+    border-radius: 26px;
+  }
 }
 
 .hero-intro {
