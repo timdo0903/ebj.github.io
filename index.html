@@ -56,7 +56,7 @@
       }
     </style>
   </head>
-  <body>
+  <body class="home-page">
     <!-- Header and navigation -->
     <header>
       <div class="container header-container">
@@ -81,127 +81,183 @@
       </div>
     </header>
 
-    <!-- Hero section with background image from Marketing folder -->
-    <section class="hero">
-      <!-- Background image inserted as img so that mobile browsers reliably load it -->
-      <img class="hero-bg" src="images/8.jpg" alt="Luxury flatlay background" />
-      <div class="hero-content">
-        <h1>Sustainable Luxury Reimagined</h1>
-        <p>
-          Pre-owned designer bags with new life, honesty and circular vision.
-        </p>
-      </div>
-    </section>
-
-    <!-- About section -->
-    <section id="about" class="about">
-      <div class="container about-container">
-        <div class="about-text">
-          <h2>Who We Are</h2>
-          <p>
-          Founded in 2012, Eco Brand Japan sources and curates luxury
-            handbags and accessories from iconic houses like Hermès, Chanel,
-            Louis Vuitton and more, giving premium pieces a new chapter. We
-            operate within the circular economy, respecting each bag's
-            craftsmanship and ensuring authenticity at every step.
-          </p>
-          <p>
-            With a team of experienced experts, we authenticate, restore and
-            prepare items so that they can bring joy across generations. Our
-            collection is hand-selected for quality and rarity, making it
-            possible for you to own a piece of fashion history responsibly.
-          </p>
-        </div>
-        <div class="about-image">
-          <img
-            src="images/IMG_3435.jpg"
-            alt="Close-up of YSL bag from Marketing shoot"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Values section -->
-    <section id="values" class="values">
-      <div class="container values-container">
-        <h2>Our Promise</h2>
-        <div class="values-grid">
-          <div class="value">
-            <h3>Authenticity</h3>
+    <main>
+      <!-- Hero section with background image from Marketing folder -->
+      <section class="hero hero-home">
+        <!-- Background image inserted as img so that mobile browsers reliably load it -->
+        <img class="hero-bg" src="images/8.jpg" alt="Luxury flatlay background" />
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <div class="hero-intro">
+            <span class="hero-tag">Circular luxury from Tokyo</span>
+            <h1>Sustainable Luxury, Curated With Intention</h1>
             <p>
-              Every item we offer is thoroughly vetted by specialists. Our
-              commitment to transparency means you receive only genuine
-              pieces and honest descriptions.
+              We restore and reintroduce rare designer handbags so they can continue their storied journeys—authentically, responsibly and beautifully.
             </p>
-          </div>
-          <div class="value">
-            <h3>Sustainability</h3>
-            <p>
-              We believe luxury should not be disposable. By keeping
-              beautiful creations in circulation, we honour the materials and
-              craftsmanship that went into them.
-            </p>
-          </div>
-          <div class="value">
-            <h3>Respect &amp; Trust</h3>
-            <p>
-              Our relationships with suppliers and clients are built on
-              respect and trust. We aim to make buying and selling pre-owned
-              luxury a pleasant, transparent experience.
-            </p>
+            <div class="hero-actions">
+              <a class="button" href="#offers">Partner with Us</a>
+              <a class="button button-outline" href="#values">Explore Our Promise</a>
+            </div>
+            <ul class="hero-highlights">
+              <li><span>12+</span> years curating iconic maisons</li>
+              <li><span>40k</span> authenticated pieces circulated</li>
+              <li><span>Global</span> network of trusted partners</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Services/Offers section -->
-    <section id="offers" class="offers">
-      <div class="container offers-container">
-          <h2>How We Work</h2>
+      <!-- About section -->
+      <section id="about" class="about">
+        <div class="container about-container">
+          <div class="about-text">
+            <span class="section-tag">Who We Are</span>
+            <h2>Crafting the Next Chapter for Luxury Icons</h2>
+            <p>
+              Founded in 2012, Eco Brand Japan sources and curates handbags and accessories from maisons like Hermès, Chanel and Louis Vuitton. Each piece is handled with reverence for its craftsmanship and a commitment to longevity within the circular economy.
+            </p>
+            <p>
+              Our multilingual specialists authenticate, restore and prepare every item before it meets its next guardian. The result is a collection that marries rarity with responsibility, inviting you to invest in fashion history with confidence.
+            </p>
+            <div class="about-actions">
+              <a class="button" href="career.html">Meet the Team</a>
+              <a class="button button-outline" href="#gallery">View Highlights</a>
+            </div>
+          </div>
+          <div class="about-visual">
+            <img
+              src="images/IMG_3435.jpg"
+              alt="Close-up of YSL bag from Marketing shoot"
+              loading="lazy"
+            />
+            <div class="about-highlights">
+              <div class="highlight-card">
+                <span class="highlight-number">100%</span>
+                <p>Specialist-authenticated inventory</p>
+              </div>
+              <div class="highlight-card">
+                <span class="highlight-number">24h</span>
+                <p>Average turnaround for supplier onboarding</p>
+              </div>
+              <div class="highlight-card">
+                <span class="highlight-number">7</span>
+                <p>Languages spoken across our concierge team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values section -->
+      <section id="values" class="values">
+        <div class="container values-container">
+          <span class="section-tag">Our Promise</span>
+          <h2>Principles That Guide Every Partnership</h2>
+          <div class="values-grid">
+            <article class="value">
+              <span class="value-icon" aria-hidden="true">&#10024;</span>
+              <h3>Authenticity Assured</h3>
+              <p>
+                Expert authenticators, proprietary checkpoints and transparent reporting ensure each item and description is worthy of your trust.
+              </p>
+            </article>
+            <article class="value">
+              <span class="value-icon" aria-hidden="true">&#9851;</span>
+              <h3>Sustainable Stewardship</h3>
+              <p>
+                We champion circularity—from mindful restoration to responsible packaging—so luxury remains a force for good across generations.
+              </p>
+            </article>
+            <article class="value">
+              <span class="value-icon" aria-hidden="true">&#129309;</span>
+              <h3>Respectful Relationships</h3>
+              <p>
+                We build long-term partnerships rooted in clarity, integrity and care for the people who entrust us with their collections.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services/Offers section -->
+      <section id="offers" class="offers">
+        <div class="container offers-container">
+          <div class="offers-header">
+            <span class="section-tag">How We Work</span>
+            <h2>Tailored Programmes for Suppliers &amp; Distributors</h2>
+            <p>
+              Whether you bring us collections or curate them for clients, our team orchestrates every detail—from valuation to storytelling.
+            </p>
+          </div>
           <div class="offers-grid">
-            <div class="offer">
+            <article class="offer">
               <h3>For Suppliers</h3>
               <ul>
-                <li>We purchase your inventory upfront.</li>
-                <li>Photo catalogs showcase your products to our network-created by us or by you.</li>
-                <li>In-house authentication and valuation for all stock.</li>
+                <li>Upfront purchasing with swift payment cycles.</li>
+                <li>In-house photography and catalogues ready for market.</li>
+                <li>Restoration, authentication and logistics handled end-to-end.</li>
               </ul>
-            </div>
-            <div class="offer">
+              <a class="text-link" href="mailto:info@ecobrandjapan.com">Share Your Collection</a>
+            </article>
+            <article class="offer">
               <h3>For Distributors</h3>
               <ul>
-                <li>Daily-updated catalog with tens of thousands of items by brand and category.</li>
-                <li>Expert advice on curating selections for your client segments.</li>
-                <li>Consignment options on major marketplaces and luxury retail platforms, online and in store.</li>
+                <li>Daily refreshed catalogue across iconic brands and categories.</li>
+                <li>Personalised curation and merchandising insights.</li>
+                <li>Consignment options for flagship boutiques and marketplaces.</li>
               </ul>
-            </div>
-          </div>
-      </div>
-    </section>
-
-    <!-- Gallery section to showcase product highlights -->
-    <section class="gallery">
-      <div class="container gallery-container">
-        <h2>Highlights</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img
-              src="images/IMG_0758-Edit.jpg"
-              alt="Gray Birkin"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="images/IMG_9065.jpg"
-              alt="Two black YSL bags from Marketing folder"
-              loading="lazy"
-            />
+              <a class="text-link" href="mailto:info@ecobrandjapan.com">Connect with Our Concierge</a>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Gallery section to showcase product highlights -->
+      <section id="gallery" class="gallery">
+        <div class="container gallery-container">
+          <div class="gallery-header">
+            <span class="section-tag">Highlights</span>
+            <h2>Stories Preserved in Every Detail</h2>
+            <p>
+              Explore a glimpse of the pieces we carefully reintroduce to collectors and connoisseurs worldwide.
+            </p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-item">
+              <img
+                src="images/IMG_0758-Edit.jpg"
+                alt="Gray Hermès Birkin bag on display"
+                loading="lazy"
+              />
+              <figcaption>Hermès Birkin 30 Gris Tourterelle</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="images/IMG_9065.jpg"
+                alt="Black YSL bags from a marketing shoot"
+                loading="lazy"
+              />
+              <figcaption>Saint Laurent classics prepared for livestream retail</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div class="container cta-banner-content">
+          <div>
+            <h2>Let&#39;s Shape the Future of Sustainable Luxury</h2>
+            <p>
+              Partner with Eco Brand Japan to breathe new life into storied accessories—or join our team to craft memorable client experiences.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="button" href="mailto:info@ecobrandjapan.com">Start a Conversation</a>
+            <a class="button button-outline" href="career.html">View Careers</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer>
