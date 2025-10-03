@@ -372,36 +372,48 @@ footer {
   position: relative;
   margin-top: 70px;
   border-bottom: 1px solid #eaeaea;
+  overflow: hidden;
 }
 
 .career-hero img {
   width: 100%;
-  height: 320px;
+  height: clamp(260px, 40vw, 360px);
   object-fit: cover;
-  filter: brightness(0.85);
+  filter: brightness(0.82);
+  transform: scale(1.02);
 }
 
 .career-hero-content {
   position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 680px);
+  padding: clamp(18px, 4vw, 36px);
+  display: grid;
+  justify-items: center;
+  gap: 0.85rem;
   text-align: center;
-  padding: 20px;
   color: #ffffff;
-  background: rgba(34, 29, 26, 0.45);
+  background: rgba(34, 29, 26, 0.55);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .career-hero-content h1 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25em;
 }
 
 .career-hero-content p {
-  max-width: 640px;
-  font-size: 1.05rem;
+  max-width: 48ch;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.7;
 }
 
 .career-intro {
@@ -767,11 +779,13 @@ footer {
     margin-top: 60px;
   }
   .career-hero img {
-    height: 220px;
+    height: clamp(220px, 55vw, 280px);
   }
   .career-hero-content {
-    position: static;
-    background: #322a25;
+    width: 92%;
+    padding: 20px;
+    border-radius: 18px;
+    gap: 0.75rem;
   }
   .intro-card,
   .job-card {
