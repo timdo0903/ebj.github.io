@@ -37,16 +37,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage =
       'Something went wrong. Please email your resume and cover letter to tim@ecobrandjp.com.';
 
+    const ensureSameOriginUrl = (pathValue, attributeName) => {
+      if (!pathValue) return null;
+      try {
+        const parsedUrl = new URL(pathValue, window.location.href);
+        if (parsedUrl.origin !== window.location.origin) {
+          console.warn(`Blocked ${attributeName} redirect to external origin: ${parsedUrl.origin}`);
+          return null;
+        }
+        return parsedUrl.toString();
+      } catch (error) {
+        console.warn(`Invalid ${attributeName} redirect path:`, error);
+        return null;
+      }
+    };
+
     const nextInput = applicationForm.querySelector('input[name="_next"][data-next-path]');
     if (nextInput && nextInput.dataset.nextPath) {
-      const nextUrl = new URL(nextInput.dataset.nextPath, window.location.href);
-      nextInput.value = nextUrl.toString();
+      const sanitizedNext = ensureSameOriginUrl(nextInput.dataset.nextPath, 'success');
+      if (sanitizedNext) {
+        nextInput.value = sanitizedNext;
+      }
     }
 
     const errorInput = applicationForm.querySelector('input[name="_error"][data-error-path]');
     if (errorInput && errorInput.dataset.errorPath) {
-      const errorUrl = new URL(errorInput.dataset.errorPath, window.location.href);
-      errorInput.value = errorUrl.toString();
+      const sanitizedError = ensureSameOriginUrl(errorInput.dataset.errorPath, 'error');
+      if (sanitizedError) {
+        errorInput.value = sanitizedError;
+      }
     }
 
     const params = new URLSearchParams(window.location.search);
@@ -74,7 +93,22 @@ document.addEventListener('DOMContentLoaded', () => {
       window.history.replaceState(null, '', newUrl);
     }
 
+    let sanitizedAjaxEndpoint = null;
     if (ajaxEndpoint) {
+      try {
+        const parsedEndpoint = new URL(ajaxEndpoint, window.location.origin);
+        const allowedOrigins = new Set([window.location.origin, 'https://formspree.io']);
+        if (!allowedOrigins.has(parsedEndpoint.origin)) {
+          console.warn(`Blocked form submission to untrusted endpoint: ${parsedEndpoint.origin}`);
+        } else {
+          sanitizedAjaxEndpoint = parsedEndpoint.toString();
+        }
+      } catch (error) {
+        console.warn('Invalid AJAX endpoint on application form:', error);
+      }
+    }
+
+    if (sanitizedAjaxEndpoint) {
       applicationForm.addEventListener('submit', async event => {
         event.preventDefault();
         if (!submitButton) return;
@@ -89,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
           const formData = new FormData(applicationForm);
-          const response = await fetch(ajaxEndpoint, {
+          const response = await fetch(sanitizedAjaxEndpoint, {
             method: 'POST',
             body: formData,
             headers: {
