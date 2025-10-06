@@ -615,6 +615,12 @@ section {
   gap: 24px;
 }
 
+@media (min-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .gallery-item {
   overflow: hidden;
   border-radius: 20px;
