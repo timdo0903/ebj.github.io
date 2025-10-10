@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.application-form').forEach(applicationForm => {
     const statusEl = applicationForm.querySelector('.form-status');
     const submitButton = applicationForm.querySelector('button[type="submit"]');
+    const originalSubmitLabel = submitButton ? submitButton.textContent : '';
     const ajaxEndpoint = applicationForm.dataset.ajaxEndpoint;
     const successMessage =
       applicationForm.dataset.successMessage ||
@@ -169,6 +170,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    const setSubmittingState = () => {
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+      }
+      if (statusEl) {
+        statusEl.textContent = 'Submitting your application...';
+        statusEl.classList.remove('success', 'error');
+      }
+    };
+
+    const resetSubmittingState = () => {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalSubmitLabel;
+      }
+    };
+
+    const hasQueuedFileUploads = () =>
+      Array.from(applicationForm.querySelectorAll('input[type="file"]')).some(
+        input => input.files && input.files.length > 0
+      );
+
     let sanitizedAjaxEndpoint = null;
     if (ajaxEndpoint) {
       try {
@@ -186,16 +210,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (sanitizedAjaxEndpoint) {
       applicationForm.addEventListener('submit', async event => {
-        event.preventDefault();
-        if (!submitButton) return;
-
-        submitButton.disabled = true;
-        const originalLabel = submitButton.textContent;
-        submitButton.textContent = 'Submitting...';
-        if (statusEl) {
-          statusEl.textContent = 'Submitting your application...';
-          statusEl.classList.remove('success', 'error');
+        if (hasQueuedFileUploads()) {
+          setSubmittingState();
+          return;
         }
+
+        event.preventDefault();
+        setSubmittingState();
 
         try {
           const formData = new FormData(applicationForm);
@@ -225,18 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
             statusEl.classList.remove('success');
           }
         } finally {
-          submitButton.disabled = false;
-          submitButton.textContent = originalLabel;
+          resetSubmittingState();
         }
       });
     } else if (submitButton) {
       applicationForm.addEventListener('submit', () => {
-        submitButton.disabled = true;
-        submitButton.textContent = 'Submitting...';
-        if (statusEl) {
-          statusEl.textContent = 'Submitting your application...';
-          statusEl.classList.remove('success', 'error');
-        }
+        setSubmittingState();
       });
     }
   });
