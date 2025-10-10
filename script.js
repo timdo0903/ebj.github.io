@@ -38,30 +38,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const applicationForm = document.querySelector('#inventory-logistics-application-form');
-  if (applicationForm) {
+  const ensureSameOriginUrl = (pathValue, attributeName) => {
+    if (!pathValue) return null;
+    try {
+      const parsedUrl = new URL(pathValue, window.location.href);
+      if (parsedUrl.origin !== window.location.origin) {
+        console.warn(`Blocked ${attributeName} redirect to external origin: ${parsedUrl.origin}`);
+        return null;
+      }
+      return parsedUrl.toString();
+    } catch (error) {
+      console.warn(`Invalid ${attributeName} redirect path:`, error);
+      return null;
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  let messageParamHandled = false;
+
+  document.querySelectorAll('.application-form').forEach(applicationForm => {
     const statusEl = applicationForm.querySelector('.form-status');
     const submitButton = applicationForm.querySelector('button[type="submit"]');
     const ajaxEndpoint = applicationForm.dataset.ajaxEndpoint;
     const successMessage =
+      applicationForm.dataset.successMessage ||
       'Thank you for applying! We appreciate all applications; however, only those selected for an interview will be contacted.';
+    const errorEmail = applicationForm.dataset.errorEmail || 'talents@ecobrandjp.com';
     const errorMessage =
-      'Something went wrong. Please email your resume and cover letter to tim@ecobrandjp.com.';
-
-    const ensureSameOriginUrl = (pathValue, attributeName) => {
-      if (!pathValue) return null;
-      try {
-        const parsedUrl = new URL(pathValue, window.location.href);
-        if (parsedUrl.origin !== window.location.origin) {
-          console.warn(`Blocked ${attributeName} redirect to external origin: ${parsedUrl.origin}`);
-          return null;
-        }
-        return parsedUrl.toString();
-      } catch (error) {
-        console.warn(`Invalid ${attributeName} redirect path:`, error);
-        return null;
-      }
-    };
+      applicationForm.dataset.errorMessage ||
+      `Something went wrong. Please email your resume and cover letter to ${errorEmail}.`;
 
     const nextInput = applicationForm.querySelector('input[name="_next"][data-next-path]');
     if (nextInput && nextInput.dataset.nextPath) {
@@ -79,36 +84,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    const params = new URLSearchParams(window.location.search);
-    let messageParamDisplayed = null;
-    if (params.get('submitted') === 'true') {
-      messageParamDisplayed = 'submitted';
-      if (statusEl) {
-        statusEl.textContent = successMessage;
-        statusEl.classList.add('success');
-        statusEl.classList.remove('error');
+    if (!messageParamHandled) {
+      let messageParamDisplayed = null;
+      if (params.get('submitted') === 'true') {
+        messageParamDisplayed = 'submitted';
+        if (statusEl) {
+          statusEl.textContent = successMessage;
+          statusEl.classList.add('success');
+          statusEl.classList.remove('error');
+        }
+      } else if (params.get('error') === 'true') {
+        messageParamDisplayed = 'error';
+        if (statusEl) {
+          statusEl.textContent = errorMessage;
+          statusEl.classList.add('error');
+          statusEl.classList.remove('success');
+        }
       }
-    } else if (params.get('error') === 'true') {
-      messageParamDisplayed = 'error';
-      if (statusEl) {
-        statusEl.textContent = errorMessage;
-        statusEl.classList.add('error');
-        statusEl.classList.remove('success');
-      }
-    }
 
-    if (messageParamDisplayed) {
-      const url = new URL(window.location.href);
-      url.searchParams.delete(messageParamDisplayed);
-      const newUrl = `${url.pathname}${url.search ? `?${url.searchParams.toString()}` : ''}${url.hash}`;
-      window.history.replaceState(null, '', newUrl);
+      if (messageParamDisplayed) {
+        const url = new URL(window.location.href);
+        url.searchParams.delete(messageParamDisplayed);
+        const newUrl = `${url.pathname}${url.search ? `?${url.searchParams.toString()}` : ''}${url.hash}`;
+        window.history.replaceState(null, '', newUrl);
+        messageParamHandled = true;
+      }
     }
 
     let sanitizedAjaxEndpoint = null;
     if (ajaxEndpoint) {
       try {
         const parsedEndpoint = new URL(ajaxEndpoint, window.location.origin);
-        const allowedOrigins = new Set([window.location.origin, 'https://formspree.io']);
+        const allowedOrigins = new Set([window.location.origin, 'https://formspree.io', 'https://formsubmit.co']);
         if (!allowedOrigins.has(parsedEndpoint.origin)) {
           console.warn(`Blocked form submission to untrusted endpoint: ${parsedEndpoint.origin}`);
         } else {
@@ -150,11 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
           if (statusEl) {
             statusEl.textContent = successMessage;
             statusEl.classList.add('success');
+            statusEl.classList.remove('error');
           }
         } catch (error) {
           if (statusEl) {
             statusEl.textContent = errorMessage;
             statusEl.classList.add('error');
+            statusEl.classList.remove('success');
           }
         } finally {
           submitButton.disabled = false;
@@ -171,5 +180,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-  }
+  });
 });
