@@ -24,7 +24,7 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://www.ecobrandjapan.com; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+      content="default-src 'self'; img-src 'self' data: https://www.ecobrandjapan.com; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io https://formsubmit.co; form-action 'self' https://formspree.io https://formsubmit.co; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
   </head>
@@ -60,13 +60,10 @@
           </p>
           <div class="job-actions">
             <a class="button button-secondary" href="/career/#open-roles">Back to Careers</a>
-            <button class="button disabled" type="button" disabled aria-disabled="true">
-              Applications Opening Soon
-            </button>
+            <a class="button" href="#apply">Apply Now</a>
           </div>
           <p class="job-status">
-            Applications are paused while we upgrade our hiring tools. Save this page and return
-            soon to submit your details once the portal opens.
+            We&#39;re reviewing applications on a rolling basis. Submit your materials below to be considered.
           </p>
         </div>
       </section>
@@ -123,6 +120,98 @@
               <li>A collaborative, creative and professional work environment.</li>
               <li>Career growth opportunities within a fast-expanding international business.</li>
             </ul>
+          </article>
+
+          <article id="apply" class="application-section">
+            <h2>Submit Your Application</h2>
+            <p>
+              Provide your contact information, resume, cover letter and portfolio details so we can evaluate your creative
+              experience.
+            </p>
+            <form
+              id="product-photographer-application-form"
+              class="application-form"
+              action="https://formsubmit.co/talents@ecobrandjp.com"
+              method="POST"
+              enctype="multipart/form-data"
+              data-ajax-endpoint="https://formsubmit.co/ajax/talents@ecobrandjp.com"
+              data-error-email="talents@ecobrandjp.com"
+            >
+              <input type="hidden" name="_subject" value="Product Photographer Application" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for applying to Eco Brand Japan. Our team will review your application and contact you if selected for an interview."
+              />
+              <input
+                type="hidden"
+                name="_next"
+                data-next-path="/product-photographer/?submitted=true#apply"
+              />
+              <input
+                type="hidden"
+                name="_error"
+                data-error-path="/product-photographer/?error=true#apply"
+              />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="photographer-name">Full Name</label>
+                  <input type="text" id="photographer-name" name="Name" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="photographer-email">Email</label>
+                  <input type="email" id="photographer-email" name="Email" autocomplete="email" required />
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-phone">Phone Number (optional)</label>
+                  <input type="tel" id="photographer-phone" name="Phone" autocomplete="tel" />
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-resume">Resume</label>
+                  <input
+                    type="file"
+                    id="photographer-resume"
+                    name="Resume"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-cover-letter">Cover Letter</label>
+                  <input
+                    type="file"
+                    id="photographer-cover-letter"
+                    name="Cover Letter"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-portfolio">Portfolio URL (optional)</label>
+                  <input
+                    type="url"
+                    id="photographer-portfolio"
+                    name="Portfolio URL"
+                    placeholder="https://"
+                  />
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-message">Additional Information (optional)</label>
+                  <textarea
+                    id="photographer-message"
+                    name="Additional Details"
+                    rows="4"
+                    placeholder="Share equipment expertise, schedule details or other notes."
+                  ></textarea>
+                </div>
+              </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <button class="button" type="submit">Submit Application</button>
+            </form>
           </article>
 
           <article>
