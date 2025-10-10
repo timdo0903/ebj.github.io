@@ -118,7 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const restructureAttachments = formData => {
       if (!attachmentInputs.length || !formData) return;
 
-      const collectedFiles = [];
+      let hasFiles = false;
+
+      // Clear any existing attachment buckets so we can rebuild them with sanitized filenames.
+      if (formData.has('attachments[]')) {
+        formData.delete('attachments[]');
+      }
 
       attachmentInputs.forEach(input => {
         const { files } = input;
@@ -126,26 +131,24 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-        const label = (input.dataset.attachmentLabel || '').trim();
-        Array.from(files).forEach(file => {
-          collectedFiles.push({ file, label });
-        });
-      });
-
-      if (!collectedFiles.length) {
-        return;
-      }
-
-      ['attachments[]', 'attachment'].forEach(fieldName => {
+        const fieldName = (input.getAttribute('name') || 'attachment').trim() || 'attachment';
         if (formData.has(fieldName)) {
           formData.delete(fieldName);
         }
+
+        const label = (input.dataset.attachmentLabel || '').trim();
+
+        Array.from(files).forEach(file => {
+          hasFiles = true;
+          const sanitizedLabel = label ? `${label} - ${file.name}` : file.name;
+          formData.append(fieldName, file, sanitizedLabel);
+          formData.append('attachments[]', file, sanitizedLabel);
+        });
       });
 
-      collectedFiles.forEach(({ file, label }) => {
-        const sanitizedLabel = label ? `${label} - ${file.name}` : file.name;
-        formData.append('attachment', file, sanitizedLabel);
-      });
+      if (!hasFiles && formData.has('attachments[]')) {
+        formData.delete('attachments[]');
+      }
     };
 
     if ('onformdata' in applicationForm) {
