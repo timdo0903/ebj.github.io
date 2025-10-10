@@ -24,7 +24,7 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://www.ecobrandjapan.com; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+      content="default-src 'self'; img-src 'self' data: https://www.ecobrandjapan.com; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io https://formsubmit.co; form-action 'self' https://formspree.io https://formsubmit.co; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
   </head>
@@ -60,13 +60,11 @@
           </p>
           <div class="job-actions">
             <a class="button button-secondary" href="/career/#open-roles">Back to Careers</a>
-            <button class="button disabled" type="button" disabled aria-disabled="true">
-              Applications Opening Soon
-            </button>
+            <a class="button" href="#apply">Apply Now</a>
           </div>
           <p class="job-status">
-            Applications are paused while we upgrade our hiring tools. Save this page and return soon to submit your
-            details once the portal opens.
+            Excited about livestream commerce? Share your details below and we will contact applicants whose
+            experience matches our needs.
           </p>
         </div>
       </section>
@@ -138,6 +136,90 @@
               Applicants living in Tokyo will be given priority. If you plan to relocate to the Greater Tokyo Area, please
               mention it in your cover letter.
             </p>
+          </article>
+
+          <article id="apply" class="application-section">
+            <h2>Submit Your Application</h2>
+            <p>
+              Share your contact details, resume and cover letter so we can learn more about your presentation experience and
+              availability.
+            </p>
+            <form
+              id="live-seller-application-form"
+              class="application-form"
+              action="https://formsubmit.co/talents@ecobrandjp.com"
+              method="POST"
+              enctype="multipart/form-data"
+              data-ajax-endpoint="https://formsubmit.co/ajax/talents@ecobrandjp.com"
+              data-error-email="talents@ecobrandjp.com"
+            >
+              <input type="hidden" name="_subject" value="Live Seller Application" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for applying to Eco Brand Japan. Our team will review your application and contact you if selected for an interview."
+              />
+              <input type="hidden" name="Preferred Role" value="Live Seller" />
+              <input
+                type="hidden"
+                name="_next"
+                data-next-path="/live-seller/?submitted=true#apply"
+              />
+              <input
+                type="hidden"
+                name="_error"
+                data-error-path="/live-seller/?error=true#apply"
+              />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="live-seller-name">Full Name</label>
+                  <input type="text" id="live-seller-name" name="Name" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="live-seller-email">Email</label>
+                  <input type="email" id="live-seller-email" name="Email" autocomplete="email" required />
+                </div>
+                <div class="form-group full-width">
+                  <label for="live-seller-phone">Phone Number (optional)</label>
+                  <input type="tel" id="live-seller-phone" name="Phone" autocomplete="tel" />
+                </div>
+                <div class="form-group full-width">
+                  <label for="live-seller-resume">Resume</label>
+                  <input
+                    type="file"
+                    id="live-seller-resume"
+                    name="Resume"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="live-seller-cover-letter">Cover Letter</label>
+                  <input
+                    type="file"
+                    id="live-seller-cover-letter"
+                    name="Cover Letter"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="live-seller-message">Additional Information (optional)</label>
+                  <textarea
+                    id="live-seller-message"
+                    name="Additional Details"
+                    rows="4"
+                    placeholder="Share streaming availability, language skills or other notes."
+                  ></textarea>
+                </div>
+              </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <button class="button" type="submit">Submit Application</button>
+            </form>
           </article>
         </div>
       </section>
