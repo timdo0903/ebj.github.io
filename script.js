@@ -1,3 +1,14 @@
+(() => {
+  const { pathname, search, hash } = window.location;
+  if (/\/index\.html$/.test(pathname)) {
+    const redirectPath = pathname.replace(/index\.html$/, '');
+    const normalizedPath = redirectPath || '/';
+    const target = normalizedPath + (search || '') + (hash || '');
+    window.location.replace(target);
+    return;
+  }
+})();
+
 // script.js
 // Add JavaScript for minor interactivity if needed.
 
