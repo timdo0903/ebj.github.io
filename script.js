@@ -118,34 +118,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const restructureAttachments = formData => {
       if (!attachmentInputs.length || !formData) return;
 
-      const fieldNames = new Set();
+      const collectedFiles = [];
+      const fieldNamesToClear = new Set(['attachments[]', 'attachment']);
 
       attachmentInputs.forEach(input => {
-        const fieldName = (input.getAttribute('name') || '').trim();
-        if (fieldName) {
-          fieldNames.add(fieldName);
+        const originalName = (input.getAttribute('name') || '').trim();
+        if (originalName) {
+          fieldNamesToClear.add(originalName);
         }
-      });
 
-      fieldNames.forEach(fieldName => {
-        if (formData.has(fieldName)) {
-          formData.delete(fieldName);
-        }
-      });
-
-      attachmentInputs.forEach(input => {
         const { files } = input;
         if (!files || files.length === 0) {
           return;
         }
 
         const label = (input.dataset.attachmentLabel || '').trim();
-        const fieldName = (input.getAttribute('name') || 'attachment').trim() || 'attachment';
         Array.from(files).forEach((file, index) => {
           const includeIndex = files.length > 1 ? ` (${index + 1})` : '';
           const sanitizedLabel = label ? `${label}${includeIndex} - ${file.name}` : file.name;
-          formData.append(fieldName, file, sanitizedLabel);
+          collectedFiles.push({ file, sanitizedLabel });
         });
+      });
+
+      if (!collectedFiles.length) {
+        return;
+      }
+
+      collectedFiles.forEach((_, index) => {
+        if (index > 0) {
+          fieldNamesToClear.add(`attachment_${index + 1}`);
+        }
+      });
+
+      fieldNamesToClear.forEach(fieldName => {
+        while (formData.has(fieldName)) {
+          formData.delete(fieldName);
+        }
+      });
+
+      collectedFiles.forEach((item, index) => {
+        const aliasName = index === 0 ? 'attachment' : `attachment_${index + 1}`;
+        formData.append('attachments[]', item.file, item.sanitizedLabel);
+        formData.append(aliasName, item.file, item.sanitizedLabel);
       });
     };
 
