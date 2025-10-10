@@ -208,7 +208,7 @@
                   <input
                     type="file"
                     id="applicant-resume"
-                    name="Resume"
+                    name="attachments[]"
                     accept=".pdf,.doc,.docx"
                     required
                   />
@@ -219,7 +219,7 @@
                   <input
                     type="file"
                     id="applicant-cover-letter"
-                    name="Cover Letter"
+                    name="attachments[]"
                     accept=".pdf,.doc,.docx"
                     required
                   />
@@ -239,6 +239,8 @@
               <button class="button" type="submit">Submit Application</button>
             </form>
           </article>
+
+          
 
           <div class="job-detail-actions">
             <a class="back-link" href="/career/">&larr; Back to Career Opportunities</a>

@@ -121,88 +121,7 @@
             <p class="note">This overview reflects core responsibilities. Additional duties may be assigned as our business evolves.</p>
           </article>
 
-          <article id="apply" class="application-section">
-            <h2>Submit Your Application</h2>
-            <p>
-              Upload your resume and cover letter so we can learn more about your experience. PDF,
-              DOC or DOCX files are accepted.
-            </p>
-            <form
-              id="luxury-buyer-application-form"
-              class="application-form"
-              action="https://formsubmit.co/talents@ecobrandjp.com"
-              method="POST"
-              enctype="multipart/form-data"
-              data-ajax-endpoint="https://formsubmit.co/ajax/talents@ecobrandjp.com"
-              data-error-email="talents@ecobrandjp.com"
-            >
-              <input type="hidden" name="_subject" value="Luxury Buyer Application" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_autoresponse"
-                value="Thank you for applying to Eco Brand Japan. Our team will review your application and contact you if selected for an interview."
-              />
-              <input
-                type="hidden"
-                name="_next"
-                data-next-path="/buyers-position/?submitted=true#apply"
-              />
-              <input
-                type="hidden"
-                name="_error"
-                data-error-path="/buyers-position/?error=true#apply"
-              />
-              <div class="form-grid">
-                <div class="form-group">
-                  <label for="buyer-name">Full Name</label>
-                  <input type="text" id="buyer-name" name="Name" autocomplete="name" required />
-                </div>
-                <div class="form-group">
-                  <label for="buyer-email">Email</label>
-                  <input type="email" id="buyer-email" name="Email" autocomplete="email" required />
-                </div>
-                <div class="form-group full-width">
-                  <label for="buyer-phone">Phone Number (optional)</label>
-                  <input type="tel" id="buyer-phone" name="Phone" autocomplete="tel" />
-                </div>
-                <div class="form-group full-width">
-                  <label for="buyer-resume">Resume</label>
-                  <input
-                    type="file"
-                    id="buyer-resume"
-                    name="Resume"
-                    accept=".pdf,.doc,.docx"
-                    required
-                  />
-                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
-                </div>
-                <div class="form-group full-width">
-                  <label for="buyer-cover-letter">Cover Letter</label>
-                  <input
-                    type="file"
-                    id="buyer-cover-letter"
-                    name="Cover Letter"
-                    accept=".pdf,.doc,.docx"
-                    required
-                  />
-                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
-                </div>
-                <div class="form-group full-width">
-                  <label for="buyer-message">Additional Information (optional)</label>
-                  <textarea
-                    id="buyer-message"
-                    name="Additional Details"
-                    rows="4"
-                    placeholder="Share preferred start dates, travel availability or other notes."
-                  ></textarea>
-                </div>
-              </div>
-              <p class="form-status" role="status" aria-live="polite"></p>
-              <button class="button" type="submit">Submit Application</button>
-            </form>
-          </article>
+          
 
           <article>
             <h2>Hours &amp; Travel</h2>
@@ -258,6 +177,89 @@
             <p class="note">
               Applicants living in Tokyo will be given priority. If you plan to relocate to the Greater Tokyo Area, please mention it in your cover letter.
             </p>
+          </article>
+
+          <article id="apply" class="application-section">
+            <h2>Submit Your Application</h2>
+            <p>
+              Upload your resume and cover letter so we can learn more about your experience. PDF,
+              DOC or DOCX files are accepted.
+            </p>
+            <form
+              id="luxury-buyer-application-form"
+              class="application-form"
+              action="https://formsubmit.co/talents@ecobrandjp.com"
+              method="POST"
+              enctype="multipart/form-data"
+              data-ajax-endpoint="https://formsubmit.co/ajax/talents@ecobrandjp.com"
+              data-error-email="talents@ecobrandjp.com"
+            >
+              <input type="hidden" name="_subject" value="Luxury Buyer Application" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for applying to Eco Brand Japan. Our team will review your application and contact you if selected for an interview."
+              />
+              <input
+                type="hidden"
+                name="_next"
+                data-next-path="/buyers-position/?submitted=true#apply"
+              />
+              <input
+                type="hidden"
+                name="_error"
+                data-error-path="/buyers-position/?error=true#apply"
+              />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="buyer-name">Full Name</label>
+                  <input type="text" id="buyer-name" name="Name" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="buyer-email">Email</label>
+                  <input type="email" id="buyer-email" name="Email" autocomplete="email" required />
+                </div>
+                <div class="form-group full-width">
+                  <label for="buyer-phone">Phone Number (optional)</label>
+                  <input type="tel" id="buyer-phone" name="Phone" autocomplete="tel" />
+                </div>
+                <div class="form-group full-width">
+                  <label for="buyer-resume">Resume</label>
+                  <input
+                    type="file"
+                    id="buyer-resume"
+                    name="attachments[]"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="buyer-cover-letter">Cover Letter</label>
+                  <input
+                    type="file"
+                    id="buyer-cover-letter"
+                    name="attachments[]"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="buyer-message">Additional Information (optional)</label>
+                  <textarea
+                    id="buyer-message"
+                    name="Additional Details"
+                    rows="4"
+                    placeholder="Share preferred start dates, travel availability or other notes."
+                  ></textarea>
+                </div>
+              </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <button class="button" type="submit">Submit Application</button>
+            </form>
           </article>
 
           <div class="job-detail-actions">
