@@ -155,8 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    const hasFileUploads = attachmentInputs.length > 0;
+
     let sanitizedAjaxEndpoint = null;
-    if (ajaxEndpoint) {
+    if (ajaxEndpoint && !hasFileUploads) {
       try {
         const parsedEndpoint = new URL(ajaxEndpoint, window.location.origin);
         const allowedOrigins = new Set([window.location.origin, 'https://formspree.io', 'https://formsubmit.co']);
