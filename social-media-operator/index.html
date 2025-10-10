@@ -24,7 +24,7 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://www.ecobrandjapan.com; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+      content="default-src 'self'; img-src 'self' data: https://www.ecobrandjapan.com; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io https://formsubmit.co; form-action 'self' https://formspree.io https://formsubmit.co; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
   </head>
@@ -61,13 +61,11 @@
           </p>
           <div class="job-actions">
             <a class="button button-secondary" href="/career/#open-roles">Back to Careers</a>
-            <button class="button disabled" type="button" disabled aria-disabled="true">
-              Applications Opening Soon
-            </button>
+            <a class="button" href="#apply">Apply Now</a>
           </div>
           <p class="job-status">
-            Applications are paused while we upgrade our hiring tools. Save this page and return
-            soon to submit your details once the portal opens.
+            We&#39;re eager to meet storytellers who love social media. Submit your application below and we&#39;ll reach out to
+            shortlisted candidates.
           </p>
         </div>
       </section>
@@ -129,6 +127,97 @@
               <li>Ability to work effectively with international, cross-functional partners.</li>
               <li>Valid Visa to work in Japan</li>
             </ul>
+          </article>
+
+          <article id="apply" class="application-section">
+            <h2>Submit Your Application</h2>
+            <p>
+              Share your background, resume, cover letter and relevant links to help us understand your creative approach.
+            </p>
+            <form
+              id="social-media-operator-application-form"
+              class="application-form"
+              action="https://formsubmit.co/talents@ecobrandjp.com"
+              method="POST"
+              enctype="multipart/form-data"
+              data-ajax-endpoint="https://formsubmit.co/ajax/talents@ecobrandjp.com"
+              data-error-email="talents@ecobrandjp.com"
+            >
+              <input type="hidden" name="_subject" value="Social Media Operator Application" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for applying to Eco Brand Japan. Our team will review your application and contact you if selected for an interview."
+              />
+              <input
+                type="hidden"
+                name="_next"
+                data-next-path="/social-media-operator/?submitted=true#apply"
+              />
+              <input
+                type="hidden"
+                name="_error"
+                data-error-path="/social-media-operator/?error=true#apply"
+              />
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="social-media-name">Full Name</label>
+                  <input type="text" id="social-media-name" name="Name" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="social-media-email">Email</label>
+                  <input type="email" id="social-media-email" name="Email" autocomplete="email" required />
+                </div>
+                <div class="form-group full-width">
+                  <label for="social-media-phone">Phone Number (optional)</label>
+                  <input type="tel" id="social-media-phone" name="Phone" autocomplete="tel" />
+                </div>
+                <div class="form-group full-width">
+                  <label for="social-media-resume">Resume</label>
+                  <input
+                    type="file"
+                    id="social-media-resume"
+                    name="Resume"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="social-media-cover-letter">Cover Letter</label>
+                  <input
+                    type="file"
+                    id="social-media-cover-letter"
+                    name="Cover Letter"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="social-media-links">Portfolio or Social Links (optional)</label>
+                  <textarea
+                    id="social-media-links"
+                    name="Portfolio or Social Links"
+                    rows="3"
+                    placeholder="Share relevant profiles or project links."
+                  ></textarea>
+                </div>
+                <div class="form-group full-width">
+                  <label for="social-media-message">Additional Information (optional)</label>
+                  <textarea
+                    id="social-media-message"
+                    name="Additional Details"
+                    rows="4"
+                    placeholder="Include availability, language skills or other notes."
+                  ></textarea>
+                </div>
+              </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <button class="button" type="submit">Submit Application</button>
+            </form>
           </article>
 
           <article>
