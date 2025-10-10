@@ -118,7 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const restructureAttachments = formData => {
       if (!attachmentInputs.length || !formData) return;
 
-      const collectedFiles = [];
+      const fieldNames = new Set();
+
+      attachmentInputs.forEach(input => {
+        const fieldName = (input.getAttribute('name') || '').trim();
+        if (fieldName) {
+          fieldNames.add(fieldName);
+        }
+      });
+
+      fieldNames.forEach(fieldName => {
+        if (formData.has(fieldName)) {
+          formData.delete(fieldName);
+        }
+      });
 
       attachmentInputs.forEach(input => {
         const { files } = input;
@@ -127,24 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const label = (input.dataset.attachmentLabel || '').trim();
-        Array.from(files).forEach(file => {
-          collectedFiles.push({ file, label });
+        const fieldName = (input.getAttribute('name') || 'attachment').trim() || 'attachment';
+        Array.from(files).forEach((file, index) => {
+          const includeIndex = files.length > 1 ? ` (${index + 1})` : '';
+          const sanitizedLabel = label ? `${label}${includeIndex} - ${file.name}` : file.name;
+          formData.append(fieldName, file, sanitizedLabel);
         });
-      });
-
-      if (!collectedFiles.length) {
-        return;
-      }
-
-      ['attachments[]', 'attachment'].forEach(fieldName => {
-        if (formData.has(fieldName)) {
-          formData.delete(fieldName);
-        }
-      });
-
-      collectedFiles.forEach(({ file, label }) => {
-        const sanitizedLabel = label ? `${label} - ${file.name}` : file.name;
-        formData.append('attachment', file, sanitizedLabel);
       });
     };
 
