@@ -111,6 +111,49 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    const attachmentInputs = Array.from(
+      applicationForm.querySelectorAll('input[type="file"][data-attachment-label]')
+    );
+
+    const restructureAttachments = formData => {
+      if (!attachmentInputs.length || !formData) return;
+
+      const collectedFiles = [];
+
+      attachmentInputs.forEach(input => {
+        const { files } = input;
+        if (!files || files.length === 0) {
+          return;
+        }
+
+        const label = (input.dataset.attachmentLabel || '').trim();
+        Array.from(files).forEach(file => {
+          collectedFiles.push({ file, label });
+        });
+      });
+
+      if (!collectedFiles.length) {
+        return;
+      }
+
+      ['attachments[]', 'attachment'].forEach(fieldName => {
+        if (formData.has(fieldName)) {
+          formData.delete(fieldName);
+        }
+      });
+
+      collectedFiles.forEach(({ file, label }) => {
+        const sanitizedLabel = label ? `${label} - ${file.name}` : file.name;
+        formData.append('attachment', file, sanitizedLabel);
+      });
+    };
+
+    if ('onformdata' in applicationForm) {
+      applicationForm.addEventListener('formdata', event => {
+        restructureAttachments(event.formData);
+      });
+    }
+
     let sanitizedAjaxEndpoint = null;
     if (ajaxEndpoint) {
       try {
@@ -141,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
           const formData = new FormData(applicationForm);
+          restructureAttachments(formData);
           const response = await fetch(sanitizedAjaxEndpoint, {
             method: 'POST',
             body: formData,
