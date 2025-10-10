@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       collectedFiles.forEach((_, index) => {
         if (index > 0) {
+          fieldNamesToClear.add(`attachment-${index + 1}`);
           fieldNamesToClear.add(`attachment_${index + 1}`);
         }
       });
@@ -157,8 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       collectedFiles.forEach((item, index) => {
-        const aliasName = index === 0 ? 'attachment' : `attachment_${index + 1}`;
-        formData.append('attachments[]', item.file, item.sanitizedLabel);
+        const aliasName = index === 0 ? 'attachment' : `attachment-${index + 1}`;
         formData.append(aliasName, item.file, item.sanitizedLabel);
       });
     };
