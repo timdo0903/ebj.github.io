@@ -151,10 +151,12 @@
               method="POST"
               enctype="multipart/form-data"
               data-form-key="live-seller"
+              data-next-path="/live-seller/?submitted=true"
             >
               <input type="hidden" name="Position" value="Live Seller" />
               <input type="hidden" name="Department" value="Livestream" />
               <input type="hidden" name="Source" value="Website" />
+              <input type="hidden" name="_subject" value="Live Seller" />
               <div class="form-grid">
                 <div class="form-group">
                   <label for="live-seller-name">Full Name</label>

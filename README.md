@@ -7,19 +7,18 @@ Static marketing and recruiting site for https://www.ecobrandjapan.com.
 - Install dependencies once: `npm install` (pulls in `sharp`).
 - Dry run to preview outputs: `npm run optimize:images:dry`.
 - Generate responsive assets: `npm run optimize:images`.
-- New variants are written to `images/optimized/` and consumed via `<picture>` elements on the site.
+- New variants are written to `images/optimized/`. The production markup currently serves the base JPEGs only—re-introduce the generated AVIF/WebP sources once you are ready to ship the optimised assets alongside the site.
 - Rerun the command whenever you update hero/gallery photography. Use `--force` to regenerate everything after adjusting quality settings.
 
 ## Application Form Configuration
 
 - Form behaviour is driven by `form-config.json`. Update this file when you are ready to point traffic at your production submission API.
 - Keys to tailor:
-  - `submitUrl`: HTML fallback (non-JS) endpoint.
-  - `ajaxSubmitUrl`: CORS-enabled endpoint for progressive enhancement.
-  - `allowedOrigins`: API origins whitelisted for XHR submissions.
-  - `maxAttachmentBytes` / `maxTotalBytes`: Client-side validation thresholds.
+  - `submitUrl`: HTML form endpoint.
+  - `allowedOrigins`: API origins permitted for progressive enhancement (only used when an explicit AJAX endpoint is supplied).
+  - `maxAttachmentBytes` / `maxTotalBytes`: Client-side validation thresholds (FormSubmit limits the combined payload to 5 MB).
 - Once your new backend is stable, swap the FormSubmit URL for your API (for example `https://api.ecobrandjapan.com/applications`).
-- The front end retries transient `408/429/5xx` responses with exponential backoff. Make sure the API returns JSON and 200 on success.
+- Add a `_next` redirect in `data-next-path` if you need to change the thank-you target for individual roles.
 
 ## Bringing Your Own Submission Backend
 
@@ -34,7 +33,7 @@ Static marketing and recruiting site for https://www.ecobrandjapan.com.
 
 - Run `npm run optimize:images` before major campaigns to keep hero assets cached and lightweight.
 - Use a synthetic load tool (e.g. k6, Artillery) against the static site and the application API before publishing hiring pushes.
-- Enable CDN caching on `/images/optimized/**` with long `Cache-Control` headers; bust the cache by regenerating assets when artwork changes.
+- Enable CDN caching on `/images/**` with long `Cache-Control` headers; bust the cache by regenerating assets when artwork changes.
 - Monitor API latency and error rates during campaigns; tune `retryAttempts` or `retryBackoffMs` in `form-config.json` if upstream throttling appears.
 
 ## Repository Scripts
