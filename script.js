@@ -52,7 +52,7 @@ const formatBytes = bytes => {
   const units = ['B', 'KB', 'MB', 'GB'];
   const magnitude = Math.floor(Math.log(bytes) / Math.log(1024));
   const size = bytes / 1024 ** magnitude;
-  return `${size.toFixed(size > 10 ? 0 : 1)} ${units[magnitude]}`;
+  return `${size.toFixed(1)} ${units[magnitude]}`;
 };
 
 const createFormDataFromEntries = entries => {
@@ -162,7 +162,7 @@ function setupApplicationForms(config) {
     }
 
     const ajaxEndpoint = sanitizeEndpoint(
-      settings?.ajaxSubmitUrl || settings?.submitUrl || form.dataset.ajaxEndpoint,
+      settings?.ajaxSubmitUrl || form.dataset.ajaxEndpoint,
       allowedOrigins
     );
 
@@ -171,6 +171,24 @@ function setupApplicationForms(config) {
     const requestTimeoutMs = Number(settings?.requestTimeoutMs) || 20000;
     const retryAttempts = Number(settings?.retryAttempts) || 3;
     const retryBackoffMs = Number(settings?.retryBackoffMs) || 750;
+
+    const nextPath = form.dataset.nextPath || null;
+
+    if (nextPath) {
+      let nextField = form.querySelector('input[name="_next"]');
+      if (!nextField) {
+        nextField = document.createElement('input');
+        nextField.type = 'hidden';
+        nextField.name = '_next';
+        form.appendChild(nextField);
+      }
+      try {
+        const nextUrl = new URL(nextPath, window.location.origin);
+        nextField.value = nextUrl.toString();
+      } catch (error) {
+        console.warn('Invalid nextPath on form', form.id, error);
+      }
+    }
 
     const guidanceEl = form.querySelector('.form-upload-guidance');
     if (guidanceEl && (maxAttachmentBytes || maxTotalBytes)) {
