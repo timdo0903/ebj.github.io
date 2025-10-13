@@ -1,8 +1,7 @@
 {
   "default": {
     "submitUrl": "https://formsubmit.co/talents@ecobrandjp.com",
-    "ajaxSubmitUrl": "",
-    "successMessage": "Thank you for applying! We appreciate all applications; however, only those selected for an interview will be contacted.",
+    "successMessage": "Application received! We will contact shortlisted candidates via email.",
     "errorMessage": "Something went wrong. Please email your resume and cover letter to talents@ecobrandjp.com.",
     "submittingMessage": "Submitting your application...",
     "allowedOrigins": [
@@ -10,27 +9,10 @@
       "https://formspree.io"
     ],
     "maxAttachmentBytes": 5242880,
-    "maxTotalBytes": 10485760,
+    "maxTotalBytes": 5242880,
     "requestTimeoutMs": 20000,
     "retryAttempts": 3,
     "retryBackoffMs": 1000
   },
-  "roles": {
-    "luxury-buyer": {
-      "successMessage": "Application received. Our talent team will reach out to shortlisted candidates via email.",
-      "maxTotalBytes": 15728640
-    },
-    "inventory-logistics-specialist": {
-      "successMessage": "Thanks for your interest in our Inventory & Logistics team. We will contact qualified profiles soon."
-    },
-    "product-photographer": {
-      "successMessage": "Thanks for applying to be our Product Photographer. We will connect if your experience matches our needs."
-    },
-    "social-media-operator": {
-      "successMessage": "Application received. We will be in touch with shortlisted Social Media Operator candidates."
-    },
-    "live-seller": {
-      "successMessage": "Thanks for applying to be a Live Seller. We will reach out when we schedule interviews."
-    }
-  }
+  "roles": {}
 }
