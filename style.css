@@ -144,20 +144,15 @@ nav a.current {
 
 /* Hero section */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   /* Background image is inserted via img.hero-bg */
   background: none;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 60px; /* space for fixed header */
-}
-
-@media (min-width: 769px) {
-  .hero {
-    padding-top: 80px; /* more space for larger desktop header */
-  }
+  padding-top: clamp(90px, 12vw, 160px); /* ensure content clears the fixed header */
+  padding-bottom: clamp(40px, 8vw, 120px);
 }
 
 /* Hero background image styling */
