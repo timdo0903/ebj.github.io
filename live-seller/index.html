@@ -150,28 +150,11 @@
               action="https://formsubmit.co/talents@ecobrandjp.com"
               method="POST"
               enctype="multipart/form-data"
-              data-ajax-endpoint="https://formsubmit.co/ajax/talents@ecobrandjp.com"
-              data-error-email="talents@ecobrandjp.com"
+              data-form-key="live-seller"
             >
-              <input type="hidden" name="_subject" value="Live Seller Application" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_autoresponse"
-                value="Thank you for applying to Eco Brand Japan. Our team will review your application and contact you if selected for an interview."
-              />
-              <input type="hidden" name="Preferred Role" value="Live Seller" />
-              <input
-                type="hidden"
-                name="_next"
-                data-next-path="/live-seller/?submitted=true#apply"
-              />
-              <input
-                type="hidden"
-                name="_error"
-                data-error-path="/live-seller/?error=true#apply"
-              />
+              <input type="hidden" name="Position" value="Live Seller" />
+              <input type="hidden" name="Department" value="Livestream" />
+              <input type="hidden" name="Source" value="Website" />
               <div class="form-grid">
                 <div class="form-group">
                   <label for="live-seller-name">Full Name</label>
@@ -219,6 +202,7 @@
                   ></textarea>
                 </div>
               </div>
+              <p class="form-upload-guidance input-note" aria-live="polite"></p>
               <p class="form-status" role="status" aria-live="polite"></p>
               <button class="button" type="submit">Submit Application</button>
             </form>
