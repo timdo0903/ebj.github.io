@@ -35,6 +35,11 @@ const sanitizeEndpoint = (rawValue, allowedOrigins) => {
   if (!rawValue) return null;
   try {
     const parsed = new URL(rawValue, window.location.origin);
+    const sameOrigin = parsed.origin === window.location.origin;
+    if (!sameOrigin && parsed.protocol !== 'https:') {
+      console.warn(`Blocked form submission over insecure protocol: ${parsed.toString()}`);
+      return null;
+    }
     if (allowedOrigins && allowedOrigins.size && !allowedOrigins.has(parsed.origin)) {
       console.warn(`Blocked form submission to untrusted origin: ${parsed.origin}`);
       return null;
