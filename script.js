@@ -255,16 +255,26 @@ function setupApplicationForms(config) {
       return { valid: true, message: null };
     };
 
+    const getAttachmentInputs = () =>
+      Array.from(form.querySelectorAll('input[type="file"][data-attachment-label]'));
+
+    const ensureAttachmentInputNames = () => {
+      getAttachmentInputs().forEach((input, index) => {
+        const alias = index === 0 ? 'attachment' : `attachment-${index + 1}`;
+        if (input.name !== alias) {
+          input.name = alias;
+        }
+      });
+    };
+
     const restructureAttachments = formData => {
-      const attachmentInputs = Array.from(
-        form.querySelectorAll('input[type="file"][data-attachment-label]')
-      );
-      if (!attachmentInputs.length || !formData) return;
+      const inputs = getAttachmentInputs();
+      if (!inputs.length || !formData) return;
 
       const collected = [];
       const fieldsToClear = new Set(['attachments[]', 'attachment']);
 
-      attachmentInputs.forEach(input => {
+      inputs.forEach(input => {
         const originalName = (input.getAttribute('name') || '').trim();
         if (originalName) {
           fieldsToClear.add(originalName);
@@ -359,6 +369,8 @@ function setupApplicationForms(config) {
         resetSubmittingState();
         return;
       }
+
+      ensureAttachmentInputNames();
 
       if (!ajaxEndpoint) {
         setSubmittingState();
