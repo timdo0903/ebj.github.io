@@ -161,6 +161,20 @@ nav a.current {
 }
 
 /* Hero background image styling */
+.hero-bg-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-bg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero-bg {
   position: absolute;
   top: 0;
@@ -416,9 +430,17 @@ section {
   gap: 24px;
 }
 
+.about-visual picture,
 .about-visual img {
   border-radius: 20px;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.about-visual picture img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .about-highlights {
@@ -629,13 +651,20 @@ section {
   display: grid;
 }
 
+.gallery-item picture,
 .gallery-item img {
   width: 100%;
   height: 100%;
+  display: block;
+}
+
+.gallery-item picture img,
+.gallery-item img {
   object-fit: cover;
   transition: transform 0.35s ease;
 }
 
+.gallery-item:hover picture img,
 .gallery-item:hover img {
   transform: scale(1.05);
 }
@@ -699,12 +728,19 @@ footer {
   min-height: 420px;
 }
 
+.career-hero picture,
 .career-hero img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.career-hero picture img,
+.career-hero img {
   min-height: 420px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   filter: brightness(0.8);
 }
@@ -1088,6 +1124,10 @@ footer {
 
 .form-status.error {
   color: #b93b3b;
+}
+
+.form-status.info {
+  color: #7a6a5e;
 }
 
 .job-content article h2 {

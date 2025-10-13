@@ -52,12 +52,24 @@
 
     <main>
       <section class="career-hero">
-        <img
-          src="/images/career2.jpg"
-          alt="Eco Brand Japan team collaborating"
-          loading="eager"
-          decoding="async"
-        />
+        <picture class="career-hero-media">
+          <source
+            type="image/avif"
+            srcset="/images/optimized/career2-640.avif 640w, /images/optimized/career2-960.avif 960w, /images/optimized/career2-1280.avif 1280w, /images/optimized/career2-1920.avif 1920w"
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcset="/images/optimized/career2-640.webp 640w, /images/optimized/career2-960.webp 960w, /images/optimized/career2-1280.webp 1280w, /images/optimized/career2-1920.webp 1920w"
+            sizes="100vw"
+          />
+          <img
+            src="/images/career2.jpg"
+            alt="Eco Brand Japan team collaborating"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
         <div class="career-hero-content">
           <span class="career-hero-tag">Now hiring in Tokyo</span>
           <h1>Grow with Eco Brand Japan</h1>

@@ -2,7 +2,13 @@
   "name": "ebj-website",
   "version": "1.0.0",
   "description": "Static website for Eco Brand Japan",
-  "scripts": {"test": "node test.js"},
+  "scripts": {
+    "test": "node test.js",
+    "optimize:images": "node tools/optimize-images.mjs",
+    "optimize:images:dry": "node tools/optimize-images.mjs --dry-run"
+  },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "sharp": "^0.33.4"
+  }
 }
