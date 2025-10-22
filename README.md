@@ -1,43 +1,95 @@
 # Eco Brand Japan Website
 
-Static marketing and recruiting site for https://www.ecobrandjapan.com.
+A static marketing and recruiting site for [Eco Brand Japan](https://www.ecobrandjapan.com). This repository contains the production-ready assets that power https://www.ecobrandjapan.com/ and related landing pages.
 
-## Image Optimisation Workflow
+## ✨ Features
 
-- Install dependencies once: `npm install` (pulls in `sharp`).
-- Dry run to preview outputs: `npm run optimize:images:dry`.
-- Generate responsive assets: `npm run optimize:images`.
-- New variants are written to `images/optimized/`. The production markup currently serves the base JPEGs only—re-introduce the generated AVIF/WebP sources once you are ready to ship the optimised assets alongside the site.
-- Rerun the command whenever you update hero/gallery photography. Use `--force` to regenerate everything after adjusting quality settings.
+- Responsive marketing pages for multiple roles and campaigns.
+- Centralised application form configuration with optional progressive enhancement.
+- Image optimisation workflow that generates modern formats (AVIF/WebP) alongside the original JPEGs.
+- Lightweight dependency footprint—no runtime frameworks required.
 
-## Application Form Configuration
+## 🚀 Getting Started
 
-- Form behaviour is driven by `form-config.json`. Update this file when you are ready to point traffic at your production submission API.
-- Keys to tailor:
-  - `submitUrl`: HTML form endpoint.
-  - `allowedOrigins`: API origins permitted for progressive enhancement (only used when an explicit AJAX endpoint is supplied).
-  - `maxAttachmentBytes` / `maxTotalBytes`: Client-side validation thresholds (FormSubmit limits the combined payload to 5 MB).
-- Once your new backend is stable, swap the FormSubmit URL for your API (for example `https://api.ecobrandjapan.com/applications`).
-- Add a `_next` redirect in `data-next-path` if you need to change the thank-you target for individual roles.
+### Prerequisites
 
-## Bringing Your Own Submission Backend
+- [Node.js](https://nodejs.org/) 18 or later
+- [npm](https://www.npmjs.com/) (bundled with Node.js)
 
-1. Provision a durable store (e.g. S3 + DynamoDB, Google Cloud Storage, or Supabase) for application payloads and file uploads.
-2. Expose an HTTPS endpoint (Cloudflare Workers, AWS Lambda/API Gateway, Netlify Functions, etc.) that accepts `multipart/form-data`, enforces attachment limits, performs server-side validation, and writes to the store.
-3. Trigger notifications (email/Slack/ATS) from the backend so hiring managers receive submissions immediately.
-4. Configure CORS (`POST` + `OPTIONS`) to accept `https://www.ecobrandjapan.com`.
-5. Add monitoring (HTTP metrics + dead-letter queue) so you can spot provider throttling.
-6. Update the CSP `connect-src` and `form-action` directives in your HTML files to include the new API origin, then deploy.
+Clone the repository and install dependencies:
 
-## Recommended Load Checks
+```bash
+npm install
+```
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run optimize:images:dry` | Preview the responsive image variants that would be generated. |
+| `npm run optimize:images` | Generate AVIF/WebP variants for large imagery and write them to `images/optimized/`. |
+| `npm test` | Check that required HTML files are present. |
+
+## 🖼 Image Optimisation Workflow
+
+Run the optimiser whenever you update hero or gallery photography:
+
+1. `npm run optimize:images:dry` to confirm the planned outputs.
+2. `npm run optimize:images` to produce optimised assets in `images/optimized/`.
+3. Serve the generated AVIF/WebP sources alongside the base JPEGs when ready for production.
+4. Use the `--force` flag if you change quality settings and need to regenerate existing variants.
+
+## 📝 Application Form Configuration
+
+Form behaviour is defined in [`form-config.json`](./form-config.json). Update this file before directing traffic to your submission backend.
+
+Key properties:
+
+- `submitUrl`: HTML form endpoint (e.g. FormSubmit or your own API).
+- `allowedOrigins`: Origins permitted to access the AJAX endpoint when progressive enhancement is enabled.
+- `maxAttachmentBytes` / `maxTotalBytes`: Client-side validation thresholds (FormSubmit limits combined payloads to 5 MB).
+- `data-next-path`: Optional thank-you redirect per role.
+
+### Bring Your Own Submission Backend
+
+1. Provision durable storage (S3 + DynamoDB, Google Cloud Storage, Supabase, etc.) for payloads and file uploads.
+2. Expose an HTTPS endpoint (Cloudflare Workers, AWS Lambda/API Gateway, Netlify Functions, etc.) that accepts `multipart/form-data`, enforces attachment limits, validates input, and writes to the store.
+3. Trigger notifications (email/Slack/ATS) so hiring managers receive submissions immediately.
+4. Configure CORS (`POST` + `OPTIONS`) to allow `https://www.ecobrandjapan.com`.
+5. Add monitoring (HTTP metrics + dead-letter queue) to catch provider throttling.
+6. Update the CSP `connect-src` and `form-action` directives in your HTML files to include the new API origin before deploying.
+
+## 🔍 Recommended Load Checks
 
 - Run `npm run optimize:images` before major campaigns to keep hero assets cached and lightweight.
-- Use a synthetic load tool (e.g. k6, Artillery) against the static site and the application API before publishing hiring pushes.
-- Enable CDN caching on `/images/**` with long `Cache-Control` headers; bust the cache by regenerating assets when artwork changes.
-- Monitor API latency and error rates during campaigns; tune `retryAttempts` or `retryBackoffMs` in `form-config.json` if upstream throttling appears.
+- Use a synthetic load tool (k6, Artillery, etc.) against both the static site and the application API ahead of hiring pushes.
+- Enable CDN caching on `/images/**` with long `Cache-Control` headers; regenerate assets to bust the cache when artwork changes.
+- Monitor API latency and error rates during campaigns; adjust `retryAttempts` or `retryBackoffMs` in `form-config.json` if upstream throttling occurs.
 
-## Repository Scripts
+## 📁 Project Structure
 
-- `npm run optimize:images:dry` – Show which image variants would be generated.
-- `npm run optimize:images` – Build optimised AVIF/WebP variants for large imagery.
-- `npm test` – Sanity check required HTML files exist.
+```
+.
+├── images/                 # Source imagery and generated variants
+├── career/                 # Role-specific landing pages
+├── live-seller/, buyers-position/, etc. # Additional campaign pages
+├── form-config.json        # Application form settings
+├── script.js               # Client-side enhancements
+├── style.css               # Global styles
+└── index.html              # Main marketing page
+```
+
+## 🚢 Deployment
+
+1. Build and optimise imagery locally (see above).
+2. Upload the static assets to your hosting platform (e.g. GitHub Pages, Netlify, Vercel, AWS S3 + CloudFront).
+3. Configure DNS to point to your hosting provider (see `CNAME` for the canonical domain).
+4. Enable HTTPS and set appropriate caching headers for static assets.
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome! Please open an issue to discuss major changes before submitting a PR.
+
+## 📄 License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
