@@ -5,7 +5,7 @@ A static, invitation-only site for Eco Brand Japan's partners, clients, and vett
 ## 🔒 Audience & Access
 
 - The site is **not intended for general public consumption**; share URLs only with trusted stakeholders.
-- Campaign pages (for example `career/`, `buyers-position/`, `live-seller/`) highlight roles under active recruitment and should be distributed on a need-to-know basis.
+- Campaign pages (for example `career/`, `buyers-position/`, `live-seller-social-media-operator/`) highlight roles under active recruitment and should be distributed on a need-to-know basis.
 - Forms point to controlled submission endpoints. Review [`form-config.json`](./form-config.json) before enabling new campaigns to ensure payload limits and redirect paths align with expectations.
 
 ## ✨ Features
@@ -79,7 +79,7 @@ Key properties:
 .
 ├── images/                 # Source imagery and generated variants
 ├── career/                 # Role-specific landing pages
-├── live-seller/, buyers-position/, etc. # Additional campaign pages
+├── live-seller-social-media-operator/, buyers-position/, etc. # Additional campaign pages
 ├── form-config.json        # Application form settings
 ├── script.js               # Client-side enhancements
 ├── style.css               # Global styles
