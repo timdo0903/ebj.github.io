@@ -1,11 +1,10 @@
 {
   "default": {
-    "submitUrl": "https://formsubmit.co/talents@ecobrandjp.com",
+    "submitUrl": "https://formspree.io/f/xanleagz",
     "successMessage": "Thanks for applying. We will contact shortlisted candidates via email.",
     "errorMessage": "Something went wrong. Please email your resume and cover letter to talents@ecobrandjp.com.",
     "submittingMessage": "Submitting your application...",
     "allowedOrigins": [
-      "https://formsubmit.co",
       "https://formspree.io"
     ],
     "maxAttachmentBytes": 5242880,
