@@ -2,20 +2,20 @@
 
 A static, invitation-only site for Eco Brand Japan's partners, clients, and vetted collaborators. The content focuses on showcasing internal capabilities, private case studies, and specialised recruitment funnels that support targeted campaigns rather than a broad public launch.
 
-## 🔒 Audience & Access
+## Audience & Access
 
 - The site is **not intended for general public consumption**; share URLs only with trusted stakeholders.
 - Campaign pages (for example `career/`, `buyers-position/`, `live-seller-social-media-operator/`) highlight roles under active recruitment and should be distributed on a need-to-know basis.
 - Forms point to controlled submission endpoints. Review [`form-config.json`](./form-config.json) before enabling new campaigns to ensure payload limits and redirect paths align with expectations.
 
-## ✨ Features
+## Features
 
 - Responsive landing pages tailored to multiple invite-only roles and service offerings.
 - Centralised application form configuration with optional progressive enhancement for private submission flows.
 - Image optimisation workflow that generates modern formats (AVIF/WebP) alongside the original JPEGs for efficient distribution.
 - Lightweight dependency footprint—no runtime frameworks required.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -36,7 +36,7 @@ npm install
 | `npm run optimize:images` | Generate AVIF/WebP variants for large imagery and write them to `images/optimized/`. |
 | `npm test` | Check that required HTML files are present. |
 
-## 🖼 Image Optimisation Workflow
+## Image Optimisation Workflow
 
 Run the optimiser whenever you update hero or gallery photography:
 
@@ -45,7 +45,7 @@ Run the optimiser whenever you update hero or gallery photography:
 3. Serve the generated AVIF/WebP sources alongside the base JPEGs when ready for production.
 4. Use the `--force` flag if you change quality settings and need to regenerate existing variants.
 
-## 📝 Application Form Configuration
+## Application Form Configuration
 
 Form behaviour is defined in [`form-config.json`](./form-config.json). Update this file before directing traffic to your submission backend.
 
@@ -65,7 +65,7 @@ Key properties:
 5. Add monitoring (HTTP metrics + dead-letter queue) to catch provider throttling.
 6. Update the CSP `connect-src` and `form-action` directives in your HTML files to include the new API origin before deploying.
 
-## 🔍 Operational Checklist
+## Operational Checklist
 
 - Review `form-config.json` prior to each campaign launch to confirm submission targets and redirect behaviour.
 - Run `npm run optimize:images` before sending invites to keep hero assets cached and lightweight.
@@ -73,7 +73,7 @@ Key properties:
 - Enable CDN caching on `/images/**` with long `Cache-Control` headers; regenerate assets to bust the cache when artwork changes.
 - Monitor API latency and error rates during campaigns; adjust `retryAttempts` or `retryBackoffMs` in `form-config.json` if upstream throttling occurs.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -86,7 +86,7 @@ Key properties:
 └── index.html              # Main marketing page
 ```
 
-## 🚢 Deployment
+## Deployment
 
 1. Build and optimise imagery locally (see above).
 2. Upload the static assets to your hosting platform (for example GitHub Pages, Netlify, Vercel, AWS S3 + CloudFront).
@@ -94,10 +94,10 @@ Key properties:
 4. Enable HTTPS and set appropriate caching headers for static assets.
 5. Restrict access via password protection, VPN allowlisting, or similar controls when publishing sensitive campaign pages.
 
-## 🤝 Internal Contributions
+## Internal Contributions
 
 This repository is maintained by the Eco Brand Japan web team. Submit changes through the internal review process rather than public pull requests.
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
