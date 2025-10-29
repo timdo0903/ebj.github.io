@@ -1038,6 +1038,83 @@ footer {
   grid-column: 1 / -1;
 }
 
+.thank-you-page {
+  margin-top: 70px;
+}
+
+.thank-you-hero {
+  padding: 100px 0 80px;
+  background: linear-gradient(135deg, rgba(50, 42, 37, 0.9), rgba(150, 109, 74, 0.85)),
+    url('/images/career2.jpg') center/cover;
+  color: #ffffff;
+  text-align: center;
+}
+
+.thank-you-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  max-width: 720px;
+  margin: 18px auto 20px;
+}
+
+.thank-you-hero p {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.thank-you-tag {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.thank-you-details {
+  background: #fafafa;
+  padding: 70px 0 110px;
+}
+
+.thank-you-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+}
+
+.thank-you-card p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #3b2f2f;
+}
+
+.thank-you-card p + p {
+  margin-top: 18px;
+}
+
+.thank-you-card .button {
+  margin-top: 28px;
+}
+
+@media (max-width: 600px) {
+  .thank-you-hero {
+    padding: 80px 0 60px;
+  }
+
+  .thank-you-card {
+    padding: 32px 24px;
+  }
+}
+
 .application-form label {
   font-weight: 600;
   color: #322a25;
