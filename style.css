@@ -727,6 +727,11 @@ footer {
   gap: 16px;
 }
 
+.footer-legal {
+  order: -1;
+  margin: 0;
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;
