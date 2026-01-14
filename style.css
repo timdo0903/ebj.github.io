@@ -1101,6 +1101,17 @@ footer {
   width: 100%;
   max-width: 100%;
   display: block;
+  height: 100vh;
+  min-height: 900px;
+  border: 0;
+}
+
+.form-fallback {
+  margin-top: 16px;
+}
+
+.form-fallback a {
+  font-weight: 600;
 }
 
 .application-form {
