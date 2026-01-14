@@ -62,7 +62,7 @@
             <a class="button button-secondary" href="/career/#open-roles">Back to Careers</a>
           </div>
           <p class="job-status">
-            This position has been filled and applications are closed.
+            Applications are currently open. Submit your resume below to be considered.
           </p>
         </div>
       </section>
@@ -156,12 +156,152 @@
           </article>
 
           <article id="apply" class="application-section">
-            <h2>Applications Closed</h2>
+            <h2>Apply Now</h2>
             <p>
-              We appreciate your interest in the Inventory &amp; Logistics Specialist opening.
-              The role has been filled, so applications are closed. Please revisit the
-              <a href="/career/">career page</a> for future updates.
+              Submit your information below. Our hiring team will contact shortlisted
+              candidates with next steps.
             </p>
+            <form
+              id="inventory-logistics-application"
+              class="application-form"
+              method="POST"
+              enctype="multipart/form-data"
+              data-form-key="inventory-logistics-specialist"
+              data-next-path="/career/thank-you/"
+            >
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="inventory-first-name">First Name *</label>
+                  <input
+                    type="text"
+                    id="inventory-first-name"
+                    name="first_name"
+                    autocomplete="given-name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inventory-last-name">Last Name *</label>
+                  <input
+                    type="text"
+                    id="inventory-last-name"
+                    name="last_name"
+                    autocomplete="family-name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inventory-email">Email *</label>
+                  <input
+                    type="email"
+                    id="inventory-email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inventory-phone">Phone *</label>
+                  <input
+                    type="tel"
+                    id="inventory-phone"
+                    name="phone"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inventory-location">Current Location *</label>
+                  <input
+                    type="text"
+                    id="inventory-location"
+                    name="current_location"
+                    placeholder="City, Country"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inventory-visa">Visa Status *</label>
+                  <input
+                    type="text"
+                    id="inventory-visa"
+                    name="visa_status"
+                    placeholder="e.g., Permanent Resident, Engineer/Specialist"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inventory-start">Earliest Start Date *</label>
+                  <input
+                    type="text"
+                    id="inventory-start"
+                    name="earliest_start"
+                    placeholder="Month / Year"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inventory-link">Portfolio or LinkedIn (Optional)</label>
+                  <input
+                    type="url"
+                    id="inventory-link"
+                    name="portfolio_link"
+                    placeholder="https://"
+                  />
+                </div>
+                <div class="form-group full-width">
+                  <label for="inventory-experience">Relevant Experience *</label>
+                  <textarea
+                    id="inventory-experience"
+                    name="experience_summary"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group full-width">
+                  <label for="inventory-motivation">Why Eco Brand Japan? *</label>
+                  <textarea
+                    id="inventory-motivation"
+                    name="motivation"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group full-width">
+                  <label for="inventory-resume">Resume / CV *</label>
+                  <input
+                    type="file"
+                    id="inventory-resume"
+                    name="attachments[]"
+                    accept=".pdf,.doc,.docx"
+                    data-attachment-label="Resume"
+                    required
+                  />
+                  <p class="input-note form-upload-guidance"></p>
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX.</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="inventory-supporting">Supporting Materials (Optional)</label>
+                  <input
+                    type="file"
+                    id="inventory-supporting"
+                    name="attachments[]"
+                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                    multiple
+                    data-attachment-label="Supporting Material"
+                  />
+                </div>
+              </div>
+              <input type="hidden" name="role" value="Inventory &amp; Logistics Specialist" />
+              <input type="hidden" name="form-name" value="inventory-logistics-specialist" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="Inventory &amp; Logistics Specialist application"
+              />
+              <p class="form-status" aria-live="polite"></p>
+              <button class="button" type="submit">Submit Application</button>
+            </form>
           </article>
 
 

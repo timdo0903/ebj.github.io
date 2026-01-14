@@ -62,7 +62,7 @@
             <a class="button button-secondary" href="/career/#open-roles">Back to Careers</a>
           </div>
           <p class="job-status">
-            This position has been filled and applications are no longer being accepted.
+            Applications are open for this role. Share your portfolio and resume below.
           </p>
         </div>
       </section>
@@ -151,12 +151,154 @@
           </article>
 
           <article id="apply" class="application-section">
-            <h2>Applications Closed</h2>
+            <h2>Apply Now</h2>
             <p>
-              Thank you for your interest in the Product Photographer role. The position has
-              been filled, so applications are closed. Please follow us on LinkedIn or
-              revisit the <a href="/career/">career page</a> for future openings.
+              Provide your details below. We will reach out to shortlisted photographers to
+              coordinate the next steps.
             </p>
+            <form
+              id="product-photographer-application"
+              class="application-form"
+              method="POST"
+              enctype="multipart/form-data"
+              data-form-key="product-photographer"
+              data-next-path="/career/thank-you/"
+            >
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="photographer-first-name">First Name *</label>
+                  <input
+                    type="text"
+                    id="photographer-first-name"
+                    name="first_name"
+                    autocomplete="given-name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="photographer-last-name">Last Name *</label>
+                  <input
+                    type="text"
+                    id="photographer-last-name"
+                    name="last_name"
+                    autocomplete="family-name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="photographer-email">Email *</label>
+                  <input
+                    type="email"
+                    id="photographer-email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="photographer-phone">Phone *</label>
+                  <input
+                    type="tel"
+                    id="photographer-phone"
+                    name="phone"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="photographer-location">Current Location *</label>
+                  <input
+                    type="text"
+                    id="photographer-location"
+                    name="current_location"
+                    placeholder="City, Country"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="photographer-visa">Visa Status *</label>
+                  <input
+                    type="text"
+                    id="photographer-visa"
+                    name="visa_status"
+                    placeholder="e.g., Permanent Resident, Engineer/Specialist"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="photographer-start">Earliest Start Date *</label>
+                  <input
+                    type="text"
+                    id="photographer-start"
+                    name="earliest_start"
+                    placeholder="Month / Year"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="photographer-portfolio">Portfolio URL *</label>
+                  <input
+                    type="url"
+                    id="photographer-portfolio"
+                    name="portfolio_link"
+                    placeholder="https://"
+                    required
+                  />
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-experience">Relevant Experience *</label>
+                  <textarea
+                    id="photographer-experience"
+                    name="experience_summary"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-story">What inspires your work? *</label>
+                  <textarea
+                    id="photographer-story"
+                    name="motivation"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-resume">Resume / CV *</label>
+                  <input
+                    type="file"
+                    id="photographer-resume"
+                    name="attachments[]"
+                    accept=".pdf,.doc,.docx"
+                    data-attachment-label="Resume"
+                    required
+                  />
+                  <p class="input-note form-upload-guidance"></p>
+                  <p class="input-note">Accepted formats: PDF, DOC or DOCX.</p>
+                </div>
+                <div class="form-group full-width">
+                  <label for="photographer-samples">Sample Images or Cover Letter (Optional)</label>
+                  <input
+                    type="file"
+                    id="photographer-samples"
+                    name="attachments[]"
+                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.zip"
+                    multiple
+                    data-attachment-label="Supporting Material"
+                  />
+                  <p class="input-note">You may attach sample images or a cover letter (JPG, PNG, PDF, DOC, ZIP).</p>
+                </div>
+              </div>
+              <input type="hidden" name="role" value="Product Photographer" />
+              <input type="hidden" name="form-name" value="product-photographer" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="Product Photographer application"
+              />
+              <p class="form-status" aria-live="polite"></p>
+              <button class="button" type="submit">Submit Application</button>
+            </form>
           </article>
 
 
