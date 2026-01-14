@@ -178,6 +178,7 @@ function setupApplicationForms(config) {
     const retryBackoffMs = Number(settings?.retryBackoffMs) || 750;
 
     const nextPath = form.dataset.nextPath || null;
+    let resolvedNextUrl = null;
 
     if (nextPath) {
       let nextField = form.querySelector('input[name="_next"]');
@@ -190,6 +191,7 @@ function setupApplicationForms(config) {
       try {
         const nextUrl = new URL(nextPath, window.location.origin);
         nextField.value = nextUrl.toString();
+        resolvedNextUrl = nextUrl.toString();
       } catch (error) {
         console.warn('Invalid nextPath on form', form.id, error);
       }
@@ -392,6 +394,10 @@ function setupApplicationForms(config) {
         await submitWithRetry(entries);
         form.reset();
         showStatus(successMessage, 'success');
+        if (resolvedNextUrl) {
+          window.location.assign(resolvedNextUrl);
+          return;
+        }
       } catch (error) {
         console.error('Form submission failed', error);
         showStatus(errorMessage, 'error');
