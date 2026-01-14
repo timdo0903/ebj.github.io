@@ -1092,6 +1092,17 @@ footer {
   margin-bottom: 12px;
 }
 
+.embedded-application {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.embedded-application iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
 .application-form {
   margin-top: 24px;
   display: grid;
