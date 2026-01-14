@@ -59,7 +59,7 @@
             item reaches our customers safely and on time.
           </p>
           <div class="job-actions">
-            <a class="button button-secondary" href="/career/#open-roles">Back to Careers</a>
+            <a class="button button-secondary" href="#apply">Apply now</a>
           </div>
           <p class="job-status">
             Applications are currently open. Submit your resume below to be considered.
@@ -133,6 +133,7 @@
             <ul>
               <li>Performance bonus eligibility after one year.</li>
               <li>Reimbursed commuter costs from home to office.</li>
+              <li>Starting salary from 250,000 yen. Performance review and salary raise once a year.</li>
             </ul>
           </article>
 
@@ -201,13 +202,12 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="inventory-phone">Phone *</label>
+                  <label for="inventory-phone">Phone (Optional)</label>
                   <input
                     type="tel"
                     id="inventory-phone"
                     name="phone"
                     autocomplete="tel"
-                    required
                   />
                 </div>
                 <div class="form-group">
@@ -233,10 +233,9 @@
                 <div class="form-group">
                   <label for="inventory-start">Earliest Start Date *</label>
                   <input
-                    type="text"
+                    type="date"
                     id="inventory-start"
                     name="earliest_start"
-                    placeholder="Month / Year"
                     required
                   />
                 </div>
@@ -250,25 +249,7 @@
                   />
                 </div>
                 <div class="form-group full-width">
-                  <label for="inventory-experience">Relevant Experience *</label>
-                  <textarea
-                    id="inventory-experience"
-                    name="experience_summary"
-                    rows="4"
-                    required
-                  ></textarea>
-                </div>
-                <div class="form-group full-width">
-                  <label for="inventory-motivation">Why Eco Brand Japan? *</label>
-                  <textarea
-                    id="inventory-motivation"
-                    name="motivation"
-                    rows="4"
-                    required
-                  ></textarea>
-                </div>
-                <div class="form-group full-width">
-                  <label for="inventory-resume">Resume / CV *</label>
+                  <label for="inventory-resume">Resume *</label>
                   <input
                     type="file"
                     id="inventory-resume"
@@ -281,14 +262,13 @@
                   <p class="input-note">Accepted formats: PDF, DOC or DOCX.</p>
                 </div>
                 <div class="form-group full-width">
-                  <label for="inventory-supporting">Supporting Materials (Optional)</label>
+                  <label for="inventory-supporting">Cover Letter (Optional)</label>
                   <input
                     type="file"
                     id="inventory-supporting"
                     name="attachments[]"
-                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                    multiple
-                    data-attachment-label="Supporting Material"
+                    accept=".pdf,.doc,.docx"
+                    data-attachment-label="Cover Letter"
                   />
                 </div>
               </div>
