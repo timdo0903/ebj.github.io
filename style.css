@@ -964,6 +964,29 @@ footer {
   color: rgba(0, 0, 0, 0.65);
 }
 
+.job-card-status {
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #f2f2f2;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.job-card-status--open {
+  background: linear-gradient(120deg, #1f7a4f, #3aa86f);
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(31, 122, 79, 0.2);
+}
+
+.job-card-status--closed {
+  background: #ececec;
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .job-card .button {
   margin-top: auto;
 }
