@@ -10,7 +10,10 @@ function JobBody({ job }) {
       <div className="job-body-grid">
         <aside>
           {toc.map((t) => (
-            <a key={t.id} href={`#${t.id}`}>§ {t.num} · {t.label}</a>
+            <a key={t.id} href={`#${t.id}`}>
+              <span className="job-toc-num">{'\u00a7'} {t.num}</span>
+              <span className="job-toc-label">{t.label}</span>
+            </a>
           ))}
         </aside>
 

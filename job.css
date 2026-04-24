@@ -122,13 +122,22 @@
 }
 .job-body aside a {
   color: var(--ink-quiet);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 10px;
   padding: 6px 0;
   border-left: 1px solid var(--rule);
   padding-left: 14px;
-  transition: color .3s, border-color .3s;
+  transition: color .3s, border-color .3s, background .3s;
 }
 .job-body aside a:hover,
 .job-body aside a.active { color: var(--fg); border-color: var(--accent); }
+.job-toc-num { white-space: nowrap; }
+.job-toc-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 
 .job-section { margin-bottom: 80px; scroll-margin-top: 120px; }
 .job-section h2 {
@@ -269,6 +278,62 @@
 @media (max-width: 960px) {
   .job-hero-grid, .job-body-grid, .job-apply-grid { grid-template-columns: 1fr; gap: 40px; }
   .job-facts { grid-template-columns: 1fr; }
-  .job-body aside { position: static; flex-direction: row; flex-wrap: wrap; }
-  .job-body aside a { border-left: 0; border-top: 1px solid var(--rule); padding: 8px 0 0; }
+  .job-body aside {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    padding: 4px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .job-body aside a {
+    min-height: 44px;
+    padding: 12px 14px;
+    border-left: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .job-body aside a:nth-child(odd) { border-right: 1px solid var(--rule); }
+  .job-body aside a:last-child,
+  .job-body aside a:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
+  .job-body aside a:last-child:nth-child(odd) { border-right: 0; }
+}
+
+@media (max-width: 640px) {
+  .job-body {
+    padding-top: 64px;
+  }
+  .job-body-grid {
+    gap: 48px;
+  }
+  .job-body aside {
+    font-size: 9px;
+    letter-spacing: .14em;
+  }
+  .job-body aside a {
+    gap: 7px;
+    min-height: 42px;
+    padding: 11px 10px;
+  }
+  .job-section {
+    margin-bottom: 64px;
+  }
+}
+
+@media (max-width: 520px) {
+  .job-body aside {
+    grid-template-columns: 1fr;
+    font-size: 10px;
+    letter-spacing: .18em;
+  }
+  .job-body aside a,
+  .job-body aside a:nth-child(odd) {
+    grid-template-columns: 54px 1fr;
+    min-height: 40px;
+    padding: 10px 0;
+    border-right: 0;
+  }
+  .job-body aside a:nth-last-child(2):nth-child(odd) {
+    border-bottom: 1px solid var(--rule);
+  }
 }
