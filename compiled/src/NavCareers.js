@@ -9,20 +9,20 @@ function NavCareers() {
     return () => document.body.classList.remove('nav-open');
   }, [open]);
   const links = isJp ? [{
-    href: '/about/',
+    href: '/ja/about/',
     label: '会社概要'
   }, {
-    href: '/principles/',
-    label: '私たちの約束'
+    href: '/ja/principles/',
+    label: '約束'
   }, {
-    href: '/highlights/',
+    href: '/ja/highlights/',
     label: 'ハイライト'
   }, {
-    href: '/careers/',
+    href: '/ja/careers/',
     label: '採用情報',
     current: true
   }, {
-    href: '/contact/',
+    href: '/ja/contact/',
     label: 'お問い合わせ'
   }] : [{
     href: '/about/',
@@ -72,10 +72,10 @@ function NavCareers() {
   }, React.createElement("span", null, "TOKYO / EST. 2012"), React.createElement("div", {
     className: "lang"
   }, React.createElement("a", {
-    href: "/",
+    href: "/careers/",
     className: !isJp ? 'active' : undefined
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/ja/",
+    href: "/ja/careers/",
     className: isJp ? 'active' : undefined
   }, "JP")), React.createElement("button", {
     type: "button",
@@ -97,14 +97,14 @@ function NavCareers() {
     className: "nav-mobile-foot"
   }, React.createElement("div", {
     className: "nav-mobile-meta"
-  }, isJp ? '採用情報ページです。' : 'Careers and current openings.'), React.createElement("div", {
+  }, isJp ? '採用情報と現在募集中のポジション。' : 'Careers and current openings.'), React.createElement("div", {
     className: "lang nav-mobile-lang"
   }, React.createElement("a", {
-    href: "/",
+    href: "/careers/",
     className: !isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/ja/",
+    href: "/ja/careers/",
     className: isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "JP")))));

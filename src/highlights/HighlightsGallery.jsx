@@ -1,4 +1,5 @@
 function HighlightsGallery() {
+  const isJp = window.SITE_LANG === 'jp';
   const data = window.HIGHLIGHTS_DATA;
   const { studio, editorial } = data;
 
@@ -19,7 +20,7 @@ function HighlightsGallery() {
           </span>
           <span className="hl-count">
             <span className="n">{String(items.length).padStart(2, '0')}</span>
-            <span className="l">pieces</span>
+            <span className="l">{isJp ? '点' : 'pieces'}</span>
           </span>
         </div>
         <window.FadeUp>
@@ -39,7 +40,7 @@ function HighlightsGallery() {
                 decoding="async"
                 fetchPriority={num === '01' && i < 3 ? 'high' : 'auto'}
               />
-              <div className="corner">{t.tag}</div>
+              <div className="corner">{isJp ? (t.tag === 'Styled' ? 'スタイリング' : '真贋確認済み') : t.tag}</div>
               <div className="num">{t.num}</div>
             </div>
             <div className="info">
@@ -58,10 +59,10 @@ function HighlightsGallery() {
     <>
       <Section
         num="01"
-        title="In-house photography"
+        title={isJp ? '社内撮影' : 'In-house photography'}
         jp="Tokyo atelier"
-        lede={<>In-house photography, <em>professional.</em></>}
-        tag="In-house photography"
+        lede={isJp ? <>社内撮影で、<em>正確に美しく。</em></> : <>In-house photography, <em>professionally executed.</em></>}
+        tag={isJp ? '社内撮影' : 'In-house photography'}
         subtag=""
         items={studio}
       />
@@ -70,11 +71,11 @@ function HighlightsGallery() {
 
       <Section
         num="02"
-        title="Styled"
+        title={isJp ? 'スタイリング' : 'Styled'}
         jp="Portrait work"
-        lede={<>Styled sittings, <em>pieces in context.</em></>}
-        tag="Styled portraits"
-        subtag="Seasonal stories, shot in and around Tokyo"
+        lede={isJp ? <>身につけた時の、<em>佇まいまで。</em></> : <>Styled sittings, <em>pieces in context.</em></>}
+        tag={isJp ? 'スタイリング撮影' : 'Styled portraits'}
+        subtag={isJp ? '東京を中心に撮影した、季節のストーリー' : 'Seasonal stories, shot in and around Tokyo'}
         items={editorial}
       />
     </>

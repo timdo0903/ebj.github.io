@@ -11,11 +11,11 @@ function Nav() {
   const homeHref = isJp ? '/ja/' : '/';
   const links = isJp
     ? [
-        { href: '/about/', label: '会社概要' },
-        { href: '/principles/', label: '私たちの約束' },
-        { href: '/highlights/', label: 'ハイライト' },
-        { href: '/careers/', label: '採用情報' },
-        { href: '/contact/', label: 'お問い合わせ' },
+        { href: '/ja/about/', label: '会社概要' },
+        { href: '/ja/principles/', label: '約束' },
+        { href: '/ja/highlights/', label: 'ハイライト' },
+        { href: '/ja/careers/', label: '採用情報' },
+        { href: '/ja/contact/', label: 'お問い合わせ' },
       ]
     : [
         { href: '/about/', label: 'About' },
@@ -43,7 +43,7 @@ function Nav() {
       </div>
 
       <div className="nav-right">
-        <span>{isJp ? 'TOKYO / EST. 2012' : 'TOKYO / EST. 2012'}</span>
+        <span>TOKYO / EST. 2012</span>
         <div className="lang">
           <a href="/" className={!isJp ? 'active' : undefined}>EN</a>
           <span>/</span>
@@ -69,7 +69,11 @@ function Nav() {
           ))}
         </div>
         <div className="nav-mobile-foot">
-          <div className="nav-mobile-meta">{isJp ? '東京から世界へ、丁寧に循環するラグジュアリーを。' : 'Circular luxury, curated with intention from Tokyo.'}</div>
+          <div className="nav-mobile-meta">
+            {isJp
+              ? '東京から、丁寧に選び、次へつなぐサーキュラー・ラグジュアリーを。'
+              : 'Circular luxury, curated with intention from Tokyo.'}
+          </div>
           <div className="lang nav-mobile-lang">
             <a href="/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
             <span>/</span>

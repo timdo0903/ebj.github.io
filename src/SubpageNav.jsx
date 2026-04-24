@@ -8,26 +8,23 @@ function SubpageNav({ current = '' }) {
     return () => document.body.classList.remove('nav-open');
   }, [open]);
 
-  const linkLabel = key => {
-    if (!isJp) return key;
-    return {
-      About: '会社概要',
-      Principles: '私たちの約束',
-      Highlights: 'ハイライト',
-      Careers: '採用情報',
-      Contact: 'お問い合わせ',
-    }[key] || key;
+  const labels = {
+    about: isJp ? '会社概要' : 'About',
+    principles: isJp ? '約束' : 'Principles',
+    highlights: isJp ? 'ハイライト' : 'Highlights',
+    careers: isJp ? '採用情報' : 'Careers',
+    contact: isJp ? 'お問い合わせ' : 'Contact',
   };
 
-  const links = [
-    { key: 'about', href: '/about/', label: linkLabel('About') },
-    { key: 'principles', href: '/principles/', label: linkLabel('Principles') },
-    { key: 'highlights', href: '/highlights/', label: linkLabel('Highlights') },
-    { key: 'careers', href: '/careers/', label: linkLabel('Careers') },
-    { key: 'contact', href: '/contact/', label: linkLabel('Contact') },
-  ];
+  const links = ['about', 'principles', 'highlights', 'careers', 'contact'].map(key => ({
+    key,
+    href: isJp ? `/ja/${key}/` : `/${key}/`,
+    label: labels[key],
+  }));
 
   const closeMenu = () => setOpen(false);
+  const englishHref = current ? `/${current}/` : '/';
+  const japaneseHref = current ? `/ja/${current}/` : '/ja/';
 
   return (
     <nav className="nav" data-scrolled={scrolled} data-open={open}>
@@ -54,9 +51,9 @@ function SubpageNav({ current = '' }) {
       <div className="nav-right">
         <span>TOKYO / EST. 2012</span>
         <div className="lang">
-          <a href="/" className={!isJp ? 'active' : undefined}>EN</a>
+          <a href={englishHref} className={!isJp ? 'active' : undefined}>EN</a>
           <span>/</span>
-          <a href="/ja/" className={isJp ? 'active' : undefined}>JP</a>
+          <a href={japaneseHref} className={isJp ? 'active' : undefined}>JP</a>
         </div>
         <button
           type="button"
@@ -85,11 +82,11 @@ function SubpageNav({ current = '' }) {
           ))}
         </div>
         <div className="nav-mobile-foot">
-          <div className="nav-mobile-meta">{isJp ? '日本語版はホームページのみ対応しています。' : 'Japanese is available for the homepage at the moment.'}</div>
+          <div className="nav-mobile-meta">{isJp ? '日本語ページを表示しています。' : 'Japanese is available for each main page.'}</div>
           <div className="lang nav-mobile-lang">
-            <a href="/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
+            <a href={englishHref} className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
             <span>/</span>
-            <a href="/ja/" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
+            <a href={japaneseHref} className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
           </div>
         </div>
       </div>

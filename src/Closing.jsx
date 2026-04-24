@@ -31,16 +31,16 @@ function Closing() {
         <window.FadeUp delay={100}>
           <p>
             {isJp
-              ? 'お客様のコレクションのご相談でも、クライアント向けのキュレーションでも。多言語対応のチームが、査定からストーリーテリングまで、ひとつひとつ丁寧に伴走します。'
+              ? 'コレクションのご相談も、パートナーとしての取り組みも。多言語対応のチームが、査定から撮影、ストーリーテリングまで丁寧に伴走します。'
               : 'Bring your collection, or curate ours for your clients. Our multilingual team orchestrates every detail, from valuation to storytelling, with the care the pieces deserve.'}
           </p>
         </window.FadeUp>
         <window.FadeUp delay={180} className="closing-actions">
-          <a className="btn-primary" href="/contact/">
-            <span>{isJp ? 'ご相談はこちら' : 'Begin a conversation'}</span>
+          <a className="btn-primary" href={isJp ? '/ja/contact/' : '/contact/'}>
+            <span>{isJp ? '相談する' : 'Begin a conversation'}</span>
             <span className="arrow"></span>
           </a>
-          <a className="btn-ghost" href="/careers/">{isJp ? '採用情報を見る' : 'View open roles'}</a>
+          <a className="btn-ghost" href={isJp ? '/ja/careers/' : '/careers/'}>{isJp ? '採用情報を見る' : 'View open roles'}</a>
         </window.FadeUp>
       </div>
     </section>

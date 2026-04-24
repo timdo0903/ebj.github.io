@@ -10,11 +10,11 @@ function NavCareers() {
 
   const links = isJp
     ? [
-        { href: '/about/', label: '会社概要' },
-        { href: '/principles/', label: '私たちの約束' },
-        { href: '/highlights/', label: 'ハイライト' },
-        { href: '/careers/', label: '採用情報', current: true },
-        { href: '/contact/', label: 'お問い合わせ' },
+        { href: '/ja/about/', label: '会社概要' },
+        { href: '/ja/principles/', label: '約束' },
+        { href: '/ja/highlights/', label: 'ハイライト' },
+        { href: '/ja/careers/', label: '採用情報', current: true },
+        { href: '/ja/contact/', label: 'お問い合わせ' },
       ]
     : [
         { href: '/about/', label: 'About' },
@@ -46,9 +46,9 @@ function NavCareers() {
       <div className="nav-right">
         <span>TOKYO / EST. 2012</span>
         <div className="lang">
-          <a href="/" className={!isJp ? 'active' : undefined}>EN</a>
+          <a href="/careers/" className={!isJp ? 'active' : undefined}>EN</a>
           <span>/</span>
-          <a href="/ja/" className={isJp ? 'active' : undefined}>JP</a>
+          <a href="/ja/careers/" className={isJp ? 'active' : undefined}>JP</a>
         </div>
         <button
           type="button"
@@ -72,11 +72,11 @@ function NavCareers() {
           ))}
         </div>
         <div className="nav-mobile-foot">
-          <div className="nav-mobile-meta">{isJp ? '採用情報ページです。' : 'Careers and current openings.'}</div>
+          <div className="nav-mobile-meta">{isJp ? '採用情報と現在募集中のポジション。' : 'Careers and current openings.'}</div>
           <div className="lang nav-mobile-lang">
-            <a href="/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
+            <a href="/careers/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
             <span>/</span>
-            <a href="/ja/" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
+            <a href="/ja/careers/" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
           </div>
         </div>
       </div>

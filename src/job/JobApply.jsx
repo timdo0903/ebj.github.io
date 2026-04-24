@@ -1,4 +1,5 @@
 function JobApply({ job }) {
+  const isJp = window.SITE_LANG === 'jp';
   const open = job.status === 'open';
   const applyNum = String((job.sections?.length || 0) + 2).padStart(2, '0');
 
@@ -6,15 +7,21 @@ function JobApply({ job }) {
     <section className="job-apply" id="apply">
       <div className="section-label">
         <span className="num">§ {applyNum}</span>
-        <span className="title">Apply</span>
+        <span className="title">{isJp ? '応募' : 'Apply'}</span>
         <span className="spacer" />
       </div>
 
       <div className="job-apply-grid">
         <div>
-          <h2>{open ? <>Apply <em>now</em>.</> : <>This role is <em>closed</em>.</>}</h2>
+          <h2>{isJp ? (open ? <>応募を<em>受け付けています。</em></> : <>この職種は<em>募集終了</em>しました。</>) : (open ? <>Apply <em>now</em>.</> : <>This role is <em>closed</em>.</>)}</h2>
           <p>
-            {open
+            {isJp
+              ? (open
+                  ? (job.formUrl
+                      ? '応募フォームから必要事項をご送信ください。書類を確認のうえ、通過された方へ次のステップをご案内します。'
+                      : '履歴書・職務経歴書と簡単なメッセージをお送りください。')
+                  : <>ご関心をお寄せいただきありがとうございます。現在この職種の新規応募は受け付けていません。今後の募集は採用情報ページをご確認ください。</>)
+              : open
               ? (job.formUrl
                   ? 'Submit your information below. Our hiring team will contact shortlisted candidates with next steps.'
                   : 'Send us your CV and a short note. We read every application personally.')
@@ -26,28 +33,28 @@ function JobApply({ job }) {
         <div className="actions">
           {open && job.formUrl ? (
             <a className="btn-primary" href={job.formUrl} target="_blank" rel="noopener noreferrer">
-              <span>Open application form</span>
+              <span>{isJp ? '応募フォームを開く' : 'Open application form'}</span>
               <span className="arrow"></span>
             </a>
           ) : open ? (
             <a className="btn-primary" href={`mailto:careers@ecobrandjapan.com?subject=${encodeURIComponent('Application · ' + job.plainTitle)}`}>
-              <span>Email your application</span>
+              <span>{isJp ? 'メールで応募する' : 'Email your application'}</span>
               <span className="arrow"></span>
             </a>
           ) : (
-            <a className="btn-primary" href="/careers/">
-              <span>Back to open roles</span>
+            <a className="btn-primary" href={isJp ? '/ja/careers/' : '/careers/'}>
+              <span>{isJp ? '採用情報へ戻る' : 'Back to open roles'}</span>
               <span className="arrow"></span>
             </a>
           )}
-          <a className="btn-ghost" href="/careers/">← All roles</a>
+          <a className="btn-ghost" href={isJp ? '/ja/careers/' : '/careers/'}>← {isJp ? 'すべての職種' : 'All roles'}</a>
         </div>
       </div>
 
       {open && job.formUrl && (
         <div className="job-embed">
           <p className="job-embed-fallback">
-            The application form will open in a new tab when you click the button above.
+            {isJp ? '上のボタンを押すと、応募フォームが新しいタブで開きます。' : 'The application form will open in a new tab when you click the button above.'}
           </p>
         </div>
       )}

@@ -1,6 +1,7 @@
 "use strict";
 
 function AboutAtelier() {
+  const isJp = window.SITE_LANG === 'jp';
   return React.createElement("div", {
     style: {
       position: 'relative'
@@ -9,7 +10,7 @@ function AboutAtelier() {
     className: "media-break"
   }, React.createElement("img", {
     src: "/catalog/portrait-sakura.jpg",
-    alt: "Editorial photography, Tokyo atelier, Eco Brand Japan",
+    alt: isJp ? '東京アトリエのエディトリアル撮影' : 'Editorial photography, Tokyo atelier, Eco Brand Japan',
     style: {
       objectPosition: "center 28%"
     }
@@ -19,7 +20,7 @@ function AboutAtelier() {
     className: "cap-kicker"
   }, "Tokyo atelier"), React.createElement("span", {
     className: "cap-copy"
-  }, "Studio photography, Spring 2026"))));
+  }, isJp ? 'Studio photography, Spring 2026' : 'Studio photography, Spring 2026'))));
 }
 Object.assign(window, {
   AboutAtelier

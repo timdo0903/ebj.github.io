@@ -1,16 +1,47 @@
 "use strict";
 
 function AboutProcess() {
-  const steps = [{
+  const isJp = window.SITE_LANG === 'jp';
+  const steps = isJp ? [{
     num: 'I',
-    title: React.createElement(React.Fragment, null, "Sourcing", React.createElement("small", null, "\u5165\u8377 \xB7 Ny\u016Bka")),
+    title: React.createElement(React.Fragment, null, "\u4ED5\u5165\u308C", React.createElement("small", null, "\u5165\u8377 \xB7 Nyuka")),
+    desc: '個人コレクター、エステート、信頼できるディストリビューターや卸先から一点ずつ受け入れます。到着した品は撮影し、記録し、作業台に載る前に管理番号を付けます。',
+    time: '1-3日'
+  }, {
+    num: 'II',
+    title: React.createElement(React.Fragment, null, React.createElement("em", null, "\u771F\u8D0B\u78BA\u8A8D"), React.createElement("small", null, "\u9451\u5B9A \xB7 Kantei")),
+    desc: '金具、ステッチ、革の質感、刻印、製造コードなど、メゾンごとの確認項目を専門スタッフが確認します。曖昧なものは次に進めません。',
+    time: '2-5日'
+  }, {
+    num: 'III',
+    title: React.createElement(React.Fragment, null, "\u72B6\u614B\u8A18\u9332", React.createElement("small", null, "\u8A3A\u65AD \xB7 Shindan")),
+    desc: '自然光の写真、採寸、状態コメントを残します。傷や使用感は隠さず、必要な情報として丁寧に記録します。',
+    time: '1日'
+  }, {
+    num: 'IV',
+    title: React.createElement(React.Fragment, null, React.createElement("em", null, "\u624B\u5165\u308C"), React.createElement("small", null, "\u30B1\u30A2 \xB7 Teire")),
+    desc: 'クリーニング、コンディショニング、必要に応じた軽い縫製補修。新品に見せるためではなく、その一点らしさを損なわないためのケアです。',
+    time: '3-10日'
+  }, {
+    num: 'V',
+    title: React.createElement(React.Fragment, null, "\u793E\u5185\u64AE\u5F71", React.createElement("small", null, "\u64AE\u5F71 \xB7 Satsuei")),
+    desc: 'プロのフォトグラファーが、正面、背面、底面、側面、内側、刻印などを撮影します。色味は正直に、経年の表情は消しません。',
+    time: '1日'
+  }, {
+    num: 'VI',
+    title: React.createElement(React.Fragment, null, React.createElement("em", null, "\u30EA\u30EA\u30FC\u30B9"), React.createElement("small", null, "\u53D7\u3051\u6E21\u3057 \xB7 Ukewatashi")),
+    desc: 'コレクター、ディストリビューター、委託元へ。梱包は追跡可能で、手作業で整え、複数の確認を経てアトリエを出ます。',
+    time: '随時'
+  }] : [{
+    num: 'I',
+    title: React.createElement(React.Fragment, null, "Sourcing", React.createElement("small", null, "\u5165\u8377 \xB7 Nyuka")),
     desc: 'We acquire from private collectors, estates, trusted distributors and wholesale channels across Asia, Europe and North America. Every intake is logged, photographed and assigned a dossier before it reaches the bench, regardless of origin.',
-    time: '1–2 days'
+    time: '1-3 days'
   }, {
     num: 'II',
     title: React.createElement(React.Fragment, null, React.createElement("em", null, "Authentication"), React.createElement("small", null, "\u9451\u5B9A \xB7 Kantei")),
     desc: 'Every single item we buy is carefully inspected and authenticated by our lead authenticators: hardware, stitching, leather grain, stamping, date codes, and a proprietary checklist tailored to each maison. Nothing ambiguous proceeds.',
-    time: '2–5 days'
+    time: '2-5 days'
   }, {
     num: 'III',
     title: React.createElement(React.Fragment, null, "Condition reporting", React.createElement("small", null, "\u8A3A\u65AD \xB7 Shindan")),
@@ -20,7 +51,7 @@ function AboutProcess() {
     num: 'IV',
     title: React.createElement(React.Fragment, null, React.createElement("em", null, "Hand revive"), React.createElement("small", null, "\u624B\u5165\u308C \xB7 Teire")),
     desc: 'Gentle cleaning, conditioning, minor stitch work if needed. Never aggressive refinishing. The intent is to return a piece to its quiet, honest best, not to pretend it is new.',
-    time: '3–10 days'
+    time: '3-10 days'
   }, {
     num: 'V',
     title: React.createElement(React.Fragment, null, "In-house photography", React.createElement("small", null, "\u64AE\u5F71 \xB7 Satsuei")),
@@ -41,7 +72,7 @@ function AboutProcess() {
     className: "num"
   }, "\xA7 05"), React.createElement("span", {
     className: "title"
-  }, "Our Process"), React.createElement("span", {
+  }, isJp ? 'プロセス' : 'Our Process'), React.createElement("span", {
     className: "spacer"
   }), React.createElement("span", {
     className: "jp"
@@ -56,12 +87,17 @@ function AboutProcess() {
       maxWidth: '18ch',
       textWrap: 'balance'
     }
-  }, "Six quiet steps, ", React.createElement("em", {
+  }, isJp ? React.createElement(React.Fragment, null, "\u9759\u304B\u306A\u516D\u3064\u306E\u5DE5\u7A0B\u3092\u3001", React.createElement("em", {
     style: {
       color: 'var(--accent)',
       fontStyle: 'italic'
     }
-  }, "every time."))), React.createElement("div", {
+  }, "\u6BCE\u56DE\u3002")) : React.createElement(React.Fragment, null, "Six quiet steps, ", React.createElement("em", {
+    style: {
+      color: 'var(--accent)',
+      fontStyle: 'italic'
+    }
+  }, "every time.")))), React.createElement("div", {
     className: "process-list"
   }, steps.map((s, i) => React.createElement("div", {
     className: "process-row",

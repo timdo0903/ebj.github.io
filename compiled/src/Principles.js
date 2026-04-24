@@ -4,19 +4,19 @@ function Principles() {
   const isJp = window.SITE_LANG === 'jp';
   const items = isJp ? [{
     num: 'I',
-    title: React.createElement(React.Fragment, null, "\u78BA\u304B\u306A", React.createElement("em", null, "\u771F\u8D0B\u78BA\u8A8D")),
-    body: '専門スタッフによる確認、独自のチェックポイント、透明性のある情報開示によって、すべての一点を信頼できる状態でお届けします。',
-    checks: ['多角的な真贋確認', '状態の記録', '由来の追跡']
+    title: React.createElement(React.Fragment, null, "\u78BA\u304B\u306A", React.createElement("br", null), React.createElement("em", null, "\u771F\u8D0B\u78BA\u8A8D")),
+    body: '専門スタッフの確認、独自のチェックポイント、状態の丁寧な記録。信頼できる一点としてお届けできるものだけを扱います。',
+    checks: ['多角的な真贋確認', '状態の記録', '履歴の管理']
   }, {
     num: 'II',
-    title: React.createElement(React.Fragment, null, "\u6301\u7D9A\u53EF\u80FD\u306A", React.createElement("em", null, "\u53D7\u3051\u7D99\u304E")),
-    body: 'やさしいケアとクリーニング、負荷を抑えた梱包、循環を意識した運営によって、ラグジュアリーが長く価値を持ち続ける流れをつくります。',
-    checks: ['手作業での軽いケア', '環境配慮の梱包', '循環型の仕入れ']
+    title: React.createElement(React.Fragment, null, "\u5FAA\u74B0\u3092\u652F\u3048\u308B", React.createElement("br", null), React.createElement("em", null, "\u624B\u4ED5\u4E8B")),
+    body: '過度な加工ではなく、必要なケアを静かに。素材を尊重し、長く使い続けられる状態へ整えます。',
+    checks: ['手作業でのケア', '低負荷な梱包', '循環を意識した仕入れ']
   }, {
     num: 'III',
-    title: React.createElement(React.Fragment, null, "\u8AA0\u5B9F\u306A", React.createElement("em", null, "\u95A2\u4FC2\u6027")),
-    body: 'お預かりする方々との関係を、明確さと誠実さ、そして丁寧な対応で育てていきます。長く続く関係こそ、私たちの基準です。',
-    checks: ['多言語対応', '迅速なやり取り', '長期的な関係性']
+    title: React.createElement(React.Fragment, null, "\u9577\u304F\u7D9A\u304F", React.createElement("br", null), React.createElement("em", null, "\u95A2\u4FC2\u6027")),
+    body: 'お客様やパートナーとの関係を、明確さ、誠実さ、丁寧なコミュニケーションで育てます。',
+    checks: ['多言語対応', '明確なやり取り', '長期的な関係']
   }] : [{
     num: 'I',
     title: React.createElement(React.Fragment, null, "Authenticity", React.createElement("br", null), React.createElement("em", null, "assured")),

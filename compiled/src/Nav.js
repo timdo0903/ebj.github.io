@@ -10,19 +10,19 @@ function Nav() {
   }, [open]);
   const homeHref = isJp ? '/ja/' : '/';
   const links = isJp ? [{
-    href: '/about/',
+    href: '/ja/about/',
     label: '会社概要'
   }, {
-    href: '/principles/',
-    label: '私たちの約束'
+    href: '/ja/principles/',
+    label: '約束'
   }, {
-    href: '/highlights/',
+    href: '/ja/highlights/',
     label: 'ハイライト'
   }, {
-    href: '/careers/',
+    href: '/ja/careers/',
     label: '採用情報'
   }, {
-    href: '/contact/',
+    href: '/ja/contact/',
     label: 'お問い合わせ'
   }] : [{
     href: '/about/',
@@ -65,7 +65,7 @@ function Nav() {
     href: link.href
   }, link.label))), React.createElement("div", {
     className: "nav-right"
-  }, React.createElement("span", null, isJp ? 'TOKYO / EST. 2012' : 'TOKYO / EST. 2012'), React.createElement("div", {
+  }, React.createElement("span", null, "TOKYO / EST. 2012"), React.createElement("div", {
     className: "lang"
   }, React.createElement("a", {
     href: "/",
@@ -92,7 +92,7 @@ function Nav() {
     className: "nav-mobile-foot"
   }, React.createElement("div", {
     className: "nav-mobile-meta"
-  }, isJp ? '東京から世界へ、丁寧に循環するラグジュアリーを。' : 'Circular luxury, curated with intention from Tokyo.'), React.createElement("div", {
+  }, isJp ? '東京から、丁寧に選び、次へつなぐサーキュラー・ラグジュアリーを。' : 'Circular luxury, curated with intention from Tokyo.'), React.createElement("div", {
     className: "lang nav-mobile-lang"
   }, React.createElement("a", {
     href: "/",
