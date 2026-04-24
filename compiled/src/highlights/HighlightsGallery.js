@@ -55,7 +55,9 @@ function HighlightsGallery() {
   }, React.createElement("img", {
     src: t.img,
     alt: t.pieceText,
-    loading: "lazy"
+    loading: num === '01' && i < 3 ? 'eager' : 'lazy',
+    decoding: "async",
+    fetchPriority: num === '01' && i < 3 ? 'high' : 'auto'
   }), React.createElement("div", {
     className: "corner"
   }, t.tag), React.createElement("div", {

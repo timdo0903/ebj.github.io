@@ -8,7 +8,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Dior Lady Dior',
     tag: 'Authenticated',
     num: 'N-024',
-    img: '/images/lady-dior.jpg',
+    img: '/catalog/highlights-web/lady-dior.webp',
     w: 'w-4'
   }, {
     id: 'n031',
@@ -17,7 +17,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Hermes Birkin 35',
     tag: 'Authenticated',
     num: 'N-031',
-    img: '/images/hermes-birkin.jpg',
+    img: '/catalog/highlights-web/hermes-birkin.webp',
     w: 'w-4'
   }, {
     id: 'n017',
@@ -26,7 +26,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Louis Vuitton Trunks',
     tag: 'Authenticated',
     num: 'N-017',
-    img: '/catalog/editorial-chocolate-bar.jpg',
+    img: '/catalog/highlights-web/editorial-chocolate-bar.webp',
     w: 'w-4'
   }, {
     id: 'n056',
@@ -35,7 +35,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel Double Flap',
     tag: 'Authenticated',
     num: 'N-056',
-    img: '/images/pink-chanel.jpg',
+    img: '/catalog/highlights-web/pink-chanel.webp',
     w: 'w-4'
   }, {
     id: 'n068',
@@ -44,7 +44,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel Classic Double Flap with Accessories',
     tag: 'Authenticated',
     num: 'N-068',
-    img: '/images/hero-flatlay.jpg',
+    img: '/catalog/highlights-web/hero-flatlay.webp',
     w: 'w-4'
   }, {
     id: 'n087',
@@ -53,7 +53,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Saint Laurent Monogram Bag',
     tag: 'Authenticated',
     num: 'N-087',
-    img: '/images/saint-laurent.jpg',
+    img: '/catalog/highlights-web/saint-laurent.webp',
     w: 'w-4'
   }, {
     id: 'n093',
@@ -62,7 +62,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Goyard Saigon',
     tag: 'Authenticated',
     num: 'N-093',
-    img: '/images/goyard.jpg',
+    img: '/catalog/highlights-web/goyard.webp',
     w: 'w-3'
   }, {
     id: 'n102',
@@ -71,7 +71,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Gucci x Louis Vuitton Camera Bags',
     tag: 'Authenticated',
     num: 'N-102',
-    img: '/images/gucci-lv.jpg',
+    img: '/catalog/highlights-web/gucci-lv.webp',
     w: 'w-3'
   }, {
     id: 'n081',
@@ -80,7 +80,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Saint Laurent Cassandre Envelope Chain',
     tag: 'Authenticated',
     num: 'N-081',
-    img: '/images/team-curating.jpg',
+    img: '/catalog/highlights-web/team-curating.webp',
     w: 'w-3'
   }, {
     id: 'n180',
@@ -89,7 +89,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Louis Vuitton Pochette Accessories Mini',
     tag: 'Authenticated',
     num: 'N-180',
-    img: '/catalog/editorial-pink-vanity.jpg',
+    img: '/catalog/highlights-web/editorial-pink-vanity.webp',
     w: 'w-3'
   }, {
     id: 'n156',
@@ -98,7 +98,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Hermes Kelly Bags',
     tag: 'Authenticated',
     num: 'N-156',
-    img: '/catalog/styled-02.jpg',
+    img: '/catalog/highlights-web/styled-02.webp',
     w: 'w-6'
   }, {
     id: 'n164',
@@ -107,7 +107,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Hermes Kelly Bags',
     tag: 'Authenticated',
     num: 'N-164',
-    img: '/catalog/styled-03.jpg',
+    img: '/catalog/highlights-web/styled-03.webp',
     w: 'w-6'
   }, {
     id: 'n074',
@@ -116,7 +116,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel Chocolate Bar',
     tag: 'Authenticated',
     num: 'N-074',
-    img: '/catalog/editorial-azur-blooms.jpg',
+    img: '/catalog/highlights-web/editorial-azur-blooms.webp',
     w: 'w-4'
   }, {
     id: 'n109',
@@ -125,7 +125,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel Vanity Case',
     tag: 'Authenticated',
     num: 'N-109',
-    img: '/catalog/editorial-lv-trunks.jpg',
+    img: '/catalog/highlights-web/editorial-lv-trunks.webp',
     w: 'w-4'
   }, {
     id: 'n127',
@@ -134,7 +134,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel Premiere watches',
     tag: 'Authenticated',
     num: 'N-127',
-    img: '/catalog/iconics-01.jpg',
+    img: '/catalog/highlights-web/iconics-01.webp',
     w: 'w-4'
   }, {
     id: 'n188',
@@ -143,7 +143,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel CC Soft Chain Tote',
     tag: 'Authenticated',
     num: 'N-188',
-    img: '/catalog/n188-cc-soft-chain-tote.jpg',
+    img: '/catalog/highlights-web/n188-cc-soft-chain-tote.webp',
     w: 'w-4'
   }, {
     id: 'n196',
@@ -152,7 +152,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Prada Canapa Bag',
     tag: 'Authenticated',
     num: 'N-196',
-    img: '/catalog/n196-prada-canapa-bag.jpg',
+    img: '/catalog/highlights-web/n196-prada-canapa-bag.webp',
     w: 'w-4'
   }, {
     id: 'n204',
@@ -161,7 +161,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Hermes Kelly Flag',
     tag: 'Authenticated',
     num: 'N-204',
-    img: '/catalog/styled-04.jpg',
+    img: '/catalog/highlights-web/styled-04.webp',
     w: 'w-4'
   }],
   editorial: [{
@@ -171,7 +171,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Louis Vuitton Leopard Zippy Wallet',
     tag: 'Styled',
     num: 'N-051',
-    img: '/catalog/portrait-chanel-sakura.jpg',
+    img: '/catalog/highlights-web/portrait-chanel-sakura.webp',
     w: 'w-4'
   }, {
     id: 'n065',
@@ -180,7 +180,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel Half Moon Chain',
     tag: 'Styled',
     num: 'N-065',
-    img: '/catalog/portrait-leopard-wallet.jpg',
+    img: '/catalog/highlights-web/portrait-leopard-wallet.webp',
     w: 'w-4'
   }, {
     id: 'n118',
@@ -189,7 +189,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Louis Vuitton Takashi Murakami Pochette Accessories',
     tag: 'Styled',
     num: 'N-118',
-    img: '/catalog/n118-sakura-murakami.jpg',
+    img: '/catalog/highlights-web/n118-sakura-murakami.webp',
     w: 'w-4'
   }, {
     id: 'n224',
@@ -198,7 +198,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Saint Laurent Cassandre Envelope Chain',
     tag: 'Styled',
     num: 'N-224',
-    img: '/catalog/saint-laurent-cassandre-envelope-chain.jpg',
+    img: '/catalog/highlights-web/saint-laurent-cassandre-envelope-chain.webp',
     w: 'w-6'
   }, {
     id: 'n228',
@@ -207,7 +207,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Loewe Basket Bag',
     tag: 'Styled',
     num: 'N-228',
-    img: '/catalog/loewe-basket-bag.jpg',
+    img: '/catalog/highlights-web/loewe-basket-bag.webp',
     w: 'w-6'
   }, {
     id: 'n120',
@@ -216,7 +216,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Bottega Veneta The Pouch',
     tag: 'Styled',
     num: 'N-120',
-    img: '/catalog/kimono-01.jpg',
+    img: '/catalog/highlights-web/kimono-01.webp',
     w: 'w-4'
   }, {
     id: 'n129',
@@ -225,7 +225,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Gucci Dionysus bag',
     tag: 'Styled',
     num: 'N-129',
-    img: '/catalog/old-money-01.jpg',
+    img: '/catalog/highlights-web/old-money-01.webp',
     w: 'w-4'
   }, {
     id: 'n138',
@@ -234,7 +234,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel Berry Crossbody',
     tag: 'Styled',
     num: 'N-138',
-    img: '/catalog/old-money-02.jpg',
+    img: '/catalog/highlights-web/old-money-02.webp',
     w: 'w-4'
   }, {
     id: 'n126',
@@ -243,7 +243,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Gucci x Chanel Bamboo Top x CC Cuba Flap',
     tag: 'Styled',
     num: 'N-126',
-    img: '/catalog/kimono-02.jpg',
+    img: '/catalog/highlights-web/kimono-02.webp',
     w: 'w-4'
   }, {
     id: 'n132',
@@ -252,7 +252,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Louis Vuitton Pochette Accessories Mini',
     tag: 'Styled',
     num: 'N-132',
-    img: '/catalog/kimono-03.jpg',
+    img: '/catalog/highlights-web/kimono-03.webp',
     w: 'w-4'
   }, {
     id: 'n140',
@@ -261,7 +261,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Gucci Dionysus bag',
     tag: 'Styled',
     num: 'N-140',
-    img: '/catalog/kimono-04.jpg',
+    img: '/catalog/highlights-web/kimono-04.webp',
     w: 'w-4'
   }, {
     id: 'n148',
@@ -270,7 +270,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Dior Lady Dior',
     tag: 'Styled',
     num: 'N-148',
-    img: '/catalog/old-money-03.jpg',
+    img: '/catalog/highlights-web/old-money-03.webp',
     w: 'w-4'
   }, {
     id: 'n172',
@@ -279,7 +279,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Gucci GG Should Bag',
     tag: 'Styled',
     num: 'N-172',
-    img: '/catalog/old-money-04.jpg',
+    img: '/catalog/highlights-web/old-money-04.webp',
     w: 'w-4'
   }, {
     id: 'n212',
@@ -288,7 +288,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Hermes Bangle',
     tag: 'Styled',
     num: 'N-212',
-    img: '/catalog/kimono-05.jpg',
+    img: '/catalog/highlights-web/kimono-05.webp',
     w: 'w-4'
   }, {
     id: 'n220',
@@ -297,7 +297,7 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Chanel Berry Crossbody',
     tag: 'Styled',
     num: 'N-220',
-    img: '/catalog/old-money-05.jpg',
+    img: '/catalog/highlights-web/old-money-05.webp',
     w: 'w-4'
   }]
 };
