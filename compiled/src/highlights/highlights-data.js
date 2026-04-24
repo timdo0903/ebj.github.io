@@ -135,24 +135,24 @@ window.HIGHLIGHTS_DATA = {
     tag: 'Authenticated',
     num: 'N-127',
     img: 'catalog/iconics-01.jpg',
-    w: 'w-3'
+    w: 'w-4'
   }, {
     id: 'n188',
     maison: 'Chanel',
-    piece: 'Premiere watches',
-    pieceText: 'Chanel Premiere watches',
+    piece: 'CC Soft Chain Tote',
+    pieceText: 'Chanel CC Soft Chain Tote',
     tag: 'Authenticated',
     num: 'N-188',
-    img: 'catalog/iconics-02.jpg',
+    img: 'catalog/n188-cc-soft-chain-tote.jpg',
     w: 'w-4'
   }, {
     id: 'n196',
-    maison: 'Chanel',
-    piece: 'Premiere watches',
-    pieceText: 'Chanel Premiere watches',
+    maison: 'Prada',
+    piece: 'Canapa Bag',
+    pieceText: 'Prada Canapa Bag',
     tag: 'Authenticated',
     num: 'N-196',
-    img: 'catalog/iconics-03.jpg',
+    img: 'catalog/n196-prada-canapa-bag.jpg',
     w: 'w-4'
   }, {
     id: 'n204',
@@ -189,8 +189,8 @@ window.HIGHLIGHTS_DATA = {
     pieceText: 'Louis Vuitton Takashi Murakami Pochette Accessories',
     tag: 'Styled',
     num: 'N-118',
-    img: 'catalog/portrait-sakura.jpg',
-    w: 'w-6'
+    img: 'catalog/n118-sakura-murakami.jpg',
+    w: 'w-4'
   }, {
     id: 'n120',
     maison: 'Bottega Veneta',
@@ -199,7 +199,7 @@ window.HIGHLIGHTS_DATA = {
     tag: 'Styled',
     num: 'N-120',
     img: 'catalog/kimono-01.jpg',
-    w: 'w-3'
+    w: 'w-4'
   }, {
     id: 'n129',
     maison: 'Gucci',
