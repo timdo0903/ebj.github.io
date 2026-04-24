@@ -22,23 +22,23 @@ function SubpageNav({
   };
   const links = [{
     key: 'about',
-    href: 'about.html',
+    href: '/about/',
     label: linkLabel('About')
   }, {
     key: 'principles',
-    href: 'principles.html',
+    href: '/principles/',
     label: linkLabel('Principles')
   }, {
     key: 'highlights',
-    href: 'highlights.html',
+    href: '/highlights/',
     label: linkLabel('Highlights')
   }, {
     key: 'careers',
-    href: 'careers.html',
+    href: '/careers/',
     label: linkLabel('Careers')
   }, {
     key: 'contact',
-    href: 'contact.html',
+    href: '/contact/',
     label: linkLabel('Contact')
   }];
   const closeMenu = () => setOpen(false);
@@ -49,7 +49,7 @@ function SubpageNav({
   }, React.createElement("div", {
     className: "brand"
   }, React.createElement("a", {
-    href: isJp ? 'index-jp.html' : 'index.html',
+    href: isJp ? '/ja/' : '/',
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -73,10 +73,10 @@ function SubpageNav({
   }, React.createElement("span", null, "TOKYO / EST. 2012"), React.createElement("div", {
     className: "lang"
   }, React.createElement("a", {
-    href: "index.html",
+    href: "/",
     className: !isJp ? 'active' : undefined
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "index-jp.html",
+    href: "/ja/",
     className: isJp ? 'active' : undefined
   }, "JP")), React.createElement("button", {
     type: "button",
@@ -101,11 +101,11 @@ function SubpageNav({
   }, isJp ? '日本語版はホームページのみ対応しています。' : 'Japanese is available for the homepage at the moment.'), React.createElement("div", {
     className: "lang nav-mobile-lang"
   }, React.createElement("a", {
-    href: "index.html",
+    href: "/",
     className: !isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "index-jp.html",
+    href: "/ja/",
     className: isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "JP")))));

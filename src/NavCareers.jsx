@@ -10,18 +10,18 @@ function NavCareers() {
 
   const links = isJp
     ? [
-        { href: 'about.html', label: '会社概要' },
-        { href: 'principles.html', label: '私たちの約束' },
-        { href: 'highlights.html', label: 'ハイライト' },
-        { href: 'careers.html', label: '採用情報', current: true },
-        { href: 'contact.html', label: 'お問い合わせ' },
+        { href: '/about/', label: '会社概要' },
+        { href: '/principles/', label: '私たちの約束' },
+        { href: '/highlights/', label: 'ハイライト' },
+        { href: '/careers/', label: '採用情報', current: true },
+        { href: '/contact/', label: 'お問い合わせ' },
       ]
     : [
-        { href: 'about.html', label: 'About' },
-        { href: 'principles.html', label: 'Principles' },
-        { href: 'highlights.html', label: 'Highlights' },
-        { href: 'careers.html', label: 'Careers', current: true },
-        { href: 'contact.html', label: 'Contact' },
+        { href: '/about/', label: 'About' },
+        { href: '/principles/', label: 'Principles' },
+        { href: '/highlights/', label: 'Highlights' },
+        { href: '/careers/', label: 'Careers', current: true },
+        { href: '/contact/', label: 'Contact' },
       ];
 
   const closeMenu = () => setOpen(false);
@@ -29,7 +29,7 @@ function NavCareers() {
   return (
     <nav className="nav" data-scrolled={scrolled} data-open={open}>
       <div className="brand">
-        <a href={isJp ? 'index-jp.html' : 'index.html'} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <a href={isJp ? '/ja/' : '/'} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span className="brand-mark">E</span>
           <span className="en">Eco Brand Japan</span>
         </a>
@@ -46,9 +46,9 @@ function NavCareers() {
       <div className="nav-right">
         <span>TOKYO / EST. 2012</span>
         <div className="lang">
-          <a href="index.html" className={!isJp ? 'active' : undefined}>EN</a>
+          <a href="/" className={!isJp ? 'active' : undefined}>EN</a>
           <span>/</span>
-          <a href="index-jp.html" className={isJp ? 'active' : undefined}>JP</a>
+          <a href="/ja/" className={isJp ? 'active' : undefined}>JP</a>
         </div>
         <button
           type="button"
@@ -74,9 +74,9 @@ function NavCareers() {
         <div className="nav-mobile-foot">
           <div className="nav-mobile-meta">{isJp ? '採用情報ページです。' : 'Careers and current openings.'}</div>
           <div className="lang nav-mobile-lang">
-            <a href="index.html" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
+            <a href="/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
             <span>/</span>
-            <a href="index-jp.html" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
+            <a href="/ja/" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
           </div>
         </div>
       </div>

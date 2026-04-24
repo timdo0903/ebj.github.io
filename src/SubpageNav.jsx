@@ -20,11 +20,11 @@ function SubpageNav({ current = '' }) {
   };
 
   const links = [
-    { key: 'about', href: 'about.html', label: linkLabel('About') },
-    { key: 'principles', href: 'principles.html', label: linkLabel('Principles') },
-    { key: 'highlights', href: 'highlights.html', label: linkLabel('Highlights') },
-    { key: 'careers', href: 'careers.html', label: linkLabel('Careers') },
-    { key: 'contact', href: 'contact.html', label: linkLabel('Contact') },
+    { key: 'about', href: '/about/', label: linkLabel('About') },
+    { key: 'principles', href: '/principles/', label: linkLabel('Principles') },
+    { key: 'highlights', href: '/highlights/', label: linkLabel('Highlights') },
+    { key: 'careers', href: '/careers/', label: linkLabel('Careers') },
+    { key: 'contact', href: '/contact/', label: linkLabel('Contact') },
   ];
 
   const closeMenu = () => setOpen(false);
@@ -32,7 +32,7 @@ function SubpageNav({ current = '' }) {
   return (
     <nav className="nav" data-scrolled={scrolled} data-open={open}>
       <div className="brand">
-        <a href={isJp ? 'index-jp.html' : 'index.html'} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <a href={isJp ? '/ja/' : '/'} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span className="brand-mark">E</span>
           <span className="en">Eco Brand Japan</span>
         </a>
@@ -54,9 +54,9 @@ function SubpageNav({ current = '' }) {
       <div className="nav-right">
         <span>TOKYO / EST. 2012</span>
         <div className="lang">
-          <a href="index.html" className={!isJp ? 'active' : undefined}>EN</a>
+          <a href="/" className={!isJp ? 'active' : undefined}>EN</a>
           <span>/</span>
-          <a href="index-jp.html" className={isJp ? 'active' : undefined}>JP</a>
+          <a href="/ja/" className={isJp ? 'active' : undefined}>JP</a>
         </div>
         <button
           type="button"
@@ -87,9 +87,9 @@ function SubpageNav({ current = '' }) {
         <div className="nav-mobile-foot">
           <div className="nav-mobile-meta">{isJp ? '日本語版はホームページのみ対応しています。' : 'Japanese is available for the homepage at the moment.'}</div>
           <div className="lang nav-mobile-lang">
-            <a href="index.html" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
+            <a href="/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
             <span>/</span>
-            <a href="index-jp.html" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
+            <a href="/ja/" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
           </div>
         </div>
       </div>

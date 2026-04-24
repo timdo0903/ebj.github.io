@@ -23,7 +23,7 @@ function JobApp() {
         <div className="job-not-found">
           <h1>Role not found</h1>
           <p>That position isn't listed. Browse our open roles instead.</p>
-          <a className="btn-primary" href="careers.html">
+          <a className="btn-primary" href="/careers/">
             <span>Back to careers</span>
             <span className="arrow"></span>
           </a>

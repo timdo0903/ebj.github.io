@@ -19,8 +19,8 @@ function PrinciplesApp() {
         eyebrow="Questions or partnership"
         title={<>These are the <em>rules of the atelier.</em></>}
         body="If you'd like to understand any of them in more detail, or discuss a partnership with us, our concierge team will be glad to hear from you."
-        primary={{ label: 'Get in touch', href: 'contact.html' }}
-        secondary={{ label: 'View current highlights →', href: 'highlights.html' }}
+        primary={{ label: 'Get in touch', href: '/contact/' }}
+        secondary={{ label: 'View current highlights →', href: '/highlights/' }}
       />
       <window.Footer />
     </>

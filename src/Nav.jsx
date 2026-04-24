@@ -8,21 +8,21 @@ function Nav() {
     return () => document.body.classList.remove('nav-open');
   }, [open]);
 
-  const homeHref = isJp ? 'index-jp.html' : 'index.html';
+  const homeHref = isJp ? '/ja/' : '/';
   const links = isJp
     ? [
-        { href: 'about.html', label: '会社概要' },
-        { href: 'principles.html', label: '私たちの約束' },
-        { href: 'highlights.html', label: 'ハイライト' },
-        { href: 'careers.html', label: '採用情報' },
-        { href: 'contact.html', label: 'お問い合わせ' },
+        { href: '/about/', label: '会社概要' },
+        { href: '/principles/', label: '私たちの約束' },
+        { href: '/highlights/', label: 'ハイライト' },
+        { href: '/careers/', label: '採用情報' },
+        { href: '/contact/', label: 'お問い合わせ' },
       ]
     : [
-        { href: 'about.html', label: 'About' },
-        { href: 'principles.html', label: 'Principles' },
-        { href: 'highlights.html', label: 'Highlights' },
-        { href: 'careers.html', label: 'Careers' },
-        { href: 'contact.html', label: 'Contact' },
+        { href: '/about/', label: 'About' },
+        { href: '/principles/', label: 'Principles' },
+        { href: '/highlights/', label: 'Highlights' },
+        { href: '/careers/', label: 'Careers' },
+        { href: '/contact/', label: 'Contact' },
       ];
 
   const closeMenu = () => setOpen(false);
@@ -45,9 +45,9 @@ function Nav() {
       <div className="nav-right">
         <span>{isJp ? 'TOKYO / EST. 2012' : 'TOKYO / EST. 2012'}</span>
         <div className="lang">
-          <a href="index.html" className={!isJp ? 'active' : undefined}>EN</a>
+          <a href="/" className={!isJp ? 'active' : undefined}>EN</a>
           <span>/</span>
-          <a href="index-jp.html" className={isJp ? 'active' : undefined}>JP</a>
+          <a href="/ja/" className={isJp ? 'active' : undefined}>JP</a>
         </div>
         <button
           type="button"
@@ -71,9 +71,9 @@ function Nav() {
         <div className="nav-mobile-foot">
           <div className="nav-mobile-meta">{isJp ? '東京から世界へ、丁寧に循環するラグジュアリーを。' : 'Circular luxury, curated with intention from Tokyo.'}</div>
           <div className="lang nav-mobile-lang">
-            <a href="index.html" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
+            <a href="/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
             <span>/</span>
-            <a href="index-jp.html" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
+            <a href="/ja/" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
           </div>
         </div>
       </div>

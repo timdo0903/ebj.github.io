@@ -2,9 +2,9 @@ function JobHero({ job }) {
   return (
     <header className="job-hero">
       <nav className="job-crumbs">
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <span className="sep">·</span>
-        <a href="careers.html">Careers</a>
+        <a href="/careers/">Careers</a>
         <span className="sep">·</span>
         <span className="here">{job.plainTitle}</span>
       </nav>

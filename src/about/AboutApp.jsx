@@ -21,8 +21,8 @@ function AboutApp() {
         eyebrow="Work with us"
         title={<>Two ways to <em>begin a relationship.</em></>}
         body="Whether you're a collector considering consignment, or a distributor building a circular luxury programme, our concierge team is ready to listen."
-        primary={{ label: 'Get in touch', href: 'contact.html' }}
-        secondary={{ label: 'View open roles →', href: 'careers.html' }}
+        primary={{ label: 'Get in touch', href: '/contact/' }}
+        secondary={{ label: 'View open roles →', href: '/careers/' }}
       />
       <window.Footer />
     </>
