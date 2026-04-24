@@ -735,7 +735,7 @@
   letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--ink-quiet);
-  margin-top: 16px;
+  margin-top: 32px;
 }
 .principle-deep h2 {
   font-family: var(--serif);
