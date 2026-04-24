@@ -64,7 +64,7 @@ function Hero() {
     ref: imgRef,
     className: "hero-image-wrap"
   }, React.createElement("img", {
-    src: "catalog/portrait-leopard-wallet.jpg",
+    src: "/catalog/portrait-leopard-wallet.jpg",
     alt: copy.alt,
     style: {
       objectPosition: 'center 25%'

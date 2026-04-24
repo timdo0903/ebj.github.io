@@ -8,7 +8,7 @@ function AboutAtelier() {
   }, React.createElement("div", {
     className: "media-break"
   }, React.createElement("img", {
-    src: "catalog/portrait-sakura.jpg",
+    src: "/catalog/portrait-sakura.jpg",
     alt: "Editorial photography, Tokyo atelier, Eco Brand Japan",
     style: {
       objectPosition: "center 28%"
