@@ -1,6 +1,7 @@
 "use strict";
 
 function HighlightsGallery() {
+  const isJp = window.SITE_LANG === 'jp';
   const data = window.HIGHLIGHTS_DATA;
   const {
     studio,
@@ -40,7 +41,7 @@ function HighlightsGallery() {
     className: "n"
   }, String(items.length).padStart(2, '0')), React.createElement("span", {
     className: "l"
-  }, "pieces"))), React.createElement(window.FadeUp, null, React.createElement("h2", {
+  }, isJp ? '点' : 'pieces'))), React.createElement(window.FadeUp, null, React.createElement("h2", {
     className: "hl-section-title"
   }, lede)), subtag ? React.createElement("div", {
     className: "hl-section-subtag"
@@ -60,7 +61,7 @@ function HighlightsGallery() {
     fetchPriority: num === '01' && i < 3 ? 'high' : 'auto'
   }), React.createElement("div", {
     className: "corner"
-  }, t.tag), React.createElement("div", {
+  }, isJp ? t.tag === 'Styled' ? 'スタイリング' : '真贋確認済み' : t.tag), React.createElement("div", {
     className: "num"
   }, t.num)), React.createElement("div", {
     className: "info"
@@ -71,10 +72,10 @@ function HighlightsGallery() {
   }, t.piece)))))));
   return React.createElement(React.Fragment, null, React.createElement(Section, {
     num: "01",
-    title: "In-house photography",
+    title: isJp ? '社内撮影' : 'In-house photography',
     jp: "Tokyo atelier",
-    lede: React.createElement(React.Fragment, null, "In-house photography, ", React.createElement("em", null, "professional.")),
-    tag: "In-house photography",
+    lede: isJp ? React.createElement(React.Fragment, null, "\u793E\u5185\u64AE\u5F71\u3067\u3001", React.createElement("em", null, "\u6B63\u78BA\u306B\u7F8E\u3057\u304F\u3002")) : React.createElement(React.Fragment, null, "In-house photography, ", React.createElement("em", null, "professionally executed.")),
+    tag: isJp ? '社内撮影' : 'In-house photography',
     subtag: "",
     items: studio
   }), React.createElement("div", {
@@ -82,11 +83,11 @@ function HighlightsGallery() {
     "aria-hidden": "true"
   }), React.createElement(Section, {
     num: "02",
-    title: "Styled",
+    title: isJp ? 'スタイリング' : 'Styled',
     jp: "Portrait work",
-    lede: React.createElement(React.Fragment, null, "Styled sittings, ", React.createElement("em", null, "pieces in context.")),
-    tag: "Styled portraits",
-    subtag: "Seasonal stories, shot in and around Tokyo",
+    lede: isJp ? React.createElement(React.Fragment, null, "\u8EAB\u306B\u3064\u3051\u305F\u6642\u306E\u3001", React.createElement("em", null, "\u4F47\u307E\u3044\u307E\u3067\u3002")) : React.createElement(React.Fragment, null, "Styled sittings, ", React.createElement("em", null, "pieces in context.")),
+    tag: isJp ? 'スタイリング撮影' : 'Styled portraits',
+    subtag: isJp ? '東京を中心に撮影した、季節のストーリー' : 'Seasonal stories, shot in and around Tokyo',
     items: editorial
   }));
 }

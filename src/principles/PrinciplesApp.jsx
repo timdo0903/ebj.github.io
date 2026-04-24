@@ -1,5 +1,7 @@
 function PrinciplesApp() {
   const [tweaks] = React.useState(window.TWEAKS);
+  const isJp = window.SITE_LANG === 'jp';
+
   React.useEffect(() => {
     const root = document.documentElement;
     root.setAttribute('data-theme', tweaks.theme);
@@ -16,11 +18,11 @@ function PrinciplesApp() {
       <window.PrincipleSustainability />
       <window.PrincipleRelationships />
       <window.CTABlock
-        eyebrow="Questions or partnership"
-        title={<>These are the <em>rules of the atelier.</em></>}
-        body="If you'd like to understand any of them in more detail, or discuss a partnership with us, our concierge team will be glad to hear from you."
-        primary={{ label: 'Get in touch', href: '/contact/' }}
-        secondary={{ label: 'View current highlights →', href: '/highlights/' }}
+        eyebrow={isJp ? 'ご相談・パートナーシップ' : 'Questions or partnership'}
+        title={isJp ? <>アトリエの<em>基準です。</em></> : <>These are the <em>rules of the atelier.</em></>}
+        body={isJp ? '詳しく知りたい約束がある場合や、パートナーシップについて話したい場合は、コンシェルジュチームへご連絡ください。' : "If you'd like to understand any of them in more detail, or discuss a partnership with us, our concierge team will be glad to hear from you."}
+        primary={{ label: isJp ? '問い合わせる' : 'Get in touch', href: isJp ? '/ja/contact/' : '/contact/' }}
+        secondary={{ label: isJp ? 'ハイライトを見る' : 'View current highlights →', href: isJp ? '/ja/highlights/' : '/highlights/' }}
       />
       <window.Footer />
     </>

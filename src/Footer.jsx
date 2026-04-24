@@ -29,11 +29,11 @@ function Footer() {
         <div>
           <h5>{isJp ? 'ページ' : 'Explore'}</h5>
           <ul>
-            <li><a href="/about/">{isJp ? '会社概要' : 'About'}</a></li>
-            <li><a href="/principles/">{isJp ? '私たちの約束' : 'Principles'}</a></li>
-            <li><a href="/highlights/">{isJp ? 'ハイライト' : 'Highlights'}</a></li>
-            <li><a href="/careers/">{isJp ? '採用情報' : 'Careers'}</a></li>
-            <li><a href="/contact/">{isJp ? 'お問い合わせ' : 'Contact'}</a></li>
+            <li><a href={isJp ? '/ja/about/' : '/about/'}>{isJp ? '会社概要' : 'About'}</a></li>
+            <li><a href={isJp ? '/ja/principles/' : '/principles/'}>{isJp ? '約束' : 'Principles'}</a></li>
+            <li><a href={isJp ? '/ja/highlights/' : '/highlights/'}>{isJp ? 'ハイライト' : 'Highlights'}</a></li>
+            <li><a href={isJp ? '/ja/careers/' : '/careers/'}>{isJp ? '採用情報' : 'Careers'}</a></li>
+            <li><a href={isJp ? '/ja/contact/' : '/contact/'}>{isJp ? 'お問い合わせ' : 'Contact'}</a></li>
           </ul>
         </div>
 

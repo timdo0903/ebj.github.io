@@ -10,7 +10,8 @@ function JobApp() {
 
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('role') || 'inventory-logistics-specialist';
-  const job = window.JOBS[slug];
+  const isJp = window.SITE_LANG === 'jp';
+  const job = (isJp && window.JOBS_JP?.[slug]) || window.JOBS[slug];
 
   React.useEffect(() => {
     if (job) document.title = `${job.plainTitle} · Eco Brand Japan`;
@@ -21,10 +22,10 @@ function JobApp() {
       <>
         <window.NavCareers />
         <div className="job-not-found">
-          <h1>Role not found</h1>
-          <p>That position isn't listed. Browse our open roles instead.</p>
-          <a className="btn-primary" href="/careers/">
-            <span>Back to careers</span>
+          <h1>{isJp ? '募集情報が見つかりません' : 'Role not found'}</h1>
+          <p>{isJp ? 'このポジションは現在掲載されていません。採用情報ページをご確認ください。' : "That position isn't listed. Browse our open roles instead."}</p>
+          <a className="btn-primary" href={isJp ? '/ja/careers/' : '/careers/'}>
+            <span>{isJp ? '採用情報へ戻る' : 'Back to careers'}</span>
             <span className="arrow"></span>
           </a>
         </div>

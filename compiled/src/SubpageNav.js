@@ -10,38 +10,21 @@ function SubpageNav({
     document.body.classList.toggle('nav-open', open);
     return () => document.body.classList.remove('nav-open');
   }, [open]);
-  const linkLabel = key => {
-    if (!isJp) return key;
-    return {
-      About: '会社概要',
-      Principles: '私たちの約束',
-      Highlights: 'ハイライト',
-      Careers: '採用情報',
-      Contact: 'お問い合わせ'
-    }[key] || key;
+  const labels = {
+    about: isJp ? '会社概要' : 'About',
+    principles: isJp ? '約束' : 'Principles',
+    highlights: isJp ? 'ハイライト' : 'Highlights',
+    careers: isJp ? '採用情報' : 'Careers',
+    contact: isJp ? 'お問い合わせ' : 'Contact'
   };
-  const links = [{
-    key: 'about',
-    href: '/about/',
-    label: linkLabel('About')
-  }, {
-    key: 'principles',
-    href: '/principles/',
-    label: linkLabel('Principles')
-  }, {
-    key: 'highlights',
-    href: '/highlights/',
-    label: linkLabel('Highlights')
-  }, {
-    key: 'careers',
-    href: '/careers/',
-    label: linkLabel('Careers')
-  }, {
-    key: 'contact',
-    href: '/contact/',
-    label: linkLabel('Contact')
-  }];
+  const links = ['about', 'principles', 'highlights', 'careers', 'contact'].map(key => ({
+    key,
+    href: isJp ? `/ja/${key}/` : `/${key}/`,
+    label: labels[key]
+  }));
   const closeMenu = () => setOpen(false);
+  const englishHref = current ? `/${current}/` : '/';
+  const japaneseHref = current ? `/ja/${current}/` : '/ja/';
   return React.createElement("nav", {
     className: "nav",
     "data-scrolled": scrolled,
@@ -73,10 +56,10 @@ function SubpageNav({
   }, React.createElement("span", null, "TOKYO / EST. 2012"), React.createElement("div", {
     className: "lang"
   }, React.createElement("a", {
-    href: "/",
+    href: englishHref,
     className: !isJp ? 'active' : undefined
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/ja/",
+    href: japaneseHref,
     className: isJp ? 'active' : undefined
   }, "JP")), React.createElement("button", {
     type: "button",
@@ -98,14 +81,14 @@ function SubpageNav({
     className: "nav-mobile-foot"
   }, React.createElement("div", {
     className: "nav-mobile-meta"
-  }, isJp ? '日本語版はホームページのみ対応しています。' : 'Japanese is available for the homepage at the moment.'), React.createElement("div", {
+  }, isJp ? '日本語ページを表示しています。' : 'Japanese is available for each main page.'), React.createElement("div", {
     className: "lang nav-mobile-lang"
   }, React.createElement("a", {
-    href: "/",
+    href: englishHref,
     className: !isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/ja/",
+    href: japaneseHref,
     className: isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "JP")))));

@@ -230,8 +230,8 @@ window.HIGHLIGHTS_DATA = {
   }, {
     id: 'n138',
     maison: 'Chanel',
-    piece: 'Berry Crossbody',
-    pieceText: 'Chanel Berry Crossbody',
+    piece: 'Wallet on Chain',
+    pieceText: 'Chanel Wallet on Chain',
     tag: 'Styled',
     num: 'N-138',
     img: '/catalog/highlights-web/old-money-02.webp',
@@ -275,8 +275,8 @@ window.HIGHLIGHTS_DATA = {
   }, {
     id: 'n172',
     maison: 'Gucci',
-    piece: 'GG Should Bag',
-    pieceText: 'Gucci GG Should Bag',
+    piece: 'GG Shoulder Bag',
+    pieceText: 'Gucci GG Shoulder Bag',
     tag: 'Styled',
     num: 'N-172',
     img: '/catalog/highlights-web/old-money-04.webp',
@@ -293,8 +293,8 @@ window.HIGHLIGHTS_DATA = {
   }, {
     id: 'n220',
     maison: 'Chanel',
-    piece: 'Berry Crossbody',
-    pieceText: 'Chanel Berry Crossbody',
+    piece: 'Wallet on Chain',
+    pieceText: 'Chanel Wallet on Chain',
     tag: 'Styled',
     num: 'N-220',
     img: '/catalog/highlights-web/old-money-05.webp',

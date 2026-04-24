@@ -10,17 +10,17 @@ function Hero() {
     return () => cancelAnimationFrame(id);
   }, []);
   const copy = isJp ? {
-    left: '創業 2012 / 東京',
-    center: '丁寧に受け継ぐ、サーキュラー・ラグジュアリー',
-    right: 'N-001 / ホームページ',
-    lines: ['名品を、', '次の持ち主へ。'],
-    lede: '東京から、希少なメゾンバッグやアクセサリーを選び、真贋確認を行い、やさしく整え、次の持ち主へ届ける準備をします。私たちの循環は、手仕事から始まります。',
+    left: '2012年創業 / 東京',
+    center: '丁寧に選び、次へつなぐサーキュラー・ラグジュアリー',
+    right: 'N-001 / ホーム',
+    lines: ['受け継がれる', 'ラグジュアリーを、', '次の持ち主へ。'],
+    lede: '東京を拠点に、希少なメゾンバッグやアクセサリーを選び、真贋を確認し、必要な手入れを施して、次の章へと送り出します。手仕事から始まる、静かな循環です。',
     primary: '私たちの約束へ',
-    secondary: '最新ハイライトを見る',
-    years: '年の実績',
-    pieces: '取扱点数',
+    secondary: 'ハイライトを見る',
+    years: 'キュレーション年数',
+    pieces: '循環したアイテム',
     languages: '対応言語',
-    alt: '東京で撮影したエディトリアルポートレート',
+    alt: '東京で撮影したラグジュアリーバッグのポートレート',
     caption: 'Tokyo / Editorial N-07'
   } : {
     left: 'Est. 2012 / Tokyo',
@@ -58,7 +58,7 @@ function Hero() {
   }, copy.lines.map((line, index) => React.createElement("span", {
     key: index,
     className: "reveal-line"
-  }, React.createElement("span", null, index === 1 && !isJp ? React.createElement("em", null, line) : line))))), React.createElement("div", {
+  }, React.createElement("span", null, index === 1 ? React.createElement("em", null, line) : line))))), React.createElement("div", {
     className: "hero-side"
   }, React.createElement("div", {
     ref: imgRef,

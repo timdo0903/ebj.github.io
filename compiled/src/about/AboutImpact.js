@@ -1,7 +1,26 @@
 "use strict";
 
 function AboutImpact() {
-  const stats = [{
+  const isJp = window.SITE_LANG === 'jp';
+  const stats = isJp ? [{
+    k: 'キュレーション年数',
+    v: React.createElement(React.Fragment, null, "12", React.createElement("span", {
+      className: "plus"
+    }, "+")),
+    note: '2012年から東京を拠点に展開'
+  }, {
+    k: '循環したアイテム',
+    v: React.createElement(React.Fragment, null, "150", React.createElement("em", null, "k")),
+    note: 'バッグ、革小物、アクセサリーに次の章を'
+  }, {
+    k: '取り扱いメゾン',
+    v: React.createElement(React.Fragment, null, "28"),
+    note: 'Hermes、Chanelから希少なメゾンまで'
+  }, {
+    k: '対応言語',
+    v: React.createElement(React.Fragment, null, "6"),
+    note: 'English · 日本語 · 中文 · Español · Français · Tagalog'
+  }] : [{
     k: 'Years curating',
     v: React.createElement(React.Fragment, null, "12", React.createElement("span", {
       className: "plus"

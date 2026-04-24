@@ -3,18 +3,19 @@
 function JobBody({
   job
 }) {
+  const isJp = window.SITE_LANG === 'jp';
   const toc = [{
     id: 'overview',
     num: '01',
-    label: 'Overview'
+    label: isJp ? '概要' : 'Overview'
   }, ...job.sections.map(s => ({
     id: s.id,
     num: s.num,
-    label: labelFor(s.id)
+    label: labelFor(s.id, isJp)
   })), {
     id: 'apply',
     num: String(job.sections.length + 2).padStart(2, '0'),
-    label: 'Apply'
+    label: isJp ? '応募' : 'Apply'
   }];
   return React.createElement("section", {
     className: "job-body"
@@ -32,7 +33,7 @@ function JobBody({
     id: "overview"
   }, React.createElement("div", {
     className: "job-section-num"
-  }, "\xA7 01"), React.createElement("h2", null, "About ", React.createElement("em", null, "the role"), "."), React.createElement("p", null, job.intro)), job.sections.map(s => React.createElement("div", {
+  }, "\xA7 01"), React.createElement("h2", null, isJp ? React.createElement(React.Fragment, null, "\u3053\u306E\u8077\u7A2E\u306B", React.createElement("em", null, "\u3064\u3044\u3066\u3002")) : React.createElement(React.Fragment, null, "About ", React.createElement("em", null, "the role"), ".")), React.createElement("p", null, job.intro)), job.sections.map(s => React.createElement("div", {
     className: "job-section",
     id: s.id,
     key: s.id
@@ -45,8 +46,21 @@ function JobBody({
     className: "note"
   }, s.note))))));
 }
-function labelFor(id) {
-  const map = {
+function labelFor(id, isJp = false) {
+  const map = isJp ? {
+    responsibilities: "仕事内容",
+    duties: "仕事内容",
+    requirements: "応募条件",
+    preferred: "歓迎経験",
+    physical: "身体要件",
+    personality: "求める人物像",
+    hours: "勤務・出張",
+    education: "語学・学歴",
+    offer: "働く環境",
+    compensation: "給与・待遇",
+    eligibility: "応募前の確認",
+    interview: "選考"
+  } : {
     responsibilities: "Responsibilities",
     duties: "Responsibilities",
     requirements: "Requirements",

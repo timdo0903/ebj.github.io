@@ -6,12 +6,12 @@ function Statement() {
     num: 'S 01',
     title: '私たちの仕事',
     kanji: '継',
-    caption: 'tsugu / 受け継ぐ、つないでいく',
-    quote: '「ものを大切にすることは、その前に触れてきた手を大切にすることでもある。」',
-    body: '2012年に東京で始まり、Hermes、Chanel、Louis Vuitton をはじめとするメゾンのバッグやアクセサリーを扱ってきました。すべての品を真贋確認し、やさしく整え、次の持ち主へ渡す準備をする。それが私たちの静かなサーキュラー・ラグジュアリーです。',
+    caption: 'tsugu / 受け継ぐ、次へつなぐ',
+    quote: '「ものを大切にすることは、それを手にしてきた人たちを大切にすることでもあります。」',
+    body: '2012年、東京でスタートした私たちは、Hermes、Chanel、Louis Vuittonをはじめとするメゾンのバッグやアクセサリーを扱っています。一点ずつ真贋を確認し、状態を整え、次の持ち主へ渡す準備をする。派手ではありませんが、それが私たちのサーキュラー・ラグジュアリーです。',
     founded: '2012 / Tokyo',
     auth: '専門スタッフによる確認',
-    onboarding: '24時間以内の初回対応'
+    onboarding: '初回対応は24時間以内'
   } : {
     num: 'S 01',
     title: 'The Practice',
@@ -58,7 +58,7 @@ function Statement() {
     className: "v"
   }, copy.auth)), React.createElement("div", null, React.createElement("div", {
     className: "k"
-  }, isJp ? 'お取引開始' : 'Supplier onboarding'), React.createElement("div", {
+  }, isJp ? 'お問い合わせ' : 'Supplier onboarding'), React.createElement("div", {
     className: "v"
   }, copy.onboarding))))));
 }

@@ -21,17 +21,17 @@ function Closing() {
     className: "closing-sub"
   }, React.createElement(window.FadeUp, {
     delay: 100
-  }, React.createElement("p", null, isJp ? 'お客様のコレクションのご相談でも、クライアント向けのキュレーションでも。多言語対応のチームが、査定からストーリーテリングまで、ひとつひとつ丁寧に伴走します。' : 'Bring your collection, or curate ours for your clients. Our multilingual team orchestrates every detail, from valuation to storytelling, with the care the pieces deserve.')), React.createElement(window.FadeUp, {
+  }, React.createElement("p", null, isJp ? 'コレクションのご相談も、パートナーとしての取り組みも。多言語対応のチームが、査定から撮影、ストーリーテリングまで丁寧に伴走します。' : 'Bring your collection, or curate ours for your clients. Our multilingual team orchestrates every detail, from valuation to storytelling, with the care the pieces deserve.')), React.createElement(window.FadeUp, {
     delay: 180,
     className: "closing-actions"
   }, React.createElement("a", {
     className: "btn-primary",
-    href: "/contact/"
-  }, React.createElement("span", null, isJp ? 'ご相談はこちら' : 'Begin a conversation'), React.createElement("span", {
+    href: isJp ? '/ja/contact/' : '/contact/'
+  }, React.createElement("span", null, isJp ? '相談する' : 'Begin a conversation'), React.createElement("span", {
     className: "arrow"
   })), React.createElement("a", {
     className: "btn-ghost",
-    href: "/careers/"
+    href: isJp ? '/ja/careers/' : '/careers/'
   }, isJp ? '採用情報を見る' : 'View open roles'))));
 }
 Object.assign(window, {
