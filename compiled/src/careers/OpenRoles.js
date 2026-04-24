@@ -7,28 +7,28 @@ function OpenRoles() {
     type: 'Full-time · Tokyo, Japan',
     blurb: 'Safeguard product accuracy, coordinate shipments and support cross-functional projects.',
     status: 'open',
-    href: 'job-detail.html?role=inventory-logistics-specialist'
+    href: '/job-detail/?role=inventory-logistics-specialist'
   }, {
     num: 'II',
     title: 'Product Photographer',
     type: 'Full-time · Tokyo, Japan',
     blurb: 'Capture the craftsmanship of every piece for marketplaces and marketing channels.',
     status: 'open',
-    href: 'job-detail.html?role=product-photographer'
+    href: '/job-detail/?role=product-photographer'
   }, {
     num: 'III',
     title: 'Luxury Buyer',
     type: 'Full-time · Tokyo, Japan',
     blurb: 'Source, evaluate and authenticate luxury collections with trusted partners worldwide.',
     status: 'closed',
-    href: 'job-detail.html?role=buyers-position'
+    href: '/job-detail/?role=buyers-position'
   }, {
     num: 'IV',
     title: 'Live Seller & Social Media Operator',
     type: 'Part-time · Tokyo, Japan',
     blurb: 'Combine on-camera livestream selling with daily content to grow our community.',
     status: 'closed',
-    href: 'job-detail.html?role=live-seller-social-media-operator'
+    href: '/job-detail/?role=live-seller-social-media-operator'
   }];
   return React.createElement("section", {
     className: "roles",

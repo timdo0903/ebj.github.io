@@ -17,11 +17,11 @@ function PrinciplesApp() {
     body: "If you'd like to understand any of them in more detail, or discuss a partnership with us, our concierge team will be glad to hear from you.",
     primary: {
       label: 'Get in touch',
-      href: 'contact.html'
+      href: '/contact/'
     },
     secondary: {
       label: 'View current highlights →',
-      href: 'highlights.html'
+      href: '/highlights/'
     }
   }), React.createElement(window.Footer, null));
 }

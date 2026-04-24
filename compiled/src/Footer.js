@@ -27,15 +27,15 @@ function Footer() {
       fontWeight: 400
     }
   }, "\u30A8\u30B3\u30D6\u30E9\u30F3\u30C9\u30B8\u30E3\u30D1\u30F3")), React.createElement("p", null, isJp ? '東京から、丁寧に選び、次へつなぐサーキュラー・ラグジュアリーを。' : 'Circular luxury, curated with intention. From Tokyo, to the world\'s most considered collectors.')), React.createElement("div", null, React.createElement("h5", null, isJp ? 'ページ' : 'Explore'), React.createElement("ul", null, React.createElement("li", null, React.createElement("a", {
-    href: "about.html"
+    href: "/about/"
   }, isJp ? '会社概要' : 'About')), React.createElement("li", null, React.createElement("a", {
-    href: "principles.html"
+    href: "/principles/"
   }, isJp ? '私たちの約束' : 'Principles')), React.createElement("li", null, React.createElement("a", {
-    href: "highlights.html"
+    href: "/highlights/"
   }, isJp ? 'ハイライト' : 'Highlights')), React.createElement("li", null, React.createElement("a", {
-    href: "careers.html"
+    href: "/careers/"
   }, isJp ? '採用情報' : 'Careers')), React.createElement("li", null, React.createElement("a", {
-    href: "contact.html"
+    href: "/contact/"
   }, isJp ? 'お問い合わせ' : 'Contact')))), React.createElement("div", null, React.createElement("h5", null, isJp ? '外部リンク' : 'Channels'), React.createElement("ul", null, React.createElement("li", null, React.createElement("a", {
     href: "https://www.instagram.com/brandcoparis/",
     target: "_blank",

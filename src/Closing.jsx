@@ -36,11 +36,11 @@ function Closing() {
           </p>
         </window.FadeUp>
         <window.FadeUp delay={180} className="closing-actions">
-          <a className="btn-primary" href="contact.html">
+          <a className="btn-primary" href="/contact/">
             <span>{isJp ? 'ご相談はこちら' : 'Begin a conversation'}</span>
             <span className="arrow"></span>
           </a>
-          <a className="btn-ghost" href="careers.html">{isJp ? '採用情報を見る' : 'View open roles'}</a>
+          <a className="btn-ghost" href="/careers/">{isJp ? '採用情報を見る' : 'View open roles'}</a>
         </window.FadeUp>
       </div>
     </section>

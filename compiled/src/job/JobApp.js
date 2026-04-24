@@ -19,7 +19,7 @@ function JobApp() {
       className: "job-not-found"
     }, React.createElement("h1", null, "Role not found"), React.createElement("p", null, "That position isn't listed. Browse our open roles instead."), React.createElement("a", {
       className: "btn-primary",
-      href: "careers.html"
+      href: "/careers/"
     }, React.createElement("span", null, "Back to careers"), React.createElement("span", {
       className: "arrow"
     }))), React.createElement(window.Footer, null));

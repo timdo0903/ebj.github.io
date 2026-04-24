@@ -56,7 +56,7 @@ function Hero() {
           <h1 className="hero-headline">
             {copy.lines.map((line, index) => (
               <span key={index} className="reveal-line">
-                <span>{index === 1 && !isJp ? <em className="italic">{line}</em> : line}</span>
+                <span>{index === 1 && !isJp ? <em>{line}</em> : line}</span>
               </span>
             ))}
           </h1>

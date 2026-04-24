@@ -26,12 +26,12 @@ function Closing() {
     className: "closing-actions"
   }, React.createElement("a", {
     className: "btn-primary",
-    href: "contact.html"
+    href: "/contact/"
   }, React.createElement("span", null, isJp ? 'ご相談はこちら' : 'Begin a conversation'), React.createElement("span", {
     className: "arrow"
   })), React.createElement("a", {
     className: "btn-ghost",
-    href: "careers.html"
+    href: "/careers/"
   }, isJp ? '採用情報を見る' : 'View open roles'))));
 }
 Object.assign(window, {

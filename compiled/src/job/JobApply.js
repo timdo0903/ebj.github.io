@@ -41,12 +41,12 @@ function JobApply({
     className: "arrow"
   })) : React.createElement("a", {
     className: "btn-primary",
-    href: "careers.html"
+    href: "/careers/"
   }, React.createElement("span", null, "Back to open roles"), React.createElement("span", {
     className: "arrow"
   })), React.createElement("a", {
     className: "btn-ghost",
-    href: "careers.html"
+    href: "/careers/"
   }, "\u2190 All roles"))), open && job.formUrl && React.createElement("div", {
     className: "job-embed"
   }, React.createElement("p", {

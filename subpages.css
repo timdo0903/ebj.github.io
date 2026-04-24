@@ -985,7 +985,8 @@
   padding: 0 var(--pad) 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 24px;
+  column-gap: 24px;
+  row-gap: 48px;
 }
 .highlights-grid .tile { aspect-ratio: 3/4; }
 .highlights-grid .tile.col-3 { grid-column: span 3; }
@@ -1044,7 +1045,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 12px;
-  padding: 0 2px;
+  padding: 0 2px 8px;
 }
 .hl-card .info .maison {
   font-family: var(--mono);

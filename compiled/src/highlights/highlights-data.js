@@ -192,6 +192,24 @@ window.HIGHLIGHTS_DATA = {
     img: 'catalog/n118-sakura-murakami.jpg',
     w: 'w-4'
   }, {
+    id: 'n224',
+    maison: 'Saint Laurent',
+    piece: 'Cassandre Envelope Chain',
+    pieceText: 'Saint Laurent Cassandre Envelope Chain',
+    tag: 'Styled',
+    num: 'N-224',
+    img: 'catalog/saint-laurent-cassandre-envelope-chain.jpg',
+    w: 'w-6'
+  }, {
+    id: 'n228',
+    maison: 'Loewe',
+    piece: 'Basket Bag',
+    pieceText: 'Loewe Basket Bag',
+    tag: 'Styled',
+    num: 'N-228',
+    img: 'catalog/loewe-basket-bag.jpg',
+    w: 'w-6'
+  }, {
     id: 'n120',
     maison: 'Bottega Veneta',
     piece: 'The Pouch',

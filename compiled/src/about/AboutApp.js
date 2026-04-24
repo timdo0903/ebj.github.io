@@ -17,11 +17,11 @@ function AboutApp() {
     body: "Whether you're a collector considering consignment, or a distributor building a circular luxury programme, our concierge team is ready to listen.",
     primary: {
       label: 'Get in touch',
-      href: 'contact.html'
+      href: '/contact/'
     },
     secondary: {
       label: 'View open roles →',
-      href: 'careers.html'
+      href: '/careers/'
     }
   }), React.createElement(window.Footer, null));
 }

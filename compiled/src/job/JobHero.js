@@ -8,11 +8,11 @@ function JobHero({
   }, React.createElement("nav", {
     className: "job-crumbs"
   }, React.createElement("a", {
-    href: "index.html"
+    href: "/"
   }, "Home"), React.createElement("span", {
     className: "sep"
   }, "\xB7"), React.createElement("a", {
-    href: "careers.html"
+    href: "/careers/"
   }, "Careers"), React.createElement("span", {
     className: "sep"
   }, "\xB7"), React.createElement("span", {

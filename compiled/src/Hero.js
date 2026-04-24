@@ -58,9 +58,7 @@ function Hero() {
   }, copy.lines.map((line, index) => React.createElement("span", {
     key: index,
     className: "reveal-line"
-  }, React.createElement("span", null, index === 1 && !isJp ? React.createElement("em", {
-    className: "italic"
-  }, line) : line))))), React.createElement("div", {
+  }, React.createElement("span", null, index === 1 && !isJp ? React.createElement("em", null, line) : line))))), React.createElement("div", {
     className: "hero-side"
   }, React.createElement("div", {
     ref: imgRef,

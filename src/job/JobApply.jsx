@@ -35,12 +35,12 @@ function JobApply({ job }) {
               <span className="arrow"></span>
             </a>
           ) : (
-            <a className="btn-primary" href="careers.html">
+            <a className="btn-primary" href="/careers/">
               <span>Back to open roles</span>
               <span className="arrow"></span>
             </a>
           )}
-          <a className="btn-ghost" href="careers.html">← All roles</a>
+          <a className="btn-ghost" href="/careers/">← All roles</a>
         </div>
       </div>
 

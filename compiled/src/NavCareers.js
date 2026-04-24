@@ -9,36 +9,36 @@ function NavCareers() {
     return () => document.body.classList.remove('nav-open');
   }, [open]);
   const links = isJp ? [{
-    href: 'about.html',
+    href: '/about/',
     label: '会社概要'
   }, {
-    href: 'principles.html',
+    href: '/principles/',
     label: '私たちの約束'
   }, {
-    href: 'highlights.html',
+    href: '/highlights/',
     label: 'ハイライト'
   }, {
-    href: 'careers.html',
+    href: '/careers/',
     label: '採用情報',
     current: true
   }, {
-    href: 'contact.html',
+    href: '/contact/',
     label: 'お問い合わせ'
   }] : [{
-    href: 'about.html',
+    href: '/about/',
     label: 'About'
   }, {
-    href: 'principles.html',
+    href: '/principles/',
     label: 'Principles'
   }, {
-    href: 'highlights.html',
+    href: '/highlights/',
     label: 'Highlights'
   }, {
-    href: 'careers.html',
+    href: '/careers/',
     label: 'Careers',
     current: true
   }, {
-    href: 'contact.html',
+    href: '/contact/',
     label: 'Contact'
   }];
   const closeMenu = () => setOpen(false);
@@ -49,7 +49,7 @@ function NavCareers() {
   }, React.createElement("div", {
     className: "brand"
   }, React.createElement("a", {
-    href: isJp ? 'index-jp.html' : 'index.html',
+    href: isJp ? '/ja/' : '/',
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -72,10 +72,10 @@ function NavCareers() {
   }, React.createElement("span", null, "TOKYO / EST. 2012"), React.createElement("div", {
     className: "lang"
   }, React.createElement("a", {
-    href: "index.html",
+    href: "/",
     className: !isJp ? 'active' : undefined
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "index-jp.html",
+    href: "/ja/",
     className: isJp ? 'active' : undefined
   }, "JP")), React.createElement("button", {
     type: "button",
@@ -100,11 +100,11 @@ function NavCareers() {
   }, isJp ? '採用情報ページです。' : 'Careers and current openings.'), React.createElement("div", {
     className: "lang nav-mobile-lang"
   }, React.createElement("a", {
-    href: "index.html",
+    href: "/",
     className: !isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "index-jp.html",
+    href: "/ja/",
     className: isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "JP")))));

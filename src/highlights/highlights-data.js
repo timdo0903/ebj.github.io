@@ -27,6 +27,8 @@ window.HIGHLIGHTS_DATA = {
     { id: 'n051', maison: 'Louis Vuitton', piece: 'Leopard Zippy Wallet', pieceText: 'Louis Vuitton Leopard Zippy Wallet', tag: 'Styled', num: 'N-051', img: 'catalog/portrait-chanel-sakura.jpg', w: 'w-4' },
     { id: 'n065', maison: 'Chanel', piece: 'Half Moon Chain', pieceText: 'Chanel Half Moon Chain', tag: 'Styled', num: 'N-065', img: 'catalog/portrait-leopard-wallet.jpg', w: 'w-4' },
     { id: 'n118', maison: 'Louis Vuitton', piece: 'Takashi Murakami Pochette Accessories', pieceText: 'Louis Vuitton Takashi Murakami Pochette Accessories', tag: 'Styled', num: 'N-118', img: 'catalog/n118-sakura-murakami.jpg', w: 'w-4' },
+    { id: 'n224', maison: 'Saint Laurent', piece: 'Cassandre Envelope Chain', pieceText: 'Saint Laurent Cassandre Envelope Chain', tag: 'Styled', num: 'N-224', img: 'catalog/saint-laurent-cassandre-envelope-chain.jpg', w: 'w-6' },
+    { id: 'n228', maison: 'Loewe', piece: 'Basket Bag', pieceText: 'Loewe Basket Bag', tag: 'Styled', num: 'N-228', img: 'catalog/loewe-basket-bag.jpg', w: 'w-6' },
     { id: 'n120', maison: 'Bottega Veneta', piece: 'The Pouch', pieceText: 'Bottega Veneta The Pouch', tag: 'Styled', num: 'N-120', img: 'catalog/kimono-01.jpg', w: 'w-4' },
     { id: 'n129', maison: 'Gucci', piece: 'Dionysus bag', pieceText: 'Gucci Dionysus bag', tag: 'Styled', num: 'N-129', img: 'catalog/old-money-01.jpg', w: 'w-4' },
     { id: 'n138', maison: 'Chanel', piece: 'Berry Crossbody', pieceText: 'Chanel Berry Crossbody', tag: 'Styled', num: 'N-138', img: 'catalog/old-money-02.jpg', w: 'w-4' },
