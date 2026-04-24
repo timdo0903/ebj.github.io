@@ -49,7 +49,7 @@ function SubpageNav({
   }, React.createElement("div", {
     className: "brand"
   }, React.createElement("a", {
-    href: isJp ? '/ja/' : '/',
+    href: isJp ? '/index-jp.html' : '/',
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -76,7 +76,7 @@ function SubpageNav({
     href: "/",
     className: !isJp ? 'active' : undefined
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/ja/",
+    href: "/index-jp.html",
     className: isJp ? 'active' : undefined
   }, "JP")), React.createElement("button", {
     type: "button",
@@ -105,7 +105,7 @@ function SubpageNav({
     className: !isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/ja/",
+    href: "/index-jp.html",
     className: isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "JP")))));
