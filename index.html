@@ -1,414 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eco Brand Japan - Sustainable Luxury</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <meta
-      name="description"
-      content="Eco Brand Japan curates sustainable luxury handbags and accessories. Discover pre-owned designer bags with authenticity and circular vision."
-    />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://www.ecobrandjapan.com; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
-    />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta property="og:url" content="https://www.ecobrandjapan.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Eco Brand Japan - Sustainable Luxury" />
-    <meta
-      property="og:description"
-      content="Eco Brand Japan curates sustainable luxury handbags and accessories. Discover pre-owned designer bags with authenticity and circular vision."
-    />
-   
-    
-    <meta property="og:image" content="https://www.ecobrandjapan.com/images/8.jpg" />
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="favicon/web-app-manifest-192x192.png"
-      sizes="192x192"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="favicon/web-app-manifest-512x512.png"
-      sizes="512x512"
-    />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Eco Brand Japan · Circular Luxury, Curated in Tokyo</title>
+<meta
+  name="description"
+  content="Eco Brand Japan is the Tokyo atelier of Brandco Paris, sourcing, authenticating, restoring, and photographing circular luxury pieces."
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="favicon/web-app-manifest-192x192.png" sizes="192x192" />
+<link rel="icon" type="image/png" href="favicon/web-app-manifest-512x512.png" sizes="512x512" />
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+<link rel="manifest" href="favicon/site.webmanifest" />
+<link rel="stylesheet" href="styles.css?v=1776999975407" />
+</head>
+<body>
+  <div id="root"></div>
 
+  <script>
+    window.SITE_LANG = 'en';
+    // Tweakable defaults · persisted via host
+    window.TWEAKS = /*EDITMODE-BEGIN*/{
+      "theme": "bone",
+      "accent": "brass",
+      "heroLayout": "split",
+      "motion": "moderate",
+      "kanjiProminence": "balanced"
+    }/*EDITMODE-END*/;
+  </script>
 
+  <script defer src="compiled/vendor/react.production.min.js"></script>
+  <script defer src="compiled/vendor/react-dom.production.min.js"></script>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="home-page">
-    <!-- Header and navigation -->
-    <header>
-      <div class="container header-container">
-        <div class="logo">
-          <!-- Main logo for the site -->
-          <a href="https://www.ecobrandjapan.com">
-            <!-- Use the trimmed logo with less white space around the text -->
-            <!-- Use the moderately cropped logo; CSS will control the size to avoid excessive white space -->
-            <img src="images/EBJ-Logo-cropped-2.png" alt="Eco Brand Japan logo" />
-          </a>
-        </div>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="navbar">☰</button>
-        <nav id="navbar">
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#values">Values</a></li>
-            <li><a href="#offers">Services</a></li>
-            <li><a href="/career/">Career</a></li>
-            <li class="lang-switch"><a href="/ja/"><span class="desktop-label">日本語</span><span class="mobile-label">JP</span></a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <!-- Hero section with background image from Marketing folder -->
-      <section class="hero hero-home">
-        <picture class="hero-bg-media">
-          <img
-            class="hero-bg"
-            src="images/8.jpg"
-            srcset="images/8.jpg 1280w, images/8.jpg 1920w"
-            sizes="100vw"
-            alt="Flat lay of luxury handbags"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
-        </picture>
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="container hero-content">
-          <div class="hero-intro">
-            <span class="hero-tag">Circular luxury from Tokyo</span>
-            <h1>Sustainable Luxury, Curated With Intention</h1>
-            <p>
-              We source and reintroduce rare designer handbags—performing light refreshes so they can continue their storied journeys authentically, responsibly and beautifully.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-outline" href="#values">Explore Our Promise</a>
-            </div>
-            <ul class="hero-highlights">
-              <li><span>12+</span> years curating iconic maisons</li>
-              <li><span>40k</span> authenticated pieces circulated</li>
-              <li><span>Global</span> network of trusted partners</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- About section -->
-      <section id="about" class="about">
-        <div class="container about-container">
-          <div class="about-text">
-            <span class="section-tag">Who We Are</span>
-            <h2>Crafting the Next Chapter for Luxury Icons</h2>
-            <p>
-              Founded in 2012, Eco Brand Japan sources and curates handbags and accessories from maisons like Hermès, Chanel and Louis Vuitton. Each piece is handled with reverence for its craftsmanship and a commitment to longevity within the circular economy.
-            </p>
-            <p>
-              Our multilingual specialists authenticate, lightly revive and prepare every item before it meets its next guardian. The result is a collection that marries rarity with responsibility, inviting you to invest in fashion history with confidence.
-            </p>
-            <div class="about-actions">
-              <a class="button button-outline" href="#gallery">View Highlights</a>
-            </div>
-          </div>
-          <div class="about-visual">
-            <picture class="about-image-media">
-              <img
-                src="images/IMG_3435.jpg"
-                srcset="images/IMG_3435.jpg 800w, images/IMG_3435.jpg 1200w"
-                sizes="(min-width: 1100px) 44vw, (min-width: 768px) 70vw, 100vw"
-                alt="Team member curating handbags"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-            <div class="about-highlights">
-              <div class="highlight-card">
-                <span class="highlight-number">100%</span>
-                <p>Specialist-authenticated inventory</p>
-              </div>
-              <div class="highlight-card">
-                <span class="highlight-number">24h</span>
-                <p>Average turnaround for supplier onboarding</p>
-              </div>
-              <div class="highlight-card">
-                <span class="highlight-number">7</span>
-                <p>Languages spoken across our concierge team</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Values section -->
-      <section id="values" class="values">
-        <div class="container values-container">
-          <span class="section-tag">Our Promise</span>
-          <h2>Principles That Guide Every Partnership</h2>
-          <div class="values-grid">
-            <article class="value">
-              <h3>Authenticity Assured</h3>
-              <p>
-                Expert authenticators, proprietary checkpoints and transparent reporting ensure each item and description is worthy of your trust.
-              </p>
-            </article>
-            <article class="value">
-              <h3>Sustainable Stewardship</h3>
-              <p>
-                We promote circularity, from gentle care and cleaning to sustainable packaging, ensuring luxury continues to create positive impact for generations to come.
-              </p>
-            </article>
-            <article class="value">
-              <h3>Respectful Relationships</h3>
-              <p>
-                We build long-term partnerships rooted in clarity, integrity and care for the people who entrust us with their collections.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services/Offers section -->
-      <section id="offers" class="offers">
-        <div class="container offers-container">
-          <div class="offers-header">
-            <span class="section-tag">How We Work</span>
-            <h2>Tailored Programmes for Suppliers &amp; Distributors</h2>
-            <p>
-              Whether you bring us collections or curate them for clients, our team orchestrates every detail, from valuation to storytelling.
-            </p>
-          </div>
-          <div class="offers-grid">
-            <article class="offer">
-              <h3>For Suppliers</h3>
-              <ul>
-                <li>Upfront purchasing with swift payment cycles.</li>
-                <li>In-house photography and catalogues ready for market.</li>
-                <li>Light refresh, authentication and logistics handled end-to-end.</li>
-              </ul>
-            </article>
-            <article class="offer">
-              <h3>For Distributors</h3>
-              <ul>
-                <li>Daily refreshed catalogue across iconic brands and categories.</li>
-                <li>Personalised curation and merchandising insights.</li>
-                <li>Consignment options for flagship boutiques and marketplaces.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Gallery section to showcase product highlights -->
-      <section id="gallery" class="gallery">
-        <div class="container gallery-container">
-          <div class="gallery-header">
-            <span class="section-tag">Highlights</span>
-            <h2>Stories Preserved in Every Detail</h2>
-            <p>
-              Explore a glimpse of the pieces we carefully reintroduce to collectors and connoisseurs worldwide.
-            </p>
-          </div>
-          <div class="gallery-grid">
-            <figure class="gallery-item">
-              <picture>
-                <img
-                  src="images/IMG_0758-Edit.jpg"
-                  srcset="images/IMG_0758-Edit.jpg 800w, images/IMG_0758-Edit.jpg 1200w"
-                  sizes="(min-width: 1200px) 32vw, (min-width: 768px) 48vw, 100vw"
-                  alt="Gray Hermès Birkin bag"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-            <figure class="gallery-item">
-              <picture>
-                <img
-                  src="images/IMG_9065.jpg"
-                  srcset="images/IMG_9065.jpg 800w, images/IMG_9065.jpg 1200w"
-                  sizes="(min-width: 1200px) 32vw, (min-width: 768px) 48vw, 100vw"
-                  alt="Black Saint Laurent bag"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-            <figure class="gallery-item">
-              <picture>
-                <img
-                  src="images/lady_dior.jpg"
-                  srcset="images/lady_dior.jpg 800w, images/lady_dior.jpg 1200w"
-                  sizes="(min-width: 1200px) 32vw, (min-width: 768px) 48vw, 100vw"
-                  alt="Lady Dior bag"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-            <figure class="gallery-item">
-              <picture>
-                <img
-                  src="images/pink_chanel.jpg"
-                  srcset="images/pink_chanel.jpg 800w, images/pink_chanel.jpg 1200w"
-                  sizes="(min-width: 1200px) 32vw, (min-width: 768px) 48vw, 100vw"
-                  alt="Pink Chanel Classic Flap bag"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-            <figure class="gallery-item">
-              <picture>
-                <img
-                  src="images/pink_gucci.jpg"
-                  srcset="images/pink_gucci.jpg 800w, images/pink_gucci.jpg 1200w"
-                  sizes="(min-width: 1200px) 32vw, (min-width: 768px) 48vw, 100vw"
-                  alt="Gucci Marmont bag and LV Camera bag"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-            <figure class="gallery-item">
-              <picture>
-                <img
-                  src="images/pink_saigon.jpg"
-                  srcset="images/pink_saigon.jpg 800w, images/pink_saigon.jpg 1200w"
-                  sizes="(min-width: 1200px) 32vw, (min-width: 768px) 48vw, 100vw"
-                  alt="Goyard Saigon bags"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-banner">
-        <div class="container cta-banner-content">
-          <div>
-            <h2>Let&#39;s Shape the Future of Sustainable Luxury</h2>
-            <p>
-              Join the Eco Brand Japan team to craft memorable client experiences and advance circular luxury.
-            </p>
-          </div>
-          <div class="cta-actions">
-            <a class="button" href="/career/">View Careers</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container footer-container">
-        <ul class="social-links" aria-label="Follow Eco Brand Japan">
-          <li>
-            <a
-              class="social-link social-link--instagram"
-              href="https://www.instagram.com/brandcoparis/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <span class="sr-only">Instagram</span>
-              <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                <path
-                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm12 1a1 1 0 1 1-1 1 1 1 0 0 1 1-1ZM12 7.5A4.5 4.5 0 1 1 7.5 12 4.51 4.51 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Z"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              class="social-link social-link--facebook"
-              href="https://www.facebook.com/brandcoparis"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <span class="sr-only">Facebook</span>
-              <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                <path
-                  d="M12 2.04a10 10 0 0 0-1.5 19.87v-6.99H8.9v-3h1.6V9.41c0-1.57.93-3.88 3.64-3.88 1.55 0 2.23.12 2.6.18v2.9h-1.7c-1.06 0-1.4.51-1.4 1.22v1.49h3.07l-.4 3H13v6.99A10 10 0 0 0 12 2.04Z"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              class="social-link social-link--linkedin"
-              href="https://www.linkedin.com/company/eco-brand-japan/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <span class="sr-only">LinkedIn</span>
-              <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                <path
-                  d="M4.98 3.5a2.5 2.5 0 1 1-4.96 0 2.5 2.5 0 0 1 4.96 0ZM.5 8.5h4.96v15H.5v-15Zm7 0h4.74v2.1h.07c.66-1.24 2.28-2.54 4.7-2.54 4.99 0 5.94 3.29 5.94 7.56V23.5h-4.96v-6.93c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.79-2.65 3.64v7.06H7.5v-15Z"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              class="social-link social-link--rakuten"
-              href="https://www.rakuten.co.jp/brandcoparis"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Rakuten"
-            >
-              <span class="sr-only">Rakuten</span>
-              <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                <path
-                  d="M7 5h6.4a3.6 3.6 0 0 1 0 7.2H9.4V19H7V5Zm2.4 2v3.2h4a1.6 1.6 0 1 0 0-3.2h-4Zm4 6.2 3.6 5.8h-2.8l-3.5-5.6V13.2h1.5a1.9 1.9 0 0 1 1.2.4Z"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              class="social-link social-link--mercari"
-              href="https://jp.mercari.com/shops/profile/Fv7W5YWA78UVv8mjcHr4RM"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Mercari"
-            >
-              <span class="sr-only">Mercari</span>
-              <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                <path
-                  d="M6 5h2.6l3.4 5 3.4-5H18v14h-2.4v-8.2l-3 4.4h-1.2l-3-4.4V19H6V5Z"
-                ></path>
-              </svg>
-            </a>
-          </li>
-        </ul>
-        <p>&copy; 2025 Eco Brand Japan. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+  <script defer src="compiled/src/hooks.js"></script>
+  <script defer src="compiled/src/Nav.js"></script>
+  <script defer src="compiled/src/Hero.js"></script>
+  <script defer src="compiled/src/Maisons.js"></script>
+  <script defer src="compiled/src/Statement.js"></script>
+  <script defer src="compiled/src/Principles.js"></script>
+  <script defer src="compiled/src/Gallery.js"></script>
+  <script defer src="compiled/src/Closing.js"></script>
+  <script defer src="compiled/src/Footer.js"></script>
+  <script defer src="compiled/src/App.js"></script>
+</body>
 </html>
