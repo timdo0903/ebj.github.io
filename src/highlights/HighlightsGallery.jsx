@@ -32,7 +32,13 @@ function HighlightsGallery() {
         {items.map((t, i) => (
           <window.FadeUp className={`hl-card ${t.w}`} key={t.id} delay={Math.min(i * 40, 320)}>
             <div className="img">
-              <img src={t.img} alt={t.pieceText} loading="lazy" />
+              <img
+                src={t.img}
+                alt={t.pieceText}
+                loading={num === '01' && i < 3 ? 'eager' : 'lazy'}
+                decoding="async"
+                fetchPriority={num === '01' && i < 3 ? 'high' : 'auto'}
+              />
               <div className="corner">{t.tag}</div>
               <div className="num">{t.num}</div>
             </div>

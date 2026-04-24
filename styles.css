@@ -1119,7 +1119,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .hero-cta-row { flex-wrap: wrap; gap: 20px; }
   .gallery-sub,
   .gallery-footer,
-  .foot-bot { flex-direction: column; align-items: flex-start; }
+  .foot-bot { flex-direction: column; align-items: flex-start; gap: 8px; }
   .statement-meta { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
@@ -1156,6 +1156,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .principles,
   .closing,
   .foot { padding-left: 16px; padding-right: 16px; }
+  .foot-bot {
+    gap: 6px;
+    padding-top: 24px;
+    font-size: 10px;
+    line-height: 1.65;
+    letter-spacing: .14em;
+  }
+  .foot-bot div {
+    max-width: 100%;
+  }
   .principle { min-height: 0; padding: 36px 24px; }
   .gallery-sub p,
   .closing-sub p { font-size: 17px; }
