@@ -1,0 +1,14 @@
+"use strict";
+
+function CareersApp() {
+  const [tweaks, setTweaks] = React.useState(window.TWEAKS);
+  React.useEffect(() => {
+    const root = document.documentElement;
+    root.setAttribute('data-theme', tweaks.theme);
+    root.setAttribute('data-accent', tweaks.accent);
+    root.setAttribute('data-motion', tweaks.motion);
+  }, [tweaks]);
+  return React.createElement(React.Fragment, null, React.createElement(window.NavCareers, null), React.createElement(window.CareersHero, null), React.createElement(window.CareersIntro, null), React.createElement(window.OpenRoles, null), React.createElement(window.Footer, null));
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(CareersApp, null));

@@ -1,0 +1,192 @@
+"use strict";
+
+window.JOBS = {
+  'inventory-logistics-specialist': {
+    title: React.createElement(React.Fragment, null, "Inventory & ", React.createElement("em", null, "Logistics"), " Specialist"),
+    plainTitle: 'Inventory & Logistics Specialist',
+    type: 'Full-time',
+    location: 'Tokyo, Japan',
+    department: 'Operations',
+    commitment: 'Permanent · On-site',
+    status: 'open',
+    statusNote: 'Applications are currently open. Submit your resume below to be considered.',
+    intro: "The Inventory & Logistics Specialist manages product movement from authentication through shipment. You will collaborate across teams to maintain accurate records, protect product quality and deliver exceptional customer experiences.",
+    formUrl: 'https://b5i9cfx0.forms.app/form/696732c6d196b60002bce481',
+    sections: [{
+      id: 'responsibilities',
+      num: '02',
+      title: React.createElement(React.Fragment, null, "Main ", React.createElement("em", null, "duties"), " & responsibilities."),
+      items: ['Authenticate luxury handbags and accessories using brand-specific standards.', 'Investigate questionable items and stay current on counterfeit detection trends.', 'Record and reconcile inventory data, resolving discrepancies quickly.', 'Manage product flow, including returns, damages and stock adjustments.', 'Maintain clean, organised storage areas that support efficient picking.', 'Coordinate daily transfers between departments, warehouses and partners.', 'Prepare accurate domestic and international shipping documentation and labels.', 'Monitor courier performance, addressing delivery, customs or compliance issues.', 'Track freight spend and recommend cost-saving improvements.', 'Inspect inbound and outbound items to uphold quality and listing accuracy.', 'Maintain detailed inventory and shipment records, producing timely reports.', 'Share status updates with purchasing, sales and customer service teams.'],
+      note: 'This overview reflects core responsibilities. Additional duties may be assigned as our business evolves.'
+    }, {
+      id: 'requirements',
+      num: '03',
+      title: React.createElement(React.Fragment, null, "Qualifications & ", React.createElement("em", null, "requirements"), "."),
+      items: ['Proven experience in supply chain management, preferably in secondhand luxury goods.', 'Strong organisation, accuracy and attention to detail.', 'Proficiency in Microsoft Office and inventory tools · ERP (SAP), Notion and Slack a plus.', 'Ability to prioritise multiple tasks in a fast-paced environment.', 'Fluent English communication; JLPT N3 or above is a plus.', "Post-college or university degree (Bachelor's) is required.", 'Valid Japan work visa with at least one year of eligibility remaining.']
+    }, {
+      id: 'preferred',
+      num: '04',
+      title: React.createElement(React.Fragment, null, "Preferred ", React.createElement("em", null, "experience"), "."),
+      items: ['Background in luxury consignment or resale.', 'Luxury authentication certifications.', 'Understanding of international shipping procedures and customs.']
+    }, {
+      id: 'physical',
+      num: '05',
+      title: React.createElement(React.Fragment, null, "Physical ", React.createElement("em", null, "requirements"), "."),
+      body: 'Comfortable standing, moving and lifting 15–20 kg as needed.'
+    }, {
+      id: 'compensation',
+      num: '06',
+      title: React.createElement(React.Fragment, null, "Compensation & ", React.createElement("em", null, "benefits"), "."),
+      items: ['Performance bonus eligibility after one year.', 'Reimbursed commuter costs from home to office.', 'Salary range of 270,000–300,000 yen with annual performance reviews and merit-based increases.']
+    }, {
+      id: 'eligibility',
+      num: '07',
+      title: React.createElement(React.Fragment, null, "What you ", React.createElement("em", null, "need to know"), "."),
+      items: ['Eligibility: Working Holiday Visa holders are not eligible to apply.', 'Visa renewal sponsorship after six months of proven performance.']
+    }, {
+      id: 'interview',
+      num: '08',
+      title: React.createElement(React.Fragment, null, "Interview ", React.createElement("em", null, "process"), "."),
+      items: ['Video conference (initial screen).', 'In-person interview.', 'Job offer.'],
+      note: 'Applicants living in Tokyo will be given priority. If you plan to relocate to the Greater Tokyo Area, please mention it in your cover letter.'
+    }]
+  },
+  'product-photographer': {
+    title: React.createElement(React.Fragment, null, "Product ", React.createElement("em", null, "Photographer")),
+    plainTitle: 'Product Photographer',
+    type: 'Full-time',
+    location: 'Tokyo, Japan',
+    department: 'Creative',
+    commitment: 'Permanent · On-site',
+    status: 'open',
+    statusNote: 'Applications are open for this role. Share your portfolio and resume below.',
+    intro: "As a Product Photographer you will shape how our brand is experienced visually. You'll document a wide range of luxury handbags and accessories, deliver market-ready imagery and collaborate on creative storytelling for campaigns featuring models.",
+    formUrl: 'https://b5i9cfx0.forms.app/form/69674357d196b60002bd0596',
+    sections: [{
+      id: 'responsibilities',
+      num: '02',
+      title: React.createElement(React.Fragment, null, "Key ", React.createElement("em", null, "responsibilities"), "."),
+      items: ['Capture and edit high-quality product images for global marketplaces.', 'Produce platform-ready assets optimised for Asia, the United States and Europe.', 'Lead model photoshoots that align with marketing objectives.', 'Partner with the marketing team on creative planning and execution.', 'Ensure visual consistency and brand alignment across all deliverables.', 'Manage a high-volume workflow, meeting productivity and quality targets.', 'Organise product cataloguing and digital archiving.', 'Support other departments during non-peak periods when needed.'],
+      note: 'This overview reflects core responsibilities. Additional duties may be assigned as our business evolves.'
+    }, {
+      id: 'requirements',
+      num: '03',
+      title: React.createElement(React.Fragment, null, "Qualifications & ", React.createElement("em", null, "requirements"), "."),
+      items: ['Proven experience in product and commercial photography.', 'Knowledge of the luxury and fashion industry is a plus.', 'Background in e-commerce photography for online sales channels.', 'Expertise in studio lighting and professional photography equipment.', 'Advanced Adobe Creative Suite skills, especially Photoshop and Lightroom.', 'Comfort working within Apple operating systems and workflows.', 'Ability to work independently with minimal supervision while upholding high standards.', 'Portfolio demonstrating product and commercial work.', 'Fluent English communication; Japanese language skills are advantageous.', 'Valid Japanese work visa with at least one year of eligibility remaining.', "Bachelor's degree in Photography, Design or a related field preferred."]
+    }, {
+      id: 'offer',
+      num: '04',
+      title: React.createElement(React.Fragment, null, "What we ", React.createElement("em", null, "offer"), "."),
+      items: ['Impact within a leading company in the second-hand luxury market.', 'Exposure to audiences across Asia, the United States and Europe.', 'A collaborative, creative and professional work environment.', 'Career growth opportunities within a fast-expanding international business.']
+    }, {
+      id: 'compensation',
+      num: '05',
+      title: React.createElement(React.Fragment, null, "Compensation & ", React.createElement("em", null, "benefits"), "."),
+      items: ['Performance bonus eligibility after one year.', 'Reimbursed commuter costs from home to office.', 'Salary range of 270,000–300,000 yen with annual performance reviews and merit-based increases.']
+    }, {
+      id: 'eligibility',
+      num: '06',
+      title: React.createElement(React.Fragment, null, "What you ", React.createElement("em", null, "need to know"), "."),
+      items: ['Eligibility: Working Holiday Visa holders are not eligible to apply.', 'Visa renewal sponsorship after six months of proven performance.']
+    }, {
+      id: 'interview',
+      num: '07',
+      title: React.createElement(React.Fragment, null, "Interview ", React.createElement("em", null, "process"), "."),
+      items: ['Video conference (initial screen).', 'In-person interview.', 'Job offer.'],
+      note: 'Applicants living in Tokyo will be given priority. If you plan to relocate to the Greater Tokyo Area, please mention it in your cover letter.'
+    }]
+  },
+  'buyers-position': {
+    title: React.createElement(React.Fragment, null, "Luxury Handbag & ", React.createElement("em", null, "Accessories"), " Buyer"),
+    plainTitle: 'Luxury Handbag and Accessories Buyer',
+    type: 'Full-time',
+    location: 'Tokyo, Japan',
+    department: 'Buying',
+    commitment: 'Permanent · On-site + travel',
+    status: 'closed',
+    statusNote: 'This position has been filled and we are not accepting new applications at this time.',
+    intro: "Join our Buying team in Tokyo and report to the Head of Buying. You will build seasonal buy plans, source inventory through trusted marketplace partners and ensure every purchase aligns to the customer needs and commercial goals of Eco Brand Japan.",
+    sections: [{
+      id: 'personality',
+      num: '02',
+      title: React.createElement(React.Fragment, null, "Your ", React.createElement("em", null, "personality"), "."),
+      body: "We're searching for business-minded fashion enthusiasts with a sharp eye for trends. Success in this role comes from balancing an analytical, data-driven mindset with confident communication and relationship building, both locally and internationally."
+    }, {
+      id: 'requirements',
+      num: '03',
+      title: React.createElement(React.Fragment, null, "What we're ", React.createElement("em", null, "looking for"), "."),
+      items: ['Exceptional organisation and multi-tasking across a fast-moving schedule.', 'Advanced Microsoft Office skills with a focus on Excel data analysis; SAP a plus.', 'Positive, energetic outlook with excellent verbal and written communication.', 'Ability to suggest data-informed action plans with creativity and clarity.', 'Comfort receiving regular feedback and iterating quickly.', 'Experience thriving in changing environments with proven self-initiative.', 'Collaborative mindset with the independence to own your workload.', 'Availability to travel domestically and internationally on a regular basis.', 'Confident negotiator with persuasive storytelling and research-driven insights.', 'Detail-oriented, research-focused approach and luxury brand knowledge (nice to have).', 'Valid Japan work visa with at least one year of eligibility remaining.']
+    }, {
+      id: 'duties',
+      num: '04',
+      title: React.createElement(React.Fragment, null, "Main ", React.createElement("em", null, "duties"), " & responsibilities."),
+      items: ['Master our product database, pricing architecture and compliance standards.', 'Research emerging trends and resale pricing to inform buying strategies.', 'Participate in domestic and international marketplaces, including live bidding.', 'Expand sourcing opportunities by nurturing new and existing partnerships.', 'Authenticate handbags, accessories, apparel and more to protect brand trust.', 'Develop business relationships with local companies and suppliers.', 'Support physical review of inventory, including standing, bending, and lifting.'],
+      note: 'This overview reflects core responsibilities. Additional duties may be assigned as our business evolves.'
+    }, {
+      id: 'hours',
+      num: '05',
+      title: React.createElement(React.Fragment, null, "Hours & ", React.createElement("em", null, "travel"), "."),
+      body: 'Full-time, 40-hour role with regular travel within and beyond Tokyo. Office schedule: Monday–Friday, 9:30–18:30. Travel may require weekend work with compensatory days off to maintain a five-day work week. The six-month probation includes two months of office training, followed by four months of travel across Tokyo and other domestic regions depending on performance.'
+    }, {
+      id: 'education',
+      num: '06',
+      title: React.createElement(React.Fragment, null, "Education & ", React.createElement("em", null, "language"), "."),
+      items: ["Bachelor's degree or higher.", 'Japanese language proficiency of JLPT N2 or above.', 'Fluent or native English communication.', 'Mandarin, Cantonese or Korean at business level is highly valued.']
+    }, {
+      id: 'compensation',
+      num: '07',
+      title: React.createElement(React.Fragment, null, "Compensation & ", React.createElement("em", null, "benefits"), "."),
+      items: ['Commission bonus eligibility after one year, paid monthly based on results.', 'Reimbursed commuter costs from home to office.', 'Company-covered travel expenses for assignments outside Greater Tokyo, including transport, hotels and meals.', 'Regular domestic and international travel opportunities after probation, up to 30–40% of time.']
+    }, {
+      id: 'eligibility',
+      num: '08',
+      title: React.createElement(React.Fragment, null, "What you ", React.createElement("em", null, "need to know"), "."),
+      items: ['Eligibility: Working Holiday Visa holders are not eligible to apply.', 'Visa renewal sponsorship after six months of proven performance.']
+    }, {
+      id: 'interview',
+      num: '09',
+      title: React.createElement(React.Fragment, null, "Interview ", React.createElement("em", null, "process"), "."),
+      items: ['Video conference (initial screen).', 'In-person interview.', 'Job offer.'],
+      note: 'Applicants living in Tokyo will be given priority. If you plan to relocate to the Greater Tokyo Area, please mention it in your cover letter.'
+    }]
+  },
+  'live-seller-social-media-operator': {
+    title: React.createElement(React.Fragment, null, "Live Seller & ", React.createElement("em", null, "Social Media"), " Operator"),
+    plainTitle: 'Live Seller & Social Media Operator',
+    type: 'Part-time',
+    location: 'Tokyo, Japan',
+    department: 'Marketing',
+    commitment: 'Part-time · On-site',
+    status: 'closed',
+    statusNote: 'This role has been filled and applications are currently closed.',
+    intro: "As a Live Seller & Social Media Operator you will be the on-camera face and behind-the-scenes voice of Eco Brand Japan. You will energise livestream audiences, nurture our online community and collaborate with marketing and operations teams to spotlight pre-loved luxury pieces every day.",
+    sections: [{
+      id: 'responsibilities',
+      num: '02',
+      title: React.createElement(React.Fragment, null, "Key ", React.createElement("em", null, "responsibilities"), "."),
+      items: ['Host live selling sessions that educate, entertain and convert viewers into loyal customers.', 'Present, explain and style pre-loved luxury bags and accessories with clear on-camera storytelling.', 'Facilitate interactive chat conversations, respond to questions and highlight purchase incentives in real time.', 'Coordinate with operations to process orders, confirm stock and prepare shipments following each show.', 'Plan weekly content calendars that promote livestreams, new arrivals and brand campaigns across Instagram, TikTok and other key channels.', 'Create and edit short-form videos, product spotlights and behind-the-scenes stories optimised for each platform.', 'Publish content on schedule, uphold brand voice guidelines and ensure captions, hashtags and links drive measurable results.', 'Monitor performance analytics, report insights and propose experiments that grow audience reach and sales.', 'Follow all company compliance rules.'],
+      note: 'This overview reflects core responsibilities. Additional duties may evolve with business needs.'
+    }, {
+      id: 'requirements',
+      num: '03',
+      title: React.createElement(React.Fragment, null, "Qualifications & ", React.createElement("em", null, "requirements"), "."),
+      items: ['Fluent English communication skills with confidence speaking on camera; conversational Japanese is a plus.', 'Previous experience in livestream selling, social media management or digital content creation.', 'Experience working in brand representation and customer engagement.', 'Comfort using video editing and design tools such as CapCut, Canva or equivalent.', 'Knowledge of social media analytics and content scheduling tools.', 'Strong interest in luxury fashion brands and the global resale market.', 'Organised self-starter who can manage multiple deadlines across shows, shoots and publishing schedules.', 'Collaborative mindset with the ability to partner with creative, marketing and operations teams.', 'Valid Visa to work in Japan; domestic applicants only.']
+    }, {
+      id: 'offer',
+      num: '04',
+      title: React.createElement(React.Fragment, null, "What we ", React.createElement("em", null, "offer"), "."),
+      items: ['Comprehensive livestream and social media training led by experienced specialists.', 'Performance incentives tied to sold items and campaign milestones.', 'Hands-on exposure to an international luxury e-commerce environment.', 'A creative, collaborative team culture where individuality is celebrated.']
+    }, {
+      id: 'eligibility',
+      num: '05',
+      title: React.createElement(React.Fragment, null, "What you ", React.createElement("em", null, "need to know"), "."),
+      items: ['Typical schedule: 5 hours per day, 3–5 days per week; probation period applies.', 'Eligibility: Working Holiday Visa holders are not eligible to apply.']
+    }, {
+      id: 'interview',
+      num: '06',
+      title: React.createElement(React.Fragment, null, "Interview ", React.createElement("em", null, "process"), "."),
+      items: ['Video conference (initial screen).', 'In-person interview.', 'Job offer.'],
+      note: 'Applicants living in Tokyo will be given priority. If you plan to relocate to the Greater Tokyo Area, please mention it in your cover letter.'
+    }]
+  }
+};

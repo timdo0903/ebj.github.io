@@ -1,0 +1,41 @@
+// Curated catalogue, organised into two sections:
+//   - studio: in-house product and still-life photography
+//   - editorial: styled model/context photography
+// Widths (w-3/w-4/w-6) create editorial rhythm in the 12-col grid.
+window.HIGHLIGHTS_DATA = {
+  studio: [
+    { id: 'n024', maison: 'Dior', piece: 'Lady Dior', pieceText: 'Dior Lady Dior', tag: 'Authenticated', num: 'N-024', img: 'images/lady-dior.jpg', w: 'w-4' },
+    { id: 'n031', maison: 'Hermes', piece: 'Birkin 35', pieceText: 'Hermes Birkin 35', tag: 'Authenticated', num: 'N-031', img: 'images/hermes-birkin.jpg', w: 'w-4' },
+    { id: 'n017', maison: 'Louis Vuitton', piece: 'Trunks', pieceText: 'Louis Vuitton Trunks', tag: 'Authenticated', num: 'N-017', img: 'catalog/editorial-chocolate-bar.jpg', w: 'w-4' },
+    { id: 'n056', maison: 'Chanel', piece: 'Double Flap', pieceText: 'Chanel Double Flap', tag: 'Authenticated', num: 'N-056', img: 'images/pink-chanel.jpg', w: 'w-4' },
+    { id: 'n068', maison: 'Chanel', piece: 'Classic Double Flap with Accessories', pieceText: 'Chanel Classic Double Flap with Accessories', tag: 'Authenticated', num: 'N-068', img: 'images/hero-flatlay.jpg', w: 'w-4' },
+    { id: 'n087', maison: 'Saint Laurent', piece: 'Monogram Bag', pieceText: 'Saint Laurent Monogram Bag', tag: 'Authenticated', num: 'N-087', img: 'images/saint-laurent.jpg', w: 'w-4' },
+    { id: 'n093', maison: 'Goyard', piece: 'Saigon', pieceText: 'Goyard Saigon', tag: 'Authenticated', num: 'N-093', img: 'images/goyard.jpg', w: 'w-3' },
+    { id: 'n102', maison: 'Gucci x Louis Vuitton', piece: 'Camera Bags', pieceText: 'Gucci x Louis Vuitton Camera Bags', tag: 'Authenticated', num: 'N-102', img: 'images/gucci-lv.jpg', w: 'w-3' },
+    { id: 'n081', maison: 'Saint Laurent', piece: 'Cassandre Envelope Chain', pieceText: 'Saint Laurent Cassandre Envelope Chain', tag: 'Authenticated', num: 'N-081', img: 'images/team-curating.jpg', w: 'w-3' },
+    { id: 'n180', maison: 'Louis Vuitton', piece: 'Pochette Accessories Mini', pieceText: 'Louis Vuitton Pochette Accessories Mini', tag: 'Authenticated', num: 'N-180', img: 'catalog/editorial-pink-vanity.jpg', w: 'w-3' },
+    { id: 'n156', maison: 'Hermes', piece: 'Kelly Bags', pieceText: 'Hermes Kelly Bags', tag: 'Authenticated', num: 'N-156', img: 'catalog/styled-02.jpg', w: 'w-6' },
+    { id: 'n164', maison: 'Hermes', piece: 'Kelly Bags', pieceText: 'Hermes Kelly Bags', tag: 'Authenticated', num: 'N-164', img: 'catalog/styled-03.jpg', w: 'w-6' },
+    { id: 'n074', maison: 'Chanel', piece: 'Chocolate Bar', pieceText: 'Chanel Chocolate Bar', tag: 'Authenticated', num: 'N-074', img: 'catalog/editorial-azur-blooms.jpg', w: 'w-4' },
+    { id: 'n109', maison: 'Chanel', piece: 'Vanity Case', pieceText: 'Chanel Vanity Case', tag: 'Authenticated', num: 'N-109', img: 'catalog/editorial-lv-trunks.jpg', w: 'w-4' },
+    { id: 'n127', maison: 'Chanel', piece: 'Premiere watches', pieceText: 'Chanel Premiere watches', tag: 'Authenticated', num: 'N-127', img: 'catalog/iconics-01.jpg', w: 'w-3' },
+    { id: 'n188', maison: 'Chanel', piece: 'Premiere watches', pieceText: 'Chanel Premiere watches', tag: 'Authenticated', num: 'N-188', img: 'catalog/iconics-02.jpg', w: 'w-4' },
+    { id: 'n196', maison: 'Chanel', piece: 'Premiere watches', pieceText: 'Chanel Premiere watches', tag: 'Authenticated', num: 'N-196', img: 'catalog/iconics-03.jpg', w: 'w-4' },
+    { id: 'n204', maison: 'Hermes', piece: 'Kelly Flag', pieceText: 'Hermes Kelly Flag', tag: 'Authenticated', num: 'N-204', img: 'catalog/styled-04.jpg', w: 'w-4' },
+  ],
+  editorial: [
+    { id: 'n051', maison: 'Louis Vuitton', piece: 'Leopard Zippy Wallet', pieceText: 'Louis Vuitton Leopard Zippy Wallet', tag: 'Styled', num: 'N-051', img: 'catalog/portrait-chanel-sakura.jpg', w: 'w-4' },
+    { id: 'n065', maison: 'Chanel', piece: 'Half Moon Chain', pieceText: 'Chanel Half Moon Chain', tag: 'Styled', num: 'N-065', img: 'catalog/portrait-leopard-wallet.jpg', w: 'w-4' },
+    { id: 'n118', maison: 'Louis Vuitton', piece: 'Takashi Murakami Pochette Accessories', pieceText: 'Louis Vuitton Takashi Murakami Pochette Accessories', tag: 'Styled', num: 'N-118', img: 'catalog/portrait-sakura.jpg', w: 'w-6' },
+    { id: 'n120', maison: 'Bottega Veneta', piece: 'The Pouch', pieceText: 'Bottega Veneta The Pouch', tag: 'Styled', num: 'N-120', img: 'catalog/kimono-01.jpg', w: 'w-3' },
+    { id: 'n129', maison: 'Gucci', piece: 'Dionysus bag', pieceText: 'Gucci Dionysus bag', tag: 'Styled', num: 'N-129', img: 'catalog/old-money-01.jpg', w: 'w-4' },
+    { id: 'n138', maison: 'Chanel', piece: 'Berry Crossbody', pieceText: 'Chanel Berry Crossbody', tag: 'Styled', num: 'N-138', img: 'catalog/old-money-02.jpg', w: 'w-4' },
+    { id: 'n126', maison: 'Gucci x Chanel', piece: 'Bamboo Top x CC Cuba Flap', pieceText: 'Gucci x Chanel Bamboo Top x CC Cuba Flap', tag: 'Styled', num: 'N-126', img: 'catalog/kimono-02.jpg', w: 'w-4' },
+    { id: 'n132', maison: 'Louis Vuitton', piece: 'Pochette Accessories Mini', pieceText: 'Louis Vuitton Pochette Accessories Mini', tag: 'Styled', num: 'N-132', img: 'catalog/kimono-03.jpg', w: 'w-4' },
+    { id: 'n140', maison: 'Gucci', piece: 'Dionysus bag', pieceText: 'Gucci Dionysus bag', tag: 'Styled', num: 'N-140', img: 'catalog/kimono-04.jpg', w: 'w-4' },
+    { id: 'n148', maison: 'Dior', piece: 'Lady Dior', pieceText: 'Dior Lady Dior', tag: 'Styled', num: 'N-148', img: 'catalog/old-money-03.jpg', w: 'w-4' },
+    { id: 'n172', maison: 'Gucci', piece: 'GG Should Bag', pieceText: 'Gucci GG Should Bag', tag: 'Styled', num: 'N-172', img: 'catalog/old-money-04.jpg', w: 'w-4' },
+    { id: 'n212', maison: 'Hermes', piece: 'Bangle', pieceText: 'Hermes Bangle', tag: 'Styled', num: 'N-212', img: 'catalog/kimono-05.jpg', w: 'w-4' },
+    { id: 'n220', maison: 'Chanel', piece: 'Berry Crossbody', pieceText: 'Chanel Berry Crossbody', tag: 'Styled', num: 'N-220', img: 'catalog/old-money-05.jpg', w: 'w-4' },
+  ],
+};
