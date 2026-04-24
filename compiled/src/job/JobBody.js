@@ -23,7 +23,11 @@ function JobBody({
   }, React.createElement("aside", null, toc.map(t => React.createElement("a", {
     key: t.id,
     href: `#${t.id}`
-  }, "\xA7 ", t.num, " \xB7 ", t.label))), React.createElement("div", null, React.createElement("div", {
+  }, React.createElement("span", {
+    className: "job-toc-num"
+  }, '\u00a7', " ", t.num), React.createElement("span", {
+    className: "job-toc-label"
+  }, t.label)))), React.createElement("div", null, React.createElement("div", {
     className: "job-section",
     id: "overview"
   }, React.createElement("div", {
