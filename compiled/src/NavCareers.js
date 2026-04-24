@@ -49,7 +49,7 @@ function NavCareers() {
   }, React.createElement("div", {
     className: "brand"
   }, React.createElement("a", {
-    href: isJp ? '/index-jp.html' : '/',
+    href: isJp ? '/ja/' : '/',
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -75,7 +75,7 @@ function NavCareers() {
     href: "/",
     className: !isJp ? 'active' : undefined
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/index-jp.html",
+    href: "/ja/",
     className: isJp ? 'active' : undefined
   }, "JP")), React.createElement("button", {
     type: "button",
@@ -104,7 +104,7 @@ function NavCareers() {
     className: !isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/index-jp.html",
+    href: "/ja/",
     className: isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "JP")))));

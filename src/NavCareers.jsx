@@ -29,7 +29,7 @@ function NavCareers() {
   return (
     <nav className="nav" data-scrolled={scrolled} data-open={open}>
       <div className="brand">
-        <a href={isJp ? '/index-jp.html' : '/'} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <a href={isJp ? '/ja/' : '/'} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span className="brand-mark">E</span>
           <span className="en">Eco Brand Japan</span>
         </a>
@@ -48,7 +48,7 @@ function NavCareers() {
         <div className="lang">
           <a href="/" className={!isJp ? 'active' : undefined}>EN</a>
           <span>/</span>
-          <a href="/index-jp.html" className={isJp ? 'active' : undefined}>JP</a>
+          <a href="/ja/" className={isJp ? 'active' : undefined}>JP</a>
         </div>
         <button
           type="button"
@@ -76,7 +76,7 @@ function NavCareers() {
           <div className="lang nav-mobile-lang">
             <a href="/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
             <span>/</span>
-            <a href="/index-jp.html" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
+            <a href="/ja/" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
           </div>
         </div>
       </div>

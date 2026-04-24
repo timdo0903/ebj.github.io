@@ -8,7 +8,7 @@ function Nav() {
     return () => document.body.classList.remove('nav-open');
   }, [open]);
 
-  const homeHref = isJp ? '/index-jp.html' : '/';
+  const homeHref = isJp ? '/ja/' : '/';
   const links = isJp
     ? [
         { href: '/about/', label: '会社概要' },
@@ -47,7 +47,7 @@ function Nav() {
         <div className="lang">
           <a href="/" className={!isJp ? 'active' : undefined}>EN</a>
           <span>/</span>
-          <a href="/index-jp.html" className={isJp ? 'active' : undefined}>JP</a>
+          <a href="/ja/" className={isJp ? 'active' : undefined}>JP</a>
         </div>
         <button
           type="button"
@@ -73,7 +73,7 @@ function Nav() {
           <div className="lang nav-mobile-lang">
             <a href="/" className={!isJp ? 'active' : undefined} onClick={closeMenu}>EN</a>
             <span>/</span>
-            <a href="/index-jp.html" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
+            <a href="/ja/" className={isJp ? 'active' : undefined} onClick={closeMenu}>JP</a>
           </div>
         </div>
       </div>

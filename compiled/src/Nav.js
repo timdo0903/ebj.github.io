@@ -8,7 +8,7 @@ function Nav() {
     document.body.classList.toggle('nav-open', open);
     return () => document.body.classList.remove('nav-open');
   }, [open]);
-  const homeHref = isJp ? '/index-jp.html' : '/';
+  const homeHref = isJp ? '/ja/' : '/';
   const links = isJp ? [{
     href: '/about/',
     label: '会社概要'
@@ -71,7 +71,7 @@ function Nav() {
     href: "/",
     className: !isJp ? 'active' : undefined
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/index-jp.html",
+    href: "/ja/",
     className: isJp ? 'active' : undefined
   }, "JP")), React.createElement("button", {
     type: "button",
@@ -99,7 +99,7 @@ function Nav() {
     className: !isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "EN"), React.createElement("span", null, "/"), React.createElement("a", {
-    href: "/index-jp.html",
+    href: "/ja/",
     className: isJp ? 'active' : undefined,
     onClick: closeMenu
   }, "JP")))));
