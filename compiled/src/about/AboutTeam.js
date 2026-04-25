@@ -63,7 +63,7 @@ function AboutTeam() {
     className: "atelier-number"
   }, React.createElement("div", {
     className: "n"
-  }, "50"), React.createElement("div", {
+  }, "20"), React.createElement("div", {
     className: "n-caption"
   }, React.createElement("span", {
     className: "plus"

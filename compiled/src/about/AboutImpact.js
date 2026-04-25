@@ -10,7 +10,7 @@ function AboutImpact() {
     note: '2012年から東京を拠点に展開'
   }, {
     k: '循環したアイテム',
-    v: React.createElement(React.Fragment, null, "150", React.createElement("em", null, "k")),
+    v: React.createElement(React.Fragment, null, "65", React.createElement("em", null, "k")),
     note: 'バッグ、革小物、アクセサリーに次の章を'
   }, {
     k: '取り扱いメゾン',
@@ -28,7 +28,7 @@ function AboutImpact() {
     note: 'Since 2012, from Tokyo to the world'
   }, {
     k: 'Pieces circulated',
-    v: React.createElement(React.Fragment, null, "150", React.createElement("em", null, "k")),
+    v: React.createElement(React.Fragment, null, "65", React.createElement("em", null, "k")),
     note: 'Handbags, SLG and accessories given a second chapter'
   }, {
     k: 'Maisons curated',
