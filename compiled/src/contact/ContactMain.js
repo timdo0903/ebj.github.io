@@ -2,6 +2,7 @@
 
 function ContactMain() {
   const isJp = window.SITE_LANG === 'jp';
+  const contactFormUrl = 'https://b5i9cfx0.forms.app/eco-brand-japan-contact';
   const socials = [{
     k: 'Instagram',
     handle: '@brandcoparis',
@@ -49,13 +50,12 @@ function ContactMain() {
     className: "contact-grid"
   }, React.createElement("div", {
     className: "left"
-  }, React.createElement(window.FadeUp, null, React.createElement("h2", null, isJp ? React.createElement(React.Fragment, null, "\u3072\u3068\u3064\u306E\u7A93\u53E3\u304B\u3089\u3001", React.createElement("em", null, "\u62C5\u5F53\u8005\u3078\u3002")) : React.createElement(React.Fragment, null, "One inbox, ", React.createElement("em", null, "one team."))), React.createElement("p", null, isJp ? '委託、パートナーシップ、プレス、採用など、すべてのご連絡は同じコンシェルジュデスクで受け取り、社内の適切な担当へつなぎます。自動返信だけで終わらせず、東京の営業日に確認しています。' : "Write to us directly. Enquiries, consignment, partnerships, press, careers, all reach the same concierge desk and are routed internally. We don't use autoresponders and we don't route to ticketing systems. Messages are usually answered within a working day in Tokyo.")), React.createElement("div", {
+  }, React.createElement(window.FadeUp, null, React.createElement("h2", null, isJp ? React.createElement(React.Fragment, null, "\u30D5\u30A9\u30FC\u30E0\u304B\u3089\u3001", React.createElement("em", null, "\u62C5\u5F53\u8005\u3078\u3002")) : React.createElement(React.Fragment, null, "One form, ", React.createElement("em", null, "one team."))), React.createElement("p", null, isJp ? '委託、パートナーシップ、プレス、採用など、すべてのご連絡は下記フォームで受け取り、社内の適切な担当へつなぎます。東京の営業日に確認しています。' : 'Send your note through the form below. Enquiries, consignment, partnerships, press, and careers all reach the same concierge desk and are routed internally during Tokyo business days.')), React.createElement("div", {
     className: "contact-primary"
   }, React.createElement(window.FadeUp, {
     delay: 120
-  }, React.createElement("a", {
-    className: "contact-primary-card",
-    href: "mailto:admin@ecobrandjp.com"
+  }, React.createElement("div", {
+    className: "contact-form-panel"
   }, React.createElement("div", {
     className: "eyebrow-row"
   }, React.createElement("span", {
@@ -63,14 +63,23 @@ function ContactMain() {
   }, React.createElement("span", {
     className: "dot"
   }), isJp ? '総合窓口' : 'General enquiries'), React.createElement("span", {
+    className: "form-note"
+  }, isJp ? '東京営業日' : 'Tokyo business days')), React.createElement("iframe", {
+    className: "contact-form-embed",
+    title: isJp ? 'Eco Brand Japan お問い合わせフォーム' : 'Eco Brand Japan contact form',
+    src: contactFormUrl,
+    loading: "lazy",
+    referrerPolicy: "strict-origin-when-cross-origin"
+  }), React.createElement("div", {
+    className: "contact-form-footer"
+  }, React.createElement("p", null, isJp ? '内容を確認後、担当者よりご連絡します。' : 'After review, the right team member will reply directly.'), React.createElement("a", {
+    className: "btn-primary",
+    href: contactFormUrl,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, React.createElement("span", null, isJp ? 'フォームを開く' : 'Open form'), React.createElement("span", {
     className: "arrow"
-  }, "\u2192")), React.createElement("div", {
-    className: "email"
-  }, "admin", React.createElement("span", {
-    className: "at"
-  }, "@ecobrandjp.com")), React.createElement("div", {
-    className: "note"
-  }, isJp ? 'すべてのお問い合わせはこちらへ。必要に応じて社内で担当へつなぎます。' : 'For all enquiries. A concierge will route you internally if needed.')))), React.createElement("div", {
+  })))))), React.createElement("div", {
     style: {
       marginTop: 72
     }
@@ -131,13 +140,7 @@ function ContactMain() {
       lineHeight: 1.6,
       textWrap: 'pretty'
     }
-  }, isJp ? '現在、一般のお客様のご来訪は受け付けておりません。お問い合わせは ' : 'We are not open to visitors at this time. All enquiries, please write to ', React.createElement("a", {
-    style: {
-      color: 'var(--fg)',
-      borderBottom: '1px solid var(--ink-faint)'
-    },
-    href: "mailto:admin@ecobrandjp.com"
-  }, "admin@ecobrandjp.com"), isJp ? ' までお願いいたします。' : '.')), React.createElement("div", {
+  }, isJp ? '現在、一般のお客様のご来訪は受け付けておりません。ご相談はフォームからお送りください。内容に応じて担当者が確認します。' : 'We are not open to visitors at this time. Please use the contact form and the relevant team member will review your note.')), React.createElement("div", {
     className: "contact-card"
   }, React.createElement("h4", null, isJp ? '対応言語' : 'Languages spoken'), React.createElement("div", {
     style: {
