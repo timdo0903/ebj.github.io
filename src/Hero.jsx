@@ -88,7 +88,7 @@ function Hero() {
             <div className="l">{copy.years}</div>
           </div>
           <div className="hero-stat">
-            <div className="n">150k</div>
+            <div className="n">65k</div>
             <div className="l">{copy.pieces}</div>
           </div>
           <div className="hero-stat">
