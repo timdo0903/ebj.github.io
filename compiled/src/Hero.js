@@ -100,7 +100,7 @@ function Hero() {
     className: "hero-stat"
   }, React.createElement("div", {
     className: "n"
-  }, "150k"), React.createElement("div", {
+  }, "65k"), React.createElement("div", {
     className: "l"
   }, copy.pieces)), React.createElement("div", {
     className: "hero-stat"
