@@ -3,7 +3,7 @@
 function Maisons() {
   const isJp = window.SITE_LANG === 'jp';
   const items = [{
-    name: 'Hermes',
+    name: 'Hermès',
     num: '01',
     italic: false
   }, {

@@ -8,7 +8,7 @@ function Statement() {
         caption: 'tsugu / 受け継ぐ、次へつなぐ',
         quote: '「ものを大切にすることは、それを手にしてきた人たちを大切にすることでもあります。」',
         body:
-          '2012年、東京でスタートした私たちは、Hermes、Chanel、Louis Vuittonをはじめとするメゾンのバッグやアクセサリーを扱っています。一点ずつ真贋を確認し、状態を整え、次の持ち主へ渡す準備をする。派手ではありませんが、それが私たちのサーキュラー・ラグジュアリーです。',
+          '2012年、東京でスタートした私たちは、Hermès、Chanel、Louis Vuittonをはじめとするメゾンのバッグやアクセサリーを扱っています。一点ずつ真贋を確認し、状態を整え、次の持ち主へ渡す準備をする。派手ではありませんが、それが私たちのサーキュラー・ラグジュアリーです。',
         founded: '2012 / Tokyo',
         auth: '専門スタッフによる確認',
         onboarding: '初回対応は24時間以内',
@@ -20,7 +20,7 @@ function Statement() {
         caption: 'tsugu / to inherit, to carry forward',
         quote: '"To care for an object is to care for every hand that held it before."',
         body:
-          'Founded in Tokyo in 2012, we source and curate handbags and accessories from Hermes, Chanel, Louis Vuitton and their peers. Each piece is authenticated, gently revived, and prepared by hand for its next chapter, a quiet practice of circular luxury.',
+          'Founded in Tokyo in 2012, we source and curate handbags and accessories from Hermès, Chanel, Louis Vuitton and their peers. Each piece is authenticated, gently revived, and prepared by hand for its next chapter, a quiet practice of circular luxury.',
         founded: '2012 / Tokyo',
         auth: '100% specialist-verified',
         onboarding: '24-hour turnaround',

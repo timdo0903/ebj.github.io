@@ -1,7 +1,7 @@
 function Maisons() {
   const isJp = window.SITE_LANG === 'jp';
   const items = [
-    { name: 'Hermes', num: '01', italic: false },
+    { name: 'Hermès', num: '01', italic: false },
     { name: 'Chanel', num: '02', italic: true },
     { name: 'Louis Vuitton', num: '03', italic: false },
     { name: 'Dior', num: '04', italic: true },
