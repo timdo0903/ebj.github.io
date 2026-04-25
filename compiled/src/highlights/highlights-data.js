@@ -12,9 +12,9 @@ window.HIGHLIGHTS_DATA = {
     w: 'w-4'
   }, {
     id: 'n031',
-    maison: 'Hermes',
+    maison: 'Hermès',
     piece: 'Birkin 35',
-    pieceText: 'Hermes Birkin 35',
+    pieceText: 'Hermès Birkin 35',
     tag: 'Authenticated',
     num: 'N-031',
     img: '/catalog/highlights-web/hermes-birkin.webp',
@@ -93,18 +93,18 @@ window.HIGHLIGHTS_DATA = {
     w: 'w-3'
   }, {
     id: 'n156',
-    maison: 'Hermes',
+    maison: 'Hermès',
     piece: 'Kelly Bags',
-    pieceText: 'Hermes Kelly Bags',
+    pieceText: 'Hermès Kelly Bags',
     tag: 'Authenticated',
     num: 'N-156',
     img: '/catalog/highlights-web/styled-02.webp',
     w: 'w-6'
   }, {
     id: 'n164',
-    maison: 'Hermes',
+    maison: 'Hermès',
     piece: 'Kelly Bags',
-    pieceText: 'Hermes Kelly Bags',
+    pieceText: 'Hermès Kelly Bags',
     tag: 'Authenticated',
     num: 'N-164',
     img: '/catalog/highlights-web/styled-03.webp',
@@ -156,9 +156,9 @@ window.HIGHLIGHTS_DATA = {
     w: 'w-4'
   }, {
     id: 'n204',
-    maison: 'Hermes',
+    maison: 'Hermès',
     piece: 'Kelly Flag',
-    pieceText: 'Hermes Kelly Flag',
+    pieceText: 'Hermès Kelly Flag',
     tag: 'Authenticated',
     num: 'N-204',
     img: '/catalog/highlights-web/styled-04.webp',
@@ -283,9 +283,9 @@ window.HIGHLIGHTS_DATA = {
     w: 'w-4'
   }, {
     id: 'n212',
-    maison: 'Hermes',
+    maison: 'Hermès',
     piece: 'Bangle',
-    pieceText: 'Hermes Bangle',
+    pieceText: 'Hermès Bangle',
     tag: 'Styled',
     num: 'N-212',
     img: '/catalog/highlights-web/kimono-05.webp',
