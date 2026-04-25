@@ -4,7 +4,7 @@ function AboutImpact() {
     ? [
         { k: 'キュレーション年数', v: <>12<span className="plus">+</span></>, note: '2012年から東京を拠点に展開' },
         { k: '循環したアイテム', v: <>150<em>k</em></>, note: 'バッグ、革小物、アクセサリーに次の章を' },
-        { k: '取り扱いメゾン', v: <>28</>, note: 'Hermes、Chanelから希少なメゾンまで' },
+        { k: '取り扱いメゾン', v: <>28</>, note: 'Hermès、Chanelから希少なメゾンまで' },
         { k: '対応言語', v: <>6</>, note: 'English · 日本語 · 中文 · Español · Français · Tagalog' },
       ]
     : [

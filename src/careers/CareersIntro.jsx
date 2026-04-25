@@ -37,7 +37,7 @@ function CareersIntro() {
           <h2>{isJp ? <>アイコニックなメゾンを、<em>次の持ち主へ。</em></> : <>Storytellers for <em>iconic</em> fashion houses.</>}</h2>
           <p>
             {isJp
-              ? 'Hermes、Chanel、Louis Vuittonをはじめとする希少なバッグをキュレーションし、真贋を確認し、ラグジュアリーの循環を支えています。'
+              ? 'Hermès、Chanel、Louis Vuittonをはじめとする希少なバッグをキュレーションし、真贋を確認し、ラグジュアリーの循環を支えています。'
               : 'We curate and authenticate rare handbags from Hermès, Chanel, Louis Vuitton and their peers, and advocate for a circular economy in luxury.'}
           </p>
           <p>

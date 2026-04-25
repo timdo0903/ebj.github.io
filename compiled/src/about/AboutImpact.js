@@ -15,7 +15,7 @@ function AboutImpact() {
   }, {
     k: '取り扱いメゾン',
     v: React.createElement(React.Fragment, null, "28"),
-    note: 'Hermes、Chanelから希少なメゾンまで'
+    note: 'Hermès、Chanelから希少なメゾンまで'
   }, {
     k: '対応言語',
     v: React.createElement(React.Fragment, null, "6"),
