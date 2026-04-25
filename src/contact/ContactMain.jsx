@@ -1,5 +1,6 @@
 function ContactMain() {
   const isJp = window.SITE_LANG === 'jp';
+  const contactFormUrl = 'https://b5i9cfx0.forms.app/eco-brand-japan-contact';
   const socials = [
     {
       k: 'Instagram',
@@ -51,28 +52,42 @@ function ContactMain() {
       <div className="contact-grid">
         <div className="left">
           <window.FadeUp>
-            <h2>{isJp ? <>ひとつの窓口から、<em>担当者へ。</em></> : <>One inbox, <em>one team.</em></>}</h2>
+            <h2>{isJp ? <>フォームから、<em>担当者へ。</em></> : <>One form, <em>one team.</em></>}</h2>
             <p>
               {isJp
-                ? '委託、パートナーシップ、プレス、採用など、すべてのご連絡は同じコンシェルジュデスクで受け取り、社内の適切な担当へつなぎます。自動返信だけで終わらせず、東京の営業日に確認しています。'
-                : "Write to us directly. Enquiries, consignment, partnerships, press, careers, all reach the same concierge desk and are routed internally. We don't use autoresponders and we don't route to ticketing systems. Messages are usually answered within a working day in Tokyo."}
+                ? '委託、パートナーシップ、プレス、採用など、すべてのご連絡は下記フォームで受け取り、社内の適切な担当へつなぎます。東京の営業日に確認しています。'
+                : 'Send your note through the form below. Enquiries, consignment, partnerships, press, and careers all reach the same concierge desk and are routed internally during Tokyo business days.'}
             </p>
           </window.FadeUp>
 
           <div className="contact-primary">
             <window.FadeUp delay={120}>
-              <a className="contact-primary-card" href="mailto:admin@ecobrandjp.com">
+              <div className="contact-form-panel">
                 <div className="eyebrow-row">
                   <span className="eyebrow"><span className="dot"></span>{isJp ? '総合窓口' : 'General enquiries'}</span>
-                  <span className="arrow">→</span>
+                  <span className="form-note">{isJp ? '東京営業日' : 'Tokyo business days'}</span>
                 </div>
-                <div className="email">
-                  admin<span className="at">@ecobrandjp.com</span>
+
+                <iframe
+                  className="contact-form-embed"
+                  title={isJp ? 'Eco Brand Japan お問い合わせフォーム' : 'Eco Brand Japan contact form'}
+                  src={contactFormUrl}
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+
+                <div className="contact-form-footer">
+                  <p>
+                    {isJp
+                      ? '内容を確認後、担当者よりご連絡します。'
+                      : 'After review, the right team member will reply directly.'}
+                  </p>
+                  <a className="btn-primary" href={contactFormUrl} target="_blank" rel="noopener noreferrer">
+                    <span>{isJp ? 'フォームを開く' : 'Open form'}</span>
+                    <span className="arrow"></span>
+                  </a>
                 </div>
-                <div className="note">
-                  {isJp ? 'すべてのお問い合わせはこちらへ。必要に応じて社内で担当へつなぎます。' : 'For all enquiries. A concierge will route you internally if needed.'}
-                </div>
-              </a>
+              </div>
             </window.FadeUp>
           </div>
 
@@ -131,9 +146,9 @@ function ContactMain() {
               fontFamily: 'var(--sans)', fontSize: 13, color: 'var(--ink-quiet)',
               lineHeight: 1.6, textWrap: 'pretty',
             }}>
-              {isJp ? '現在、一般のお客様のご来訪は受け付けておりません。お問い合わせは ' : 'We are not open to visitors at this time. All enquiries, please write to '}
-              <a style={{ color: 'var(--fg)', borderBottom: '1px solid var(--ink-faint)' }} href="mailto:admin@ecobrandjp.com">admin@ecobrandjp.com</a>
-              {isJp ? ' までお願いいたします。' : '.'}
+              {isJp
+                ? '現在、一般のお客様のご来訪は受け付けておりません。ご相談はフォームからお送りください。内容に応じて担当者が確認します。'
+                : 'We are not open to visitors at this time. Please use the contact form and the relevant team member will review your note.'}
             </div>
           </div>
 

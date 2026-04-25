@@ -139,7 +139,7 @@ function setupApplicationForms(config) {
     const defaultSuccess =
       'Thank you for applying! We appreciate all applications; however, only those selected for an interview will be contacted.';
     const defaultError =
-      'Something went wrong. Please email your resume and cover letter to talents@ecobrandjp.com.';
+      'Something went wrong. Please try again later or use the application form link on the role page.';
 
     const successMessage =
       form.dataset.successMessage || settings?.successMessage || defaultSuccess;
