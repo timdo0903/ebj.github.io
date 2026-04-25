@@ -1,102 +1,130 @@
 # Eco Brand Japan Website
 
-A static, invitation-only site for Eco Brand Japan's partners, clients, and vetted collaborators. The content focuses on showcasing internal capabilities, private case studies, and specialised recruitment funnels that support targeted campaigns rather than a broad public launch.
+Static website for Eco Brand Japan, built for GitHub Pages and the canonical domain in `CNAME`.
 
-## Audience & Access
+The current site is a public, bilingual brand and recruiting website. It includes the main English and Japanese home pages, editorial brand pages, contact pages, a careers hub, and reusable job-detail pages for open and closed roles.
 
-- The site is **not intended for general public consumption**; share URLs only with trusted stakeholders.
-- Campaign pages (for example `career/`, `buyers-position/`, `live-seller-social-media-operator/`) highlight roles under active recruitment and should be distributed on a need-to-know basis.
-- Forms point to controlled submission endpoints. Review [`form-config.json`](./form-config.json) before enabling new campaigns to ensure payload limits and redirect paths align with expectations.
+## Current Update
 
-## Features
+Last updated: April 25, 2026
 
-- Responsive landing pages tailored to multiple invite-only roles and service offerings.
-- Centralised application form configuration with optional progressive enhancement for private submission flows.
-- Image optimisation workflow that generates modern formats (AVIF/WebP) alongside the original JPEGs for efficient distribution.
-- Lightweight dependency footprint—no runtime frameworks required.
+- Careers hero metadata spacing was refined so the `Now hiring - 2 roles open` pill and the `Careers - N°001` label have clearer separation on tablet and mobile widths.
+- The careers hub currently advertises 2 open roles: Inventory & Logistics Specialist and Product Photographer.
+- Closed roles remain visible for reference: Luxury Buyer and Live Seller & Social Media Operator.
+- The current page system uses source components in `src/` and compiled browser-ready scripts in `compiled/`.
+
+## Site Sections
+
+- `index.html` and `ja/index.html`: main English and Japanese home pages.
+- `about/` and `ja/about/`: company story and team pages.
+- `principles/` and `ja/principles/`: brand principles.
+- `highlights/` and `ja/highlights/`: editorial product highlights.
+- `contact/` and `ja/contact/`: contact entry points.
+- `careers/` and `ja/careers/`: bilingual careers hub.
+- `job-detail/` and `ja/job-detail/`: reusable role detail pages driven by query parameters.
+- Legacy role URLs such as `buyers-position/`, `inventory-logistics-specialist/`, `product-photographer/`, and `live-seller-social-media-operator/` are still present for campaign or redirect compatibility.
+
+## Project Structure
+
+```text
+.
+├── src/                    # React source components
+├── compiled/               # Browser-ready compiled JS and vendor files
+├── images/                 # Brand, hero, and page imagery
+├── catalog/                # Highlight/editorial catalog imagery
+├── careers.css             # Careers page styles
+├── job.css                 # Job detail page styles
+├── styles.css              # Current global styles
+├── subpages.css            # Subpage-specific styling
+├── form-config.json        # Application form configuration
+├── tools/                  # Build and image optimization scripts
+└── index.html              # English home page
+```
 
 ## Getting Started
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) 18 or later
-- [npm](https://www.npmjs.com/) (bundled with Node.js)
-
-Clone the repository and install dependencies:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Available Scripts
+Run a local static server from the repository root:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000/
+http://127.0.0.1:8000/careers/
+http://127.0.0.1:8000/ja/careers/
+```
+
+## Available Scripts
 
 | Command | Description |
-|---------|-------------|
-| `npm run optimize:images:dry` | Preview the responsive image variants that would be generated. |
-| `npm run optimize:images` | Generate AVIF/WebP variants for large imagery and write them to `images/optimized/`. |
-| `npm test` | Check that required HTML files are present. |
+| --- | --- |
+| `npm run build:client` | Compile `src/` React components into `compiled/` and copy React vendor files. |
+| `npm test` | Check that required top-level English and Japanese HTML files exist. |
+| `npm run optimize:images:dry` | Preview image variants that would be generated. |
+| `npm run optimize:images` | Generate WebP and AVIF variants in `images/optimized/`. |
 
-## Image Optimisation Workflow
+## Editing Workflow
 
-Run the optimiser whenever you update hero or gallery photography:
+1. Edit source components in `src/` when changing React-rendered sections.
+2. Run `npm run build:client` after source component changes so `compiled/` stays in sync.
+3. Edit CSS files directly for layout and visual changes.
+4. Run `npm test` before publishing.
+5. Preview the affected pages locally at realistic desktop, tablet, and mobile widths.
 
-1. `npm run optimize:images:dry` to confirm the planned outputs.
-2. `npm run optimize:images` to produce optimised assets in `images/optimized/`.
-3. Serve the generated AVIF/WebP sources alongside the base JPEGs when ready for production.
-4. Use the `--force` flag if you change quality settings and need to regenerate existing variants.
+For the latest careers spacing change, only `careers.css` was required because the issue was layout spacing in the hero metadata row.
 
-## Application Form Configuration
+## Careers And Jobs
 
-Form behaviour is defined in [`form-config.json`](./form-config.json). Update this file before directing traffic to your submission backend.
+Careers content lives in:
 
-Key properties:
+- `src/careers/`: careers hub sections.
+- `src/job/`: job detail page components and role data.
+- `careers.css`: careers hub layout and responsive behavior.
+- `job.css`: job detail page layout and application UI.
 
-- `submitUrl`: HTML form endpoint (for example FormSubmit or your own API).
-- `allowedOrigins`: Origins permitted to access the AJAX endpoint when progressive enhancement is enabled.
-- `maxAttachmentBytes` / `maxTotalBytes`: Client-side validation thresholds (FormSubmit limits combined payloads to 5 MB).
-- `data-next-path`: Optional thank-you redirect per role.
+Open roles are managed in `src/careers/OpenRoles.jsx` and detailed role copy is managed in `src/job/jobs-data.jsx` and `src/job/jobs-data-jp.jsx`.
 
-### Bring Your Own Submission Backend
+## Application Forms
 
-1. Provision durable storage (S3 + DynamoDB, Google Cloud Storage, Supabase, etc.) for payloads and file uploads.
-2. Expose an HTTPS endpoint (Cloudflare Workers, AWS Lambda/API Gateway, Netlify Functions, etc.) that accepts `multipart/form-data`, enforces attachment limits, validates input, and writes to the store.
-3. Trigger notifications (email/Slack/ATS) so hiring managers receive submissions immediately.
-4. Configure CORS (`POST` + `OPTIONS`) to allow only approved origins (for example `https://www.ecobrandjapan.com`).
-5. Add monitoring (HTTP metrics + dead-letter queue) to catch provider throttling.
-6. Update the CSP `connect-src` and `form-action` directives in your HTML files to include the new API origin before deploying.
+Form behavior is configured in `form-config.json`.
 
-## Operational Checklist
+Review these settings before changing application flows:
 
-- Review `form-config.json` prior to each campaign launch to confirm submission targets and redirect behaviour.
-- Run `npm run optimize:images` before sending invites to keep hero assets cached and lightweight.
-- Use a synthetic load tool (k6, Artillery, etc.) against both the static site and the application API ahead of private releases.
-- Enable CDN caching on `/images/**` with long `Cache-Control` headers; regenerate assets to bust the cache when artwork changes.
-- Monitor API latency and error rates during campaigns; adjust `retryAttempts` or `retryBackoffMs` in `form-config.json` if upstream throttling occurs.
+- `submitUrl`: submission endpoint.
+- `allowedOrigins`: allowed origins for enhanced form submission.
+- `maxAttachmentBytes` and `maxTotalBytes`: upload limits.
+- Redirect paths for post-submit thank-you pages.
 
-## Project Structure
+## Image Optimization
 
+Run the optimizer when adding or replacing large photography:
+
+```bash
+npm run optimize:images:dry
+npm run optimize:images
 ```
-.
-├── images/                 # Source imagery and generated variants
-├── career/                 # Role-specific landing pages
-├── live-seller-social-media-operator/, buyers-position/, etc. # Additional campaign pages
-├── form-config.json        # Application form settings
-├── script.js               # Client-side enhancements
-├── style.css               # Global styles
-└── index.html              # Main marketing page
-```
+
+Use `--force` if existing generated variants need to be regenerated after quality or source-image changes.
 
 ## Deployment
 
-1. Build and optimise imagery locally (see above).
-2. Upload the static assets to your hosting platform (for example GitHub Pages, Netlify, Vercel, AWS S3 + CloudFront).
-3. Configure DNS to point to your hosting provider (see `CNAME` for the canonical domain).
-4. Enable HTTPS and set appropriate caching headers for static assets.
-5. Restrict access via password protection, VPN allowlisting, or similar controls when publishing sensitive campaign pages.
+The repository is static and can be hosted by GitHub Pages or another static host.
 
-## Internal Contributions
+Before publishing:
 
-This repository is maintained by the Eco Brand Japan web team. Submit changes through the internal review process rather than public pull requests.
+1. Run `npm run build:client` if any `src/` files changed.
+2. Run `npm test`.
+3. Preview changed pages locally.
+4. Confirm `CNAME` still points to the intended canonical domain.
 
 ## License
 
