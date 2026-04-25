@@ -3,13 +3,13 @@ function AboutImpact() {
   const stats = isJp
     ? [
         { k: 'キュレーション年数', v: <>12<span className="plus">+</span></>, note: '2012年から東京を拠点に展開' },
-        { k: '循環したアイテム', v: <>150<em>k</em></>, note: 'バッグ、革小物、アクセサリーに次の章を' },
+        { k: '循環したアイテム', v: <>65<em>k</em></>, note: 'バッグ、革小物、アクセサリーに次の章を' },
         { k: '取り扱いメゾン', v: <>28</>, note: 'Hermès、Chanelから希少なメゾンまで' },
         { k: '対応言語', v: <>6</>, note: 'English · 日本語 · 中文 · Español · Français · Tagalog' },
       ]
     : [
         { k: 'Years curating', v: <>12<span className="plus">+</span></>, note: 'Since 2012, from Tokyo to the world' },
-        { k: 'Pieces circulated', v: <>150<em>k</em></>, note: 'Handbags, SLG and accessories given a second chapter' },
+        { k: 'Pieces circulated', v: <>65<em>k</em></>, note: 'Handbags, SLG and accessories given a second chapter' },
         { k: 'Maisons curated', v: <>28</>, note: 'From Hermès and Chanel to rarer houses' },
         { k: 'Languages spoken', v: <>6</>, note: 'English · 日本語 · 中文 · Español · Français · Tagalog' },
       ];

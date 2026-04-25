@@ -68,7 +68,7 @@ function AboutTeam() {
 
         <div className="atelier-number-row">
           <window.FadeUp delay={120} className="atelier-number">
-            <div className="n">50</div>
+            <div className="n">20</div>
             <div className="n-caption">
               <span className="plus">+</span>
               <div>
