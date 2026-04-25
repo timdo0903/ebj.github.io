@@ -19,7 +19,7 @@ function Gallery() {
   }, {
     cls: 'c tall',
     src: '/images/hermes-birkin.jpg',
-    maison: 'Hermes',
+    maison: 'Hermès',
     piece: 'Birkin 35',
     tag: 'Authenticated',
     num: 'N-031'

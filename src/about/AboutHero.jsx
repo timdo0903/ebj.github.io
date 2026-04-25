@@ -30,7 +30,7 @@ function AboutHero() {
       <window.FadeUp delay={200}>
         <p className="lede">
           {isJp
-            ? 'Eco Brand Japanは、東京の小さな一室から始まりました。一点のHermes Kelly、ルーペ、そして「良いものは手入れをすれば、もう一度誰かの大切なものになれる」という信念から。今も私たちは小さな多言語チームとして、同じ手つきでその仕事を続けています。'
+            ? 'Eco Brand Japanは、東京の小さな一室から始まりました。一点のHermès Kelly、ルーペ、そして「良いものは手入れをすれば、もう一度誰かの大切なものになれる」という信念から。今も私たちは小さな多言語チームとして、同じ手つきでその仕事を続けています。'
             : 'Eco Brand Japan began in a small room in Tokyo with one Hermès Kelly, a loupe, and a conviction that luxury could be kept, cared for, and passed on, instead of quietly discarded. Twelve years later, we remain a small, multilingual team doing that same work, at a larger scale and with the same hands.'}
         </p>
       </window.FadeUp>
