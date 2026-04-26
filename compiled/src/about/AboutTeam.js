@@ -52,7 +52,7 @@ function AboutTeam() {
     className: "atelier-eyebrow"
   }, React.createElement("span", {
     className: "dot"
-  }), React.createElement("span", null, isJp ? '五十の手、ひとつの基準' : 'Fifty hands, one standard'))), React.createElement(window.FadeUp, {
+  }), React.createElement("span", null, isJp ? '五十の手、ひとつの基準' : 'twenty hands, one standard'))), React.createElement(window.FadeUp, {
     delay: 60
   }, React.createElement("h2", {
     className: "atelier-headline"
