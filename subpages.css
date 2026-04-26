@@ -1373,6 +1373,9 @@
   .media-break {
     aspect-ratio: 4 / 5;
   }
+  .about-sakura-break img {
+    object-position: 72% center;
+  }
   .media-break .cap {
     left: 12px;
     right: 12px;
