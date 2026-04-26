@@ -15,6 +15,8 @@ const babelOptions = {
   babelrc: false,
   configFile: false,
   comments: false,
+  compact: true,
+  minified: true,
   parserOpts: {
     plugins: ['jsx'],
   },

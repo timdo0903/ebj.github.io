@@ -65,7 +65,7 @@ function Hero() {
         <div className="hero-side">
           <div ref={imgRef} className="hero-image-wrap">
             <img
-              src="/catalog/portrait-leopard-wallet.jpg"
+              src="/catalog/highlights-web/portrait-leopard-wallet.webp"
               alt={copy.alt}
               style={{ objectPosition: 'center 25%' }}
             />

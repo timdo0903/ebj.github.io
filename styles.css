@@ -1186,3 +1186,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 [data-kanji="bold"] .statement-aside .kanji-big { font-size: clamp(180px, 22vw, 300px); }
 [data-kanji="bold"] .principle .kanji { font-size: 96px; }
 [data-kanji="bold"] .gallery-caption-col .kanji { font-size: 240px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

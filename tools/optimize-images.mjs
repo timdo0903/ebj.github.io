@@ -6,8 +6,8 @@ import sharp from 'sharp';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
-const imagesDir = path.join(projectRoot, 'images');
-const outputDir = path.join(imagesDir, 'optimized');
+const sourceDirs = ['images', 'catalog'].map(dir => path.join(projectRoot, dir));
+const outputDir = path.join(projectRoot, 'assets', 'optimized');
 
 const TARGET_WIDTHS = [480, 640, 960, 1280, 1600, 1920, 2560];
 const FORMATS = [
@@ -85,13 +85,13 @@ const generateVariants = async filePath => {
   let generated = 0;
   let skipped = 0;
 
-  await ensureDir(outputDir);
-
   for (const width of widths) {
     for (const { format, extension, options } of FORMATS) {
       const baseName = path.basename(filePath, path.extname(filePath));
+      const relativeDir = path.dirname(relativePath);
       const outputFileName = `${baseName}-${width}.${extension}`;
-      const outputPath = path.join(outputDir, outputFileName);
+      const outputPath = path.join(outputDir, relativeDir, outputFileName);
+      await ensureDir(path.dirname(outputPath));
 
       if (!force) {
         try {
@@ -127,7 +127,7 @@ const generateVariants = async filePath => {
 };
 
 const run = async () => {
-  const imageFiles = await collectImages(imagesDir);
+  const imageFiles = (await Promise.all(sourceDirs.map(collectImages))).flat();
   if (!imageFiles.length) {
     log('No source images found to optimise.');
     return;

@@ -1,15 +1,1 @@
-"use strict";
-
-function App() {
-  const tweaks = window.TWEAKS;
-  React.useEffect(() => {
-    const root = document.documentElement;
-    root.setAttribute('data-theme', tweaks.theme);
-    root.setAttribute('data-accent', tweaks.accent);
-    root.setAttribute('data-motion', tweaks.motion);
-    root.setAttribute('data-kanji', tweaks.kanjiProminence);
-  }, [tweaks]);
-  return React.createElement(React.Fragment, null, React.createElement(window.Nav, null), React.createElement(window.Hero, null), React.createElement(window.Maisons, null), React.createElement(window.Statement, null), React.createElement(window.Principles, null), React.createElement(window.Gallery, null), React.createElement(window.Closing, null), React.createElement(window.Footer, null));
-}
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(React.createElement(App, null));
+"use strict";function App(){const tweaks=window.TWEAKS;React.useEffect(()=>{const root=document.documentElement;root.setAttribute("data-theme",tweaks.theme);root.setAttribute("data-accent",tweaks.accent);root.setAttribute("data-motion",tweaks.motion);root.setAttribute("data-kanji",tweaks.kanjiProminence)},[tweaks]);return React.createElement(React.Fragment,null,React.createElement(window.Nav,null),React.createElement(window.Hero,null),React.createElement(window.Maisons,null),React.createElement(window.Statement,null),React.createElement(window.Principles,null),React.createElement(window.Gallery,null),React.createElement(window.Closing,null),React.createElement(window.Footer,null))}const root=ReactDOM.createRoot(document.getElementById("root"));root.render(React.createElement(App,null));

@@ -67,15 +67,17 @@ http://127.0.0.1:8000/ja/careers/
 
 | Command | Description |
 | --- | --- |
+| `npm run build` | Compile React components, refresh static SEO metadata, and regenerate minified CSS. |
 | `npm run build:client` | Compile `src/` React components into `compiled/` and copy React vendor files. |
+| `npm run build:static` | Refresh static SEO metadata and regenerate `.min.css` files. |
 | `npm test` | Check that required top-level English and Japanese HTML files exist. |
 | `npm run optimize:images:dry` | Preview image variants that would be generated. |
-| `npm run optimize:images` | Generate WebP and AVIF variants in `images/optimized/`. |
+| `npm run optimize:images` | Generate WebP and AVIF variants in `assets/optimized/` from `images/` and `catalog/`. |
 
 ## Editing Workflow
 
 1. Edit source components in `src/` when changing React-rendered sections.
-2. Run `npm run build:client` after source component changes so `compiled/` stays in sync.
+2. Run `npm run build` after source component changes so `compiled/`, static metadata, and minified CSS stay in sync.
 3. Edit CSS files directly for layout and visual changes.
 4. Run `npm test` before publishing.
 5. Preview the affected pages locally at realistic desktop, tablet, and mobile widths.
@@ -102,7 +104,6 @@ Review these settings before changing application flows:
 - `submitUrl`: submission endpoint.
 - `allowedOrigins`: allowed origins for enhanced form submission.
 - `maxAttachmentBytes` and `maxTotalBytes`: upload limits.
-- Redirect paths for post-submit thank-you pages.
 
 ## Image Optimization
 

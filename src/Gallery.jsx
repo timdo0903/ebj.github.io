@@ -1,11 +1,11 @@
 function Gallery() {
   const isJp = window.SITE_LANG === 'jp';
   const tiles = [
-    { cls: 'a tall', src: '/catalog/kimono-03.jpg', maison: 'Editorial', piece: 'Tokyo, Autumn walk', tag: 'Editorial', num: 'N-017' },
-    { cls: 'b xtall', src: '/images/lady-dior.jpg', maison: 'Dior', piece: 'Lady Dior', tag: 'Authenticated', num: 'N-024' },
-    { cls: 'c tall', src: '/images/hermes-birkin.jpg', maison: 'Hermès', piece: 'Birkin 35', tag: 'Authenticated', num: 'N-031' },
-    { cls: 'd wide', src: '/catalog/iconics-01.jpg', maison: 'Chanel', piece: 'Premiere watches', tag: 'Archive', num: 'N-127' },
-    { cls: 'e tall', src: '/images/pink-chanel.jpg', maison: 'Chanel', piece: 'Double Flap', tag: 'Authenticated', num: 'N-056' },
+    { cls: 'a tall', src: '/catalog/highlights-web/kimono-03.webp', maison: 'Editorial', piece: 'Tokyo, Autumn walk', tag: 'Editorial', num: 'N-017' },
+    { cls: 'b xtall', src: '/catalog/highlights-web/lady-dior.webp', maison: 'Dior', piece: 'Lady Dior', tag: 'Authenticated', num: 'N-024' },
+    { cls: 'c tall', src: '/catalog/highlights-web/hermes-birkin.webp', maison: 'Hermès', piece: 'Birkin 35', tag: 'Authenticated', num: 'N-031' },
+    { cls: 'd wide', src: '/catalog/highlights-web/iconics-01.webp', maison: 'Chanel', piece: 'Premiere watches', tag: 'Archive', num: 'N-127' },
+    { cls: 'e tall', src: '/catalog/highlights-web/pink-chanel.webp', maison: 'Chanel', piece: 'Double Flap', tag: 'Authenticated', num: 'N-056' },
   ];
 
   return (
