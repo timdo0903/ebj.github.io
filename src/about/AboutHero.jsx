@@ -15,7 +15,7 @@ function AboutHero() {
             <>
               <span className="reveal-line"><span>東京から、</span></span>
               <span className="reveal-line"><span>ラグジュアリーの</span></span>
-              <span className="reveal-line"><span><em>次の物語へ。</em><span className="kanji">始</span></span></span>
+              <span className="reveal-line"><span><em>次の物語へ。</em><span className="kanji">匠</span></span></span>
             </>
           ) : (
             <>
