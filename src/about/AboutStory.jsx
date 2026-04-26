@@ -12,9 +12,9 @@ function AboutStory() {
 
       <div className="about-story-grid">
         <window.FadeUp>
-          <div className="kanji-big">継</div>
+          <div className="kanji-big">匠</div>
           <div className="kanji-cap">
-            KEI · {isJp ? '受け継ぐ、続いていく' : 'to continue, to inherit'}
+            TAKUMI · {isJp ? '匠の手しごと、受け継ぐ美意識' : 'artisan craft, carried forward'}
             <em>{isJp ? 'ひとつの品を、次の持ち主へつなぐために。' : 'The thread that connects one guardian to the next.'}</em>
           </div>
         </window.FadeUp>
