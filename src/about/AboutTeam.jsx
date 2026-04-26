@@ -56,7 +56,7 @@ function AboutTeam() {
         <window.FadeUp>
           <div className="atelier-eyebrow">
             <span className="dot"></span>
-            <span>{isJp ? '五十の手、ひとつの基準' : 'Fifty hands, one standard'}</span>
+            <span>{isJp ? '二十の手、ひとつの基準' : 'twenty hands, one standard'}</span>
           </div>
         </window.FadeUp>
 
