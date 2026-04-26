@@ -20,7 +20,7 @@ function AboutHero() {
     className: "reveal-line"
   }, React.createElement("span", null, React.createElement("em", null, "\u6B21\u306E\u7269\u8A9E\u3078\u3002"), React.createElement("span", {
     className: "kanji"
-  }, "\u7D99")))) : React.createElement(React.Fragment, null, React.createElement("span", {
+  }, "\u59CB")))) : React.createElement(React.Fragment, null, React.createElement("span", {
     className: "reveal-line"
   }, React.createElement("span", null, "A Tokyo atelier")), React.createElement("span", {
     className: "reveal-line"
