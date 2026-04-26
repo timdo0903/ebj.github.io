@@ -3,8 +3,8 @@ function AboutAtelier() {
 
   return (
     <div style={{ position: 'relative' }}>
-      <div className="media-break about-sakura-break">
-        <img src="/catalog/highlights-web/about-sakura-portrait.webp" alt={isJp ? '桜の下で撮影したエディトリアルポートレート' : 'Editorial sakura portrait, Tokyo, Eco Brand Japan'} width="2000" height="875" loading="lazy" decoding="async" />
+      <div className="media-break">
+        <img src="/catalog/highlights-web/about-sakura-full.webp" alt={isJp ? '桜の下で撮影したエディトリアルポートレート' : 'Editorial sakura portrait, Tokyo, Eco Brand Japan'} width="2000" height="1333" loading="lazy" decoding="async" style={{ objectPosition: "center 28%" }} />
         <div className="cap">
           <span className="cap-kicker">Tokyo atelier</span>
           <span className="cap-copy">{isJp ? 'Studio photography, Spring 2026' : 'Studio photography, Spring 2026'}</span>
