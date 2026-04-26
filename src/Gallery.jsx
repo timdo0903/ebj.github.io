@@ -1,11 +1,11 @@
 function Gallery() {
   const isJp = window.SITE_LANG === 'jp';
   const tiles = [
-    { cls: 'a tall', src: '/catalog/highlights-web/kimono-03.webp', maison: 'Editorial', piece: 'Tokyo, Autumn walk', tag: 'Editorial', num: 'N-017' },
-    { cls: 'b xtall', src: '/catalog/highlights-web/lady-dior.webp', maison: 'Dior', piece: 'Lady Dior', tag: 'Authenticated', num: 'N-024' },
-    { cls: 'c tall', src: '/catalog/highlights-web/hermes-birkin.webp', maison: 'Hermès', piece: 'Birkin 35', tag: 'Authenticated', num: 'N-031' },
-    { cls: 'd wide', src: '/catalog/highlights-web/iconics-01.webp', maison: 'Chanel', piece: 'Premiere watches', tag: 'Archive', num: 'N-127' },
-    { cls: 'e tall', src: '/catalog/highlights-web/pink-chanel.webp', maison: 'Chanel', piece: 'Double Flap', tag: 'Authenticated', num: 'N-056' },
+    { cls: 'a tall', src: '/catalog/highlights-web/kimono-03.webp', maison: 'Editorial', piece: 'Tokyo, Autumn walk', tag: 'Editorial', num: 'N-017', width: 1400, height: 2100 },
+    { cls: 'b xtall', src: '/catalog/highlights-web/lady-dior.webp', maison: 'Dior', piece: 'Lady Dior', tag: 'Authenticated', num: 'N-024', width: 1400, height: 1750 },
+    { cls: 'c tall', src: '/catalog/highlights-web/hermes-birkin.webp', maison: 'Hermès', piece: 'Birkin 35', tag: 'Authenticated', num: 'N-031', width: 1400, height: 1750 },
+    { cls: 'd wide', src: '/catalog/highlights-web/iconics-01.webp', maison: 'Chanel', piece: 'Premiere watches', tag: 'Archive', num: 'N-127', width: 1400, height: 2100 },
+    { cls: 'e tall', src: '/catalog/highlights-web/pink-chanel.webp', maison: 'Chanel', piece: 'Double Flap', tag: 'Authenticated', num: 'N-056', width: 1400, height: 2100 },
   ];
 
   return (
@@ -34,7 +34,7 @@ function Gallery() {
       <div className="gallery-grid">
         {tiles.slice(0, 3).map((t, i) => (
           <window.FadeUp className={`tile ${t.cls}`} key={i} delay={i * 120}>
-            <img src={t.src} alt={t.piece} />
+            <img src={t.src} alt={t.piece} width={t.width} height={t.height} loading="lazy" decoding="async" />
             <div className="tile-corner">{t.tag}</div>
             <div className="tile-meta">
               <div className="l">
@@ -55,7 +55,7 @@ function Gallery() {
 
         {tiles.slice(3).map((t, i) => (
           <window.FadeUp className={`tile ${t.cls}`} key={i + 10} delay={i * 120}>
-            <img src={t.src} alt={t.piece} />
+            <img src={t.src} alt={t.piece} width={t.width} height={t.height} loading="lazy" decoding="async" />
             <div className="tile-corner">{t.tag}</div>
             <div className="tile-meta">
               <div className="l">

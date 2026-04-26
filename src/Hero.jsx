@@ -67,6 +67,10 @@ function Hero() {
             <img
               src="/catalog/highlights-web/portrait-leopard-wallet.webp"
               alt={copy.alt}
+              width="1200"
+              height="1800"
+              decoding="async"
+              fetchPriority="high"
               style={{ objectPosition: 'center 25%' }}
             />
             <div className="hero-image-caption">{copy.caption}</div>

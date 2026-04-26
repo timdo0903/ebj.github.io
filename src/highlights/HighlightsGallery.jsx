@@ -36,6 +36,8 @@ function HighlightsGallery() {
               <img
                 src={t.img}
                 alt={t.pieceText}
+                width={t.width || 1400}
+                height={t.height || 1750}
                 loading={num === '01' && i < 3 ? 'eager' : 'lazy'}
                 decoding="async"
                 fetchPriority={num === '01' && i < 3 ? 'high' : 'auto'}

@@ -4,8 +4,8 @@
 // Width classes are kept for compatibility; CSS normalizes them into an aligned grid.
 window.HIGHLIGHTS_DATA = {
   studio: [
-    { id: 'n024', maison: 'Dior', piece: 'Lady Dior', pieceText: 'Dior Lady Dior', tag: 'Authenticated', num: 'N-024', img: '/catalog/highlights-web/lady-dior.webp', w: 'w-4' },
-    { id: 'n031', maison: 'Hermès', piece: 'Birkin 35', pieceText: 'Hermès Birkin 35', tag: 'Authenticated', num: 'N-031', img: '/catalog/highlights-web/hermes-birkin.webp', w: 'w-4' },
+    { id: 'n024', maison: 'Dior', piece: 'Lady Dior', pieceText: 'Dior Lady Dior', tag: 'Authenticated', num: 'N-024', img: '/catalog/highlights-web/lady-dior.webp', w: 'w-4', width: 1400, height: 1750 },
+    { id: 'n031', maison: 'Hermès', piece: 'Birkin 35', pieceText: 'Hermès Birkin 35', tag: 'Authenticated', num: 'N-031', img: '/catalog/highlights-web/hermes-birkin.webp', w: 'w-4', width: 1400, height: 1750 },
     { id: 'n017', maison: 'Louis Vuitton', piece: 'Trunks', pieceText: 'Louis Vuitton Trunks', tag: 'Authenticated', num: 'N-017', img: '/catalog/highlights-web/editorial-chocolate-bar.webp', w: 'w-4' },
     { id: 'n056', maison: 'Chanel', piece: 'Double Flap', pieceText: 'Chanel Double Flap', tag: 'Authenticated', num: 'N-056', img: '/catalog/highlights-web/pink-chanel.webp', w: 'w-4' },
     { id: 'n068', maison: 'Chanel', piece: 'Classic Double Flap with Accessories', pieceText: 'Chanel Classic Double Flap with Accessories', tag: 'Authenticated', num: 'N-068', img: '/catalog/highlights-web/hero-flatlay.webp', w: 'w-4' },
@@ -24,8 +24,8 @@ window.HIGHLIGHTS_DATA = {
     { id: 'n204', maison: 'Hermès', piece: 'Kelly Flag', pieceText: 'Hermès Kelly Flag', tag: 'Authenticated', num: 'N-204', img: '/catalog/highlights-web/styled-04.webp', w: 'w-4' },
   ],
   editorial: [
-    { id: 'n051', maison: 'Louis Vuitton', piece: 'Leopard Zippy Wallet', pieceText: 'Louis Vuitton Leopard Zippy Wallet', tag: 'Styled', num: 'N-051', img: '/catalog/highlights-web/portrait-chanel-sakura.webp', w: 'w-4' },
-    { id: 'n065', maison: 'Chanel', piece: 'Half Moon Chain', pieceText: 'Chanel Half Moon Chain', tag: 'Styled', num: 'N-065', img: '/catalog/highlights-web/portrait-leopard-wallet.webp', w: 'w-4' },
+    { id: 'n051', maison: 'Louis Vuitton', piece: 'Leopard Zippy Wallet', pieceText: 'Louis Vuitton Leopard Zippy Wallet', tag: 'Styled', num: 'N-051', img: '/catalog/highlights-web/portrait-chanel-sakura.webp', w: 'w-4', width: 1200, height: 1800 },
+    { id: 'n065', maison: 'Chanel', piece: 'Half Moon Chain', pieceText: 'Chanel Half Moon Chain', tag: 'Styled', num: 'N-065', img: '/catalog/highlights-web/portrait-leopard-wallet.webp', w: 'w-4', width: 1200, height: 1800 },
     { id: 'n118', maison: 'Louis Vuitton', piece: 'Takashi Murakami Pochette Accessories', pieceText: 'Louis Vuitton Takashi Murakami Pochette Accessories', tag: 'Styled', num: 'N-118', img: '/catalog/highlights-web/n118-sakura-murakami.webp', w: 'w-4' },
     { id: 'n224', maison: 'Saint Laurent', piece: 'Cassandre Envelope Chain', pieceText: 'Saint Laurent Cassandre Envelope Chain', tag: 'Styled', num: 'N-224', img: '/catalog/highlights-web/saint-laurent-cassandre-envelope-chain.webp', w: 'w-6' },
     { id: 'n228', maison: 'Loewe', piece: 'Basket Bag', pieceText: 'Loewe Basket Bag', tag: 'Styled', num: 'N-228', img: '/catalog/highlights-web/loewe-basket-bag.webp', w: 'w-6' },
