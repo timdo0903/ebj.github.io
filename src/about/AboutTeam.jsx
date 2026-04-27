@@ -10,7 +10,7 @@ function AboutTeam() {
           quiet: true,
         },
         {
-          city: 'Tokyo',
+          city: 'Japan',
           role: '真贋確認、ケア、撮影、オペレーション',
           note: 'アイテムを受け取り、確認し、整え、撮影し、次の持ち主へ送り出す中心となるアトリエです。',
           quiet: false,
@@ -30,7 +30,7 @@ function AboutTeam() {
           quiet: true,
         },
         {
-          city: 'Tokyo',
+          city: 'Japan',
           role: 'Authentication, restoration, and studio operations',
           note: "The atelier where pieces are received, restored, photographed, and prepared with the team's daily hands-on standard.",
           quiet: false,
@@ -119,7 +119,7 @@ function AboutTeam() {
 
         <div className="atelier-map-foot">
           <span>{isJp ? '三つの独立した拠点を、同じケアの基準でつないでいます。' : 'Three standalone offices, aligned by the same standard of care.'}</span>
-          <span className="mono">EUROPE &nbsp;/&nbsp; TOKYO &nbsp;/&nbsp; UNITED STATES</span>
+          <span className="mono">EUROPE &nbsp;/&nbsp; JAPAN &nbsp;/&nbsp; UNITED STATES</span>
         </div>
       </div>
     </section>
