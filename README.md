@@ -30,8 +30,8 @@ Last updated: April 25, 2026
 .
 ├── src/                    # React source components
 ├── compiled/               # Browser-ready compiled JS and vendor files
-├── images/                 # Brand, hero, and page imagery
-├── catalog/                # Highlight/editorial catalog imagery
+├── images/                 # Small generated social preview asset
+├── catalog/highlights-web/ # Optimized WebP highlight/editorial imagery
 ├── careers.css             # Careers page styles
 ├── job.css                 # Job detail page styles
 ├── styles.css              # Current global styles
@@ -71,8 +71,8 @@ http://127.0.0.1:8000/ja/careers/
 | `npm run build:client` | Compile `src/` React components into `compiled/` and copy React vendor files. |
 | `npm run build:static` | Refresh static SEO metadata and regenerate `.min.css` files. |
 | `npm test` | Check that required top-level English and Japanese HTML files exist. |
-| `npm run optimize:images:dry` | Preview image variants that would be generated. |
-| `npm run optimize:images` | Generate WebP and AVIF variants in `assets/optimized/` from `images/` and `catalog/`. |
+| `npm run optimize:images:dry` | Preview image variants that would be generated from temporary source images. |
+| `npm run optimize:images` | Generate WebP and AVIF variants in `assets/optimized/` from temporary source images. |
 
 ## Editing Workflow
 
@@ -107,7 +107,13 @@ Review these settings before changing application flows:
 
 ## Image Optimization
 
-Run the optimizer when adding or replacing large photography:
+The public repository should only contain web-ready imagery:
+
+- Keep active editorial photography in `catalog/highlights-web/` as optimized WebP files.
+- Keep `images/social-preview.jpg` for Open Graph and Twitter previews.
+- Do not commit raw source JPG/PNG photography to `images/` or the root of `catalog/`.
+
+Run the optimizer locally when preparing new photography, then commit only the final optimized web asset:
 
 ```bash
 npm run optimize:images:dry

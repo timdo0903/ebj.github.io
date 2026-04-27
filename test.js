@@ -41,6 +41,20 @@ if (exists('style.css')) {
   fail('Legacy style.css should not exist.');
 }
 
+const allowedRasterAssets = new Set([
+  path.join(root, 'images', 'social-preview.jpg'),
+]);
+
+for (const file of walk(path.join(root, 'images'), filePath => /\.(?:jpe?g|png)$/i.test(filePath))) {
+  if (!allowedRasterAssets.has(file)) {
+    fail(`${path.relative(root, file)} should not be committed. Keep only optimized web assets in the public repo.`);
+  }
+}
+
+for (const file of walk(path.join(root, 'catalog'), filePath => /\.(?:jpe?g|png)$/i.test(filePath))) {
+  fail(`${path.relative(root, file)} should not be committed. Use catalog/highlights-web WebP assets instead.`);
+}
+
 const htmlFiles = walk(root, filePath => filePath.endsWith('.html'));
 for (const absolutePath of htmlFiles) {
   const relPath = path.relative(root, absolutePath);
