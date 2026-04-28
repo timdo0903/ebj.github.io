@@ -31,19 +31,14 @@ function JobApply({ job }) {
                   ? <>Thank you for your interest in the Luxury Buyer role. The position has been filled and we are no longer accepting applications. Please follow our <a href="https://www.linkedin.com/company/eco-brand-japan/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>LinkedIn page</a> or the careers page for future updates.</>
                   : <>Thank you for your enthusiasm about this opportunity. The role has been filled and we are not collecting new submissions. Please keep an eye on the careers page for future roles.</>)}
           </p>
-        </div>
-        <div className="actions">
-          {open ? (
-            <a className="btn-primary" href={`mailto:careers@ecobrandjapan.com?subject=${encodeURIComponent('Application · ' + job.plainTitle)}`}>
-              <span>{isJp ? 'メールで応募' : 'Email fallback'}</span>
-              <span className="arrow"></span>
-            </a>
-          ) : (
-            <a className="btn-primary" href={isJp ? '/ja/careers/' : '/careers/'}>
-              <span>{isJp ? '採用情報へ戻る' : 'Back to open roles'}</span>
-              <span className="arrow"></span>
-            </a>
-          )}
+	        </div>
+	        <div className="actions">
+	          {!open && (
+	            <a className="btn-primary" href={isJp ? '/ja/careers/' : '/careers/'}>
+	              <span>{isJp ? '採用情報へ戻る' : 'Back to open roles'}</span>
+	              <span className="arrow"></span>
+	            </a>
+	          )}
           <a className="btn-ghost" href={isJp ? '/ja/careers/' : '/careers/'}>← {isJp ? 'すべての職種' : 'All roles'}</a>
         </div>
       </div>
