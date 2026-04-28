@@ -2,7 +2,7 @@ function JobApply({ job }) {
   const isJp = window.SITE_LANG === 'jp';
   const open = job.status === 'open';
   const applyNum = String((job.sections?.length || 0) + 2).padStart(2, '0');
-  const { submitForm, status, submitting, Turnstile } = window.useManagedForm({
+  const { submitForm, status, submitting, turnstile } = window.useManagedForm({
     formKey: job.slug || job.plainTitle,
     successMessage: isJp ? '応募を受け付けました。書類を確認のうえ、通過された方へご連絡します。' : 'Thanks for applying. We will contact shortlisted candidates via email.',
     errorMessage: isJp ? '送信できませんでした。時間をおいて再度お試しいただくか、メールでご応募ください。' : 'We could not submit your application. Please try again later or email your application.',
@@ -88,7 +88,7 @@ function JobApply({ job }) {
                 <input name="portfolioFile" type="file" accept=".pdf,.zip,.jpg,.jpeg,.png,.webp" />
               </label>
             </div>
-            <Turnstile />
+            {turnstile}
             <input className="form-trap" type="text" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true" />
             <div className="form-submit-row">
               <p>{isJp ? '各ファイル10MBまで、合計20MBまで送信できます。' : 'Upload up to 10 MB per file, 20 MB total.'}</p>

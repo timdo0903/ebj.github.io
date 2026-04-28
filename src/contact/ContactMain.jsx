@@ -1,6 +1,6 @@
 function ContactMain() {
   const isJp = window.SITE_LANG === 'jp';
-  const { submitForm, status, submitting, Turnstile } = window.useManagedForm({
+  const { submitForm, status, submitting, turnstile } = window.useManagedForm({
     formKey: 'contact',
     successMessage: isJp ? 'お問い合わせを受け付けました。内容を確認後、担当者よりご連絡します。' : 'Thanks. Your message has been received and will be routed to the right team member.',
     errorMessage: isJp ? '送信できませんでした。時間をおいて再度お試しいただくか、メールでお問い合わせください。' : 'We could not send your message. Please try again later or email us directly.',
@@ -92,7 +92,7 @@ function ContactMain() {
 	                    <span>{isJp ? 'メッセージ' : 'Message'}</span>
 	                    <textarea name="message" rows="7" required></textarea>
 	                  </label>
-	                  <Turnstile />
+	                  {turnstile}
 	                  <input className="form-trap" type="text" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true" />
                   <div className="contact-form-footer">
                     <p>

@@ -120,6 +120,12 @@ function useManagedForm({ formKey, successMessage, errorMessage, submittingMessa
   const [submitting, setSubmitting] = React.useState(false);
   const [settings, setSettings] = React.useState(DEFAULT_FORM_CONFIG);
   const [turnstileToken, setTurnstileToken] = React.useState('');
+  const turnstile = (
+    <TurnstileWidget
+      siteKey={settings.turnstileSiteKey}
+      onToken={setTurnstileToken}
+    />
+  );
 
   React.useEffect(() => {
     let active = true;
@@ -213,12 +219,7 @@ function useManagedForm({ formKey, successMessage, errorMessage, submittingMessa
     submitForm,
     status,
     submitting,
-    Turnstile: () => (
-      <TurnstileWidget
-        siteKey={settings.turnstileSiteKey}
-        onToken={setTurnstileToken}
-      />
-    ),
+    turnstile,
   };
 }
 
