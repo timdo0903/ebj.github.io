@@ -1,5 +1,6 @@
 window.JOBS_JP = {
   'inventory-logistics-specialist': {
+    slug: 'inventory-logistics-specialist',
     title: <>在庫・物流<em>スペシャリスト</em></>,
     plainTitle: '在庫・物流スペシャリスト',
     type: '正社員',
@@ -8,7 +9,6 @@ window.JOBS_JP = {
     commitment: '常勤 · オンサイト',
     status: 'open',
     intro: '真贋確認後の商品管理から出荷まで、品物の流れを支えるポジションです。正確な記録、品質の保護、チーム間の連携を通じて、お客様に届くまでの体験を整えます。',
-    formUrl: 'https://b5i9cfx0.forms.app/form/696732c6d196b60002bce481',
     sections: [
       {
         id: 'responsibilities',
@@ -59,6 +59,7 @@ window.JOBS_JP = {
   },
 
   'product-photographer': {
+    slug: 'product-photographer',
     title: <>商品<em>フォトグラファー</em></>,
     plainTitle: '商品フォトグラファー',
     type: '正社員',
@@ -67,7 +68,6 @@ window.JOBS_JP = {
     commitment: '常勤 · オンサイト',
     status: 'open',
     intro: 'ラグジュアリーバッグやアクセサリーの魅力と状態を、正確に美しく伝える仕事です。商品撮影、編集、モデル撮影、キャンペーン素材まで、ブランドの見え方をつくります。',
-    formUrl: 'https://b5i9cfx0.forms.app/form/69674357d196b60002bd0596',
     sections: [
       {
         id: 'responsibilities',
@@ -125,6 +125,7 @@ window.JOBS_JP = {
   },
 
   'buyers-position': {
+    slug: 'buyers-position',
     title: <>ラグジュアリー<em>バイヤー</em></>,
     plainTitle: 'ラグジュアリーバイヤー',
     type: '正社員',
@@ -173,6 +174,7 @@ window.JOBS_JP = {
   },
 
   'live-seller-social-media-operator': {
+    slug: 'live-seller-social-media-operator',
     title: <>ライブセラー / <em>SNSオペレーター</em></>,
     plainTitle: 'ライブセラー / SNSオペレーター',
     type: 'パートタイム',

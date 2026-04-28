@@ -1,15 +1,14 @@
 {
   "default": {
-    "submitUrl": "https://formspree.io/f/xanleagz",
-    "ajaxSubmitUrl": "https://formspree.io/f/xanleagz",
-    "successMessage": "Thanks for applying. We will contact shortlisted candidates via email.",
-    "errorMessage": "Something went wrong. Please try again later or use the application form link on the role page.",
-    "submittingMessage": "Submitting your application...",
+    "submitUrl": "https://ebj-forms.tim-dee.workers.dev/submit",
+    "successMessage": "Thanks. Your message has been received.",
+    "errorMessage": "Something went wrong. Please try again later or email us directly.",
+    "submittingMessage": "Sending...",
     "allowedOrigins": [
-      "https://formspree.io"
+      "https://ebj-forms.tim-dee.workers.dev"
     ],
-    "maxAttachmentBytes": 5242880,
-    "maxTotalBytes": 5242880,
+    "maxAttachmentBytes": 10485760,
+    "maxTotalBytes": 20971520,
     "requestTimeoutMs": 20000,
     "retryAttempts": 3,
     "retryBackoffMs": 1000

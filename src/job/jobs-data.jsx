@@ -1,5 +1,6 @@
 window.JOBS = {
   'inventory-logistics-specialist': {
+    slug: 'inventory-logistics-specialist',
     title: <>Inventory & <em>Logistics</em> Specialist</>,
     plainTitle: 'Inventory & Logistics Specialist',
     type: 'Full-time',
@@ -9,7 +10,6 @@ window.JOBS = {
     status: 'open',
     statusNote: 'Applications are currently open. Submit your resume below to be considered.',
     intro: "The Inventory & Logistics Specialist manages product movement from authentication through shipment. You will collaborate across teams to maintain accurate records, protect product quality and deliver exceptional customer experiences.",
-    formUrl: 'https://b5i9cfx0.forms.app/form/696732c6d196b60002bce481',
     sections: [
       {
         id: 'responsibilities',
@@ -95,6 +95,7 @@ window.JOBS = {
   },
 
   'product-photographer': {
+    slug: 'product-photographer',
     title: <>Product <em>Photographer</em></>,
     plainTitle: 'Product Photographer',
     type: 'Full-time',
@@ -104,7 +105,6 @@ window.JOBS = {
     status: 'open',
     statusNote: 'Applications are open for this role. Share your portfolio and resume below.',
     intro: "As a Product Photographer you will shape how our brand is experienced visually. You'll document a wide range of luxury handbags and accessories, deliver market-ready imagery and collaborate on creative storytelling for campaigns featuring models.",
-    formUrl: 'https://b5i9cfx0.forms.app/form/69674357d196b60002bd0596',
     sections: [
       {
         id: 'responsibilities',
@@ -185,6 +185,7 @@ window.JOBS = {
   },
 
   'buyers-position': {
+    slug: 'buyers-position',
     title: <>Luxury Handbag & <em>Accessories</em> Buyer</>,
     plainTitle: 'Luxury Handbag and Accessories Buyer',
     type: 'Full-time',
@@ -286,6 +287,7 @@ window.JOBS = {
   },
 
   'live-seller-social-media-operator': {
+    slug: 'live-seller-social-media-operator',
     title: <>Live Seller & <em>Social Media</em> Operator</>,
     plainTitle: 'Live Seller & Social Media Operator',
     type: 'Part-time',

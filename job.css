@@ -243,8 +243,10 @@
 
 .job-embed {
   margin-top: 56px;
-  padding-top: 32px;
+  padding: 36px;
   border-top: 1px solid var(--rule);
+  border: 1px solid var(--rule);
+  background: color-mix(in oklab, var(--bg) 94%, white 6%);
 }
 .job-embed-label {
   font-family: var(--mono);
@@ -275,6 +277,103 @@
 }
 .job-embed-fallback a { color: var(--accent); border-bottom: 1px solid var(--accent); }
 
+.site-form {
+  display: grid;
+  gap: 20px;
+}
+
+.site-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.site-form label span {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+}
+
+.site-form input,
+.site-form textarea {
+  width: 100%;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.4;
+  padding: 13px 14px;
+  border-radius: 0;
+}
+
+.site-form input[type="file"] {
+  font-size: 13px;
+}
+
+.site-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.site-form input:focus,
+.site-form textarea:focus {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.site-form button {
+  border: 0;
+  cursor: pointer;
+}
+
+.site-form button:disabled {
+  cursor: wait;
+  opacity: .68;
+  transform: none;
+}
+
+.form-grid.two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-submit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.job-apply .form-submit-row p {
+  margin: 0;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-status {
+  min-height: 20px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-quiet);
+}
+
+.form-status.success { color: var(--accent); }
+.form-status.error { color: #9b3a2f; }
+
+.form-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 @media (max-width: 960px) {
   .job-hero-grid, .job-body-grid, .job-apply-grid { grid-template-columns: 1fr; gap: 40px; }
   .job-facts { grid-template-columns: 1fr; }
@@ -297,6 +396,23 @@
   .job-body aside a:last-child,
   .job-body aside a:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
   .job-body aside a:last-child:nth-child(odd) { border-right: 0; }
+}
+
+@media (max-width: 720px) {
+  .job-embed {
+    padding: 24px 18px;
+  }
+
+  .form-grid.two,
+  .form-submit-row {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .form-submit-row .btn-primary {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 640px) {

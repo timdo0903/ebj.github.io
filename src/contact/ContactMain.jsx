@@ -1,6 +1,11 @@
 function ContactMain() {
   const isJp = window.SITE_LANG === 'jp';
-  const contactFormUrl = 'https://b5i9cfx0.forms.app/eco-brand-japan-contact';
+  const { submitForm, status, submitting } = window.useManagedForm({
+    formKey: 'contact',
+    successMessage: isJp ? 'お問い合わせを受け付けました。内容を確認後、担当者よりご連絡します。' : 'Thanks. Your message has been received and will be routed to the right team member.',
+    errorMessage: isJp ? '送信できませんでした。時間をおいて再度お試しいただくか、メールでお問い合わせください。' : 'We could not send your message. Please try again later or email us directly.',
+    submittingMessage: isJp ? '送信中...' : 'Sending...',
+  });
   const socials = [
     {
       k: 'Instagram',
@@ -68,25 +73,49 @@ function ContactMain() {
                   <span className="form-note">{isJp ? '東京営業日' : 'Tokyo business days'}</span>
                 </div>
 
-                <iframe
-                  className="contact-form-embed"
-                  title={isJp ? 'Eco Brand Japan お問い合わせフォーム' : 'Eco Brand Japan contact form'}
-                  src={contactFormUrl}
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                ></iframe>
+                <form className="site-form contact-site-form" onSubmit={submitForm}>
+                  <input type="hidden" name="formType" value="contact" />
+                  <input type="hidden" name="language" value={isJp ? 'ja' : 'en'} />
+                  <label>
+                    <span>{isJp ? 'お名前' : 'Name'}</span>
+                    <input name="name" type="text" autoComplete="name" required />
+                  </label>
+                  <label>
+                    <span>{isJp ? 'メールアドレス' : 'Email'}</span>
+                    <input name="email" type="email" autoComplete="email" required />
+                  </label>
+                  <label>
+                    <span>{isJp ? 'お問い合わせ種別' : 'Topic'}</span>
+                    <select name="topic" required defaultValue="">
+                      <option value="" disabled>{isJp ? '選択してください' : 'Select one'}</option>
+                      <option value="Consignment">{isJp ? '委託・買取' : 'Consignment'}</option>
+                      <option value="Partnership">{isJp ? 'パートナーシップ' : 'Partnership'}</option>
+                      <option value="Press">{isJp ? 'プレス' : 'Press'}</option>
+                      <option value="Careers">{isJp ? '採用' : 'Careers'}</option>
+                      <option value="Other">{isJp ? 'その他' : 'Other'}</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>{isJp ? 'メッセージ' : 'Message'}</span>
+                    <textarea name="message" rows="7" required></textarea>
+                  </label>
+                  <input className="form-trap" type="text" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true" />
+                  <div className="contact-form-footer">
+                    <p>
+                      {isJp
+                        ? '内容を確認後、担当者よりご連絡します。'
+                        : 'After review, the right team member will reply directly.'}
+                    </p>
+                    <button className="btn-primary" type="submit" disabled={submitting}>
+                      <span>{submitting ? (isJp ? '送信中' : 'Sending') : (isJp ? '送信する' : 'Send message')}</span>
+                      <span className="arrow"></span>
+                    </button>
+                  </div>
+                  <div className={`form-status ${status.type}`} role="status" aria-live="polite">
+                    {status.message}
+                  </div>
+                </form>
 
-                <div className="contact-form-footer">
-                  <p>
-                    {isJp
-                      ? '内容を確認後、担当者よりご連絡します。'
-                      : 'After review, the right team member will reply directly.'}
-                  </p>
-                  <a className="btn-primary" href={contactFormUrl} target="_blank" rel="noopener noreferrer">
-                    <span>{isJp ? 'フォームを開く' : 'Open form'}</span>
-                    <span className="arrow"></span>
-                  </a>
-                </div>
               </div>
             </window.FadeUp>
           </div>

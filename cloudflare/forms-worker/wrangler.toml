@@ -1,0 +1,13 @@
+name = "ebj-forms"
+main = "src/index.js"
+compatibility_date = "2026-04-28"
+
+[[r2_buckets]]
+binding = "FORM_UPLOADS"
+bucket_name = "ebj-form-submissions"
+
+[vars]
+ALLOWED_ORIGINS = "https://www.ecobrandjapan.com,https://ecobrandjapan.com"
+# Optional:
+# NOTIFY_EMAIL = "careers@ecobrandjapan.com"
+# FROM_EMAIL = "Eco Brand Japan <forms@ecobrandjapan.com>"

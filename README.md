@@ -12,6 +12,7 @@ Last updated: April 25, 2026
 - The careers hub currently advertises 2 open roles: Inventory & Logistics Specialist and Product Photographer.
 - Closed roles remain visible for reference: Luxury Buyer and Live Seller & Social Media Operator.
 - The current page system uses source components in `src/` and compiled browser-ready scripts in `compiled/`.
+- Contact and job application forms post to the Cloudflare Worker documented in `docs/cloudflare-forms.md`.
 
 ## Site Sections
 
@@ -37,6 +38,8 @@ Last updated: April 25, 2026
 ├── styles.css              # Current global styles
 ├── subpages.css            # Subpage-specific styling
 ├── form-config.json        # Application form configuration
+├── cloudflare/forms-worker # Cloudflare Worker that receives forms and stores files in R2
+├── docs/                   # Deployment notes
 ├── tools/                  # Build and image optimization scripts
 └── index.html              # English home page
 ```
