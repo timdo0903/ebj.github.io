@@ -147,6 +147,7 @@ function notificationText(submission) {
     `Email: ${submission.email || '-'}`,
   ];
   if (submission.role) lines.push(`Role: ${submission.role}`);
+  if (submission.fields.subject) lines.push(`Subject: ${submission.fields.subject}`);
   if (submission.fields.topic) lines.push(`Topic: ${submission.fields.topic}`);
   if (submission.uploads.length) {
     lines.push('Files:');
@@ -177,7 +178,7 @@ async function sendResendNotification(submission, env) {
       from: env.FROM_EMAIL,
       to: [env.NOTIFY_EMAIL],
       reply_to: submission.email || undefined,
-      subject: `Eco Brand Japan ${submission.type}: ${submission.role || submission.fields.topic || submission.name || 'new submission'}`,
+      subject: `Eco Brand Japan ${submission.type}: ${submission.role || submission.fields.subject || submission.fields.topic || submission.name || 'new submission'}`,
       text: notificationText(submission),
     }),
   });
@@ -218,7 +219,7 @@ async function handleSubmit(request, env, origin) {
 
   const baseKey = [
     sanitizeSegment(fields.formType, 'submission'),
-    sanitizeSegment(fields.roleSlug || fields.topic || 'general', 'general'),
+    sanitizeSegment(fields.roleSlug || fields.subject || fields.topic || 'general', 'general'),
     `${timestampId()}-${crypto.randomUUID()}`,
   ].join('/');
 

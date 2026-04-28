@@ -84,17 +84,10 @@ function ContactMain() {
                     <span>{isJp ? 'メールアドレス' : 'Email'}</span>
                     <input name="email" type="email" autoComplete="email" required />
                   </label>
-                  <label>
-                    <span>{isJp ? 'お問い合わせ種別' : 'Topic'}</span>
-                    <select name="topic" required defaultValue="">
-                      <option value="" disabled>{isJp ? '選択してください' : 'Select one'}</option>
-                      <option value="Consignment">{isJp ? '委託・買取' : 'Consignment'}</option>
-                      <option value="Partnership">{isJp ? 'パートナーシップ' : 'Partnership'}</option>
-                      <option value="Press">{isJp ? 'プレス' : 'Press'}</option>
-                      <option value="Careers">{isJp ? '採用' : 'Careers'}</option>
-                      <option value="Other">{isJp ? 'その他' : 'Other'}</option>
-                    </select>
-                  </label>
+	                  <label>
+	                    <span>{isJp ? '件名' : 'Subject'}</span>
+	                    <input name="subject" type="text" required />
+	                  </label>
                   <label>
                     <span>{isJp ? 'メッセージ' : 'Message'}</span>
                     <textarea name="message" rows="7" required></textarea>
