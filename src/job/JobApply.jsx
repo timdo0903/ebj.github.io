@@ -89,6 +89,7 @@ function JobApply({ job }) {
                   onChange={event => setVisaStatus(event.target.value)}
                 >
                   <option value="" disabled>{isJp ? '選択してください' : 'Select one'}</option>
+                  <option value="Japanese National">{isJp ? '日本国籍' : 'Japanese National'}</option>
                   <option value="Permanent Residence">{isJp ? '永住者' : 'Permanent Residence'}</option>
                   <option value="Spouse or Child of Japanese National">{isJp ? '日本人の配偶者等' : 'Spouse or Child of Japanese National'}</option>
                   <option value="Long-term Residence">{isJp ? '定住者' : 'Long-term Residence'}</option>
