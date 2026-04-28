@@ -374,6 +374,10 @@
   opacity: 0;
 }
 
+.turnstile-row {
+  min-height: 65px;
+}
+
 @media (max-width: 960px) {
   .job-hero-grid, .job-body-grid, .job-apply-grid { grid-template-columns: 1fr; gap: 40px; }
   .job-facts { grid-template-columns: 1fr; }

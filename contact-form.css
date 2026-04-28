@@ -139,6 +139,10 @@
   opacity: 0;
 }
 
+.turnstile-row {
+  min-height: 65px;
+}
+
 @media (max-width: 640px) {
   .contact-form-panel {
     padding: 24px 20px;

@@ -1,6 +1,7 @@
 {
   "default": {
     "submitUrl": "https://ebj-forms.tim-dee.workers.dev/submit",
+    "turnstileSiteKey": "0x4AAAAAADEnLcMfd6_YEWY6",
     "successMessage": "Thanks. Your message has been received.",
     "errorMessage": "Something went wrong. Please try again later or email us directly.",
     "submittingMessage": "Sending...",

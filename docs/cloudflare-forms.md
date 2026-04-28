@@ -78,7 +78,19 @@ npx wrangler secret put RESEND_API_KEY
 
 Then set `NOTIFY_EMAIL` and `FROM_EMAIL` in `wrangler.toml`. The sender domain must be verified in Resend.
 
-## 5. Site config
+## 5. Turnstile spam protection
+
+The browser reads the public Turnstile site key from `/form-config.json`.
+
+After the website update is live, add the private Turnstile secret key to the `ebj-forms` Worker:
+
+```bash
+npx wrangler secret put TURNSTILE_SECRET_KEY
+```
+
+Do not commit the secret key to the repository.
+
+## 6. Site config
 
 The browser reads `/form-config.json`. The important value is:
 
@@ -88,7 +100,7 @@ The browser reads `/form-config.json`. The important value is:
 
 For local testing, temporarily change `submitUrl` to a local Worker URL, or add a role-specific override under `roles`.
 
-## 6. File limits
+## 7. File limits
 
 The website validates:
 
