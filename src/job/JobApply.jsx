@@ -2,6 +2,7 @@ function JobApply({ job }) {
   const isJp = window.SITE_LANG === 'jp';
   const open = job.status === 'open';
   const applyNum = String((job.sections?.length || 0) + 2).padStart(2, '0');
+  const [visaStatus, setVisaStatus] = React.useState('');
   const { submitForm, status, submitting, turnstile } = window.useManagedForm({
     formKey: job.slug || job.plainTitle,
     successMessage: isJp ? '応募を受け付けました。書類を確認のうえ、通過された方へご連絡します。' : 'Thanks for applying. We will contact shortlisted candidates via email.',
@@ -70,6 +71,41 @@ function JobApply({ job }) {
                 <input name="location" type="text" autoComplete="address-level2" />
               </label>
             </div>
+            <div className="form-grid two">
+              <label>
+                <span>{isJp ? '現在、日本で就労可能ですか？' : 'Are you currently allowed to work in Japan?'}</span>
+                <select name="workAuthorizationJapan" required defaultValue="">
+                  <option value="" disabled>{isJp ? '選択してください' : 'Select one'}</option>
+                  <option value="Yes">{isJp ? 'はい' : 'Yes'}</option>
+                  <option value="No">{isJp ? 'いいえ' : 'No'}</option>
+                </select>
+              </label>
+              <label>
+                <span>{isJp ? '日本での在留資格' : 'Visa Status in Japan'}</span>
+                <select
+                  name="visaStatusJapan"
+                  required
+                  value={visaStatus}
+                  onChange={event => setVisaStatus(event.target.value)}
+                >
+                  <option value="" disabled>{isJp ? '選択してください' : 'Select one'}</option>
+                  <option value="Permanent Residence">{isJp ? '永住者' : 'Permanent Residence'}</option>
+                  <option value="Spouse or Child of Japanese National">{isJp ? '日本人の配偶者等' : 'Spouse or Child of Japanese National'}</option>
+                  <option value="Long-term Residence">{isJp ? '定住者' : 'Long-term Residence'}</option>
+                  <option value="Working Visa">{isJp ? '就労ビザ' : 'Working Visa'}</option>
+                  <option value="Student Visa">{isJp ? '留学ビザ' : 'Student Visa'}</option>
+                  <option value="Dependent Visa">{isJp ? '家族滞在ビザ' : 'Dependent Visa'}</option>
+                  <option value="Working Holiday Visa">{isJp ? 'ワーキングホリデービザ' : 'Working Holiday Visa'}</option>
+                  <option value="Other">{isJp ? 'その他' : 'Other'}</option>
+                </select>
+              </label>
+            </div>
+            {visaStatus === 'Other' && (
+              <label>
+                <span>{isJp ? 'その他の在留資格' : 'Other visa status'}</span>
+                <input name="visaStatusJapanOther" type="text" required />
+              </label>
+            )}
             <label>
               <span>{isJp ? 'LinkedIn / ポートフォリオURL' : 'LinkedIn / portfolio URL'}</span>
               <input name="portfolioUrl" type="url" placeholder="https://" />

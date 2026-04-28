@@ -296,6 +296,7 @@
 }
 
 .site-form input,
+.site-form select,
 .site-form textarea {
   width: 100%;
   border: 1px solid var(--rule);
@@ -318,6 +319,7 @@
 }
 
 .site-form input:focus,
+.site-form select:focus,
 .site-form textarea:focus {
   outline: 1px solid var(--accent);
   outline-offset: 2px;
