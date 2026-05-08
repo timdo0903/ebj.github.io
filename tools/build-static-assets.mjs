@@ -11,6 +11,8 @@ const socialPreviewPath = path.join(rootDir, 'images', 'social-preview.jpg');
 const ogImage = `${siteOrigin}/images/social-preview.jpg`;
 const defaultDescription =
   'Eco Brand Japan is a Tokyo atelier sourcing, authenticating, restoring, and photographing circular luxury pieces.';
+const args = new Set(process.argv.slice(2));
+const shouldBuildSocialPreview = args.has('--social-preview') || process.env.BUILD_SOCIAL_PREVIEW === '1';
 
 const cssFiles = ['styles.css', 'subpages.css', 'careers.css', 'contact-form.css', 'job.css'];
 const pairedPaths = new Set(['/', '/about/', '/principles/', '/highlights/', '/contact/', '/careers/', '/job-detail/']);
@@ -221,6 +223,12 @@ async function buildHtml() {
 }
 
 await buildCss();
-await buildSocialPreview();
+if (shouldBuildSocialPreview) {
+  await buildSocialPreview();
+}
 await buildHtml();
-console.log('Built minified CSS and refreshed static HTML metadata.');
+console.log(
+  shouldBuildSocialPreview
+    ? 'Built minified CSS, social preview image, and refreshed static HTML metadata.'
+    : 'Built minified CSS and refreshed static HTML metadata.'
+);

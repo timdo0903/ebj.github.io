@@ -5,6 +5,7 @@
   "scripts": {
     "build": "npm run build:client && npm run build:static",
     "build:static": "node tools/build-static-assets.mjs",
+    "build:social-preview": "node tools/build-static-assets.mjs --social-preview",
     "build:client": "node tools/build-client-js.mjs",
     "test": "node test.js && node --test tools/test-worker.mjs",
     "optimize:images": "node tools/optimize-images.mjs",
