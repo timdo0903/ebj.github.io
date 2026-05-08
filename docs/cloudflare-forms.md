@@ -125,3 +125,7 @@ Slack and Resend notifications are optional. If either provider returns a non-2x
 ```toml
 NOTIFICATION_TIMEOUT_MS = "8000"
 ```
+
+## 10. Live smoke test
+
+After changing form code, run the deployment and verification checklist in `docs/live-form-smoke-test.md`.

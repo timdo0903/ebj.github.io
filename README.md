@@ -111,6 +111,8 @@ Review these settings before changing application flows:
 
 The browser sends an `idempotencyKey` with each form attempt. The Worker uses that key to avoid duplicate R2 folders and duplicate notifications when a browser retries after a timeout.
 
+After changing form behavior, use `docs/live-form-smoke-test.md` to verify the live Worker, R2 storage, and Slack notifications.
+
 ## Image Optimization
 
 The public repository should only contain web-ready imagery:
