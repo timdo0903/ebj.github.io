@@ -8,6 +8,28 @@ const DEFAULT_ALLOWED_ORIGINS = [
 
 const TEXT_FIELD_LIMIT = 12000;
 const MAX_FILES = 4;
+const DEFAULT_MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024;
+const DEFAULT_MAX_TOTAL_BYTES = 20 * 1024 * 1024;
+const DEFAULT_NOTIFICATION_TIMEOUT_MS = 8000;
+const DEFAULT_TURNSTILE_TIMEOUT_MS = 5000;
+
+function httpError(message, status = 400) {
+  const error = new Error(message);
+  error.status = status;
+  return error;
+}
+
+function positiveNumber(value, fallback) {
+  const number = Number(value);
+  return Number.isFinite(number) && number > 0 ? number : fallback;
+}
+
+function getUploadLimits(env) {
+  return {
+    maxAttachmentBytes: positiveNumber(env.MAX_ATTACHMENT_BYTES, DEFAULT_MAX_ATTACHMENT_BYTES),
+    maxTotalBytes: positiveNumber(env.MAX_TOTAL_BYTES, DEFAULT_MAX_TOTAL_BYTES),
+  };
+}
 
 function json(data, status = 200, origin = '') {
   return new Response(JSON.stringify(data), {
@@ -60,6 +82,10 @@ function timestampId() {
   return new Date().toISOString().replace(/[:.]/g, '-');
 }
 
+function submissionId(fields) {
+  return sanitizeSegment(fields.idempotencyKey, `${timestampId()}-${crypto.randomUUID()}`);
+}
+
 async function verifyTurnstile(token, request, env) {
   if (!env.TURNSTILE_SECRET_KEY) return true;
   if (!token) return false;
@@ -72,20 +98,43 @@ async function verifyTurnstile(token, request, env) {
   const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
     body,
+    signal: AbortSignal.timeout(positiveNumber(env.TURNSTILE_TIMEOUT_MS, DEFAULT_TURNSTILE_TIMEOUT_MS)),
   });
+  if (!response.ok) {
+    console.warn(`Turnstile verification failed with HTTP ${response.status}.`);
+    return false;
+  }
   const result = await response.json().catch(() => null);
   return Boolean(result?.success);
 }
 
-async function storeFiles(formData, env, baseKey) {
-  const uploads = [];
+function collectUploadFiles(formData, env) {
+  const { maxAttachmentBytes, maxTotalBytes } = getUploadLimits(env);
+  const files = [];
+  let totalBytes = 0;
 
   for (const [name, value] of formData.entries()) {
     if (!(value instanceof File) || !value.name || value.size === 0) continue;
-    if (uploads.length >= MAX_FILES) {
-      throw new Error(`Too many files. Maximum ${MAX_FILES} files allowed.`);
+    if (files.length >= MAX_FILES) {
+      throw httpError(`Too many files. Maximum ${MAX_FILES} files allowed.`, 413);
     }
+    if (value.size > maxAttachmentBytes) {
+      throw httpError(`Each file must be ${maxAttachmentBytes} bytes or less.`, 413);
+    }
+    totalBytes += value.size;
+    if (totalBytes > maxTotalBytes) {
+      throw httpError(`Combined attachments must be ${maxTotalBytes} bytes or less.`, 413);
+    }
+    files.push({ name, value });
+  }
 
+  return files;
+}
+
+async function storeFiles(files, env, baseKey) {
+  const uploads = [];
+
+  for (const { name, value } of files) {
     const safeName = sanitizeSegment(value.name, 'upload');
     const key = `${baseKey}/files/${sanitizeSegment(name, 'file')}-${uploads.length + 1}-${safeName}`;
     await env.FORM_UPLOADS.put(key, value.stream(), {
@@ -157,38 +206,54 @@ function notificationText(submission) {
   return lines.join('\n');
 }
 
+async function responseSnippet(response) {
+  const text = await response.text().catch(() => '');
+  return text.slice(0, 240);
+}
+
+async function postJsonWithStatusCheck(provider, url, payload, env, extraHeaders = {}) {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...extraHeaders },
+    body: JSON.stringify(payload),
+    signal: AbortSignal.timeout(positiveNumber(env.NOTIFICATION_TIMEOUT_MS, DEFAULT_NOTIFICATION_TIMEOUT_MS)),
+  });
+
+  if (!response.ok) {
+    const detail = await responseSnippet(response);
+    throw new Error(`${provider} notification failed with HTTP ${response.status}: ${detail}`);
+  }
+}
+
 async function sendSlackNotification(submission, env) {
   if (!env.SLACK_WEBHOOK_URL) return;
-  await fetch(env.SLACK_WEBHOOK_URL, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ text: notificationText(submission) }),
-  });
+  await postJsonWithStatusCheck('Slack', env.SLACK_WEBHOOK_URL, { text: notificationText(submission) }, env);
 }
 
 async function sendResendNotification(submission, env) {
   if (!env.RESEND_API_KEY || !env.NOTIFY_EMAIL || !env.FROM_EMAIL) return;
-  await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      authorization: `Bearer ${env.RESEND_API_KEY}`,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
+  await postJsonWithStatusCheck(
+    'Resend',
+    'https://api.resend.com/emails',
+    {
       from: env.FROM_EMAIL,
       to: [env.NOTIFY_EMAIL],
       reply_to: submission.email || undefined,
       subject: `Eco Brand Japan ${submission.type}: ${submission.role || submission.fields.subject || submission.fields.topic || submission.name || 'new submission'}`,
       text: notificationText(submission),
-    }),
-  });
+    },
+    env,
+    {
+      authorization: `Bearer ${env.RESEND_API_KEY}`,
+    }
+  );
 }
 
 async function notify(submission, env) {
   const tasks = [sendSlackNotification(submission, env), sendResendNotification(submission, env)];
   const results = await Promise.allSettled(tasks);
   results.forEach(result => {
-    if (result.status === 'rejected') console.warn('Notification failed:', result.reason);
+    if (result.status === 'rejected') console.warn(`Notification failed for ${submission.id}:`, result.reason);
   });
 }
 
@@ -217,17 +282,24 @@ async function handleSubmit(request, env, origin) {
     return json({ ok: false, error: 'Missing application role.' }, 400, origin);
   }
 
+  const id = submissionId(fields);
   const baseKey = [
     sanitizeSegment(fields.formType, 'submission'),
     sanitizeSegment(fields.roleSlug || fields.subject || fields.topic || 'general', 'general'),
-    `${timestampId()}-${crypto.randomUUID()}`,
+    id,
   ].join('/');
+  const metadataKey = `${baseKey}/submission.json`;
 
-  const uploads = await storeFiles(formData, env, baseKey);
+  if (await env.FORM_UPLOADS.head(metadataKey)) {
+    return json({ ok: true, id, duplicate: true }, 200, origin);
+  }
+
+  const uploadFiles = collectUploadFiles(formData, env);
+  const uploads = await storeFiles(uploadFiles, env, baseKey);
   const submission = buildSubmission(fields, uploads, request, baseKey);
-  submission.metadataKey = `${baseKey}/submission.json`;
+  submission.metadataKey = metadataKey;
 
-  await env.FORM_UPLOADS.put(submission.metadataKey, JSON.stringify(submission, null, 2), {
+  await env.FORM_UPLOADS.put(metadataKey, JSON.stringify(submission, null, 2), {
     httpMetadata: { contentType: 'application/json; charset=utf-8' },
   });
 
@@ -259,8 +331,13 @@ export default {
     try {
       return await handleSubmit(request, env, origin);
     } catch (error) {
-      console.error('Submission failed:', error);
-      return json({ ok: false, error: error.message || 'Submission failed.' }, 500, origin);
+      const status = error.status || 500;
+      if (status >= 500) {
+        console.error('Submission failed:', error);
+      } else {
+        console.warn(`Submission rejected with HTTP ${status}:`, error.message);
+      }
+      return json({ ok: false, error: error.message || 'Submission failed.' }, status, origin);
     }
   },
 };

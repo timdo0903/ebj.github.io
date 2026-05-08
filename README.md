@@ -73,7 +73,7 @@ http://127.0.0.1:8000/ja/careers/
 | `npm run build` | Compile React components, refresh static SEO metadata, and regenerate minified CSS. |
 | `npm run build:client` | Compile `src/` React components into `compiled/` and copy React vendor files. |
 | `npm run build:static` | Refresh static SEO metadata and regenerate `.min.css` files. |
-| `npm test` | Check that required top-level English and Japanese HTML files exist. |
+| `npm test` | Run static site checks and Cloudflare Worker form regression tests. |
 | `npm run optimize:images:dry` | Preview image variants that would be generated from temporary source images. |
 | `npm run optimize:images` | Generate WebP and AVIF variants in `assets/optimized/` from temporary source images. |
 
@@ -108,6 +108,8 @@ Review these settings before changing application flows:
 - `allowedOrigins`: allowed origins for enhanced form submission.
 - `maxAttachmentBytes` and `maxTotalBytes`: upload limits.
 
+The browser sends an `idempotencyKey` with each form attempt. The Worker uses that key to avoid duplicate R2 folders and duplicate notifications when a browser retries after a timeout.
+
 ## Image Optimization
 
 The public repository should only contain web-ready imagery:
@@ -135,6 +137,8 @@ Before publishing:
 2. Run `npm test`.
 3. Preview changed pages locally.
 4. Confirm `CNAME` still points to the intended canonical domain.
+
+GitHub Actions also runs `npm ci`, `npm test`, `npm run build`, and `git diff --exit-code` on pushes and pull requests.
 
 ## License
 

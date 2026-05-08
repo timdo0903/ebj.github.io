@@ -102,9 +102,26 @@ For local testing, temporarily change `submitUrl` to a local Worker URL, or add 
 
 ## 7. File limits
 
-The website validates:
+The website and Worker both validate:
 
 - 10 MB per file
 - 20 MB total per submission
 
-Cloudflare Free currently allows larger request bodies, but the website keeps the limit conservative to protect R2 storage.
+Cloudflare Free currently allows larger request bodies, but this repo keeps the limit conservative to protect R2 storage. The Worker-side values are controlled by:
+
+```toml
+MAX_ATTACHMENT_BYTES = "10485760"
+MAX_TOTAL_BYTES = "20971520"
+```
+
+## 8. Duplicate retry protection
+
+The browser adds an `idempotencyKey` to each form attempt. If a browser retries after a timeout and the Worker has already written `submission.json`, the Worker returns the existing id with `duplicate: true` and does not write files or send another notification.
+
+## 9. Notification failure handling
+
+Slack and Resend notifications are optional. If either provider returns a non-2xx response or times out, the submission still remains stored in R2 and the Worker logs a warning with the submission id. Notification timeouts are controlled by:
+
+```toml
+NOTIFICATION_TIMEOUT_MS = "8000"
+```

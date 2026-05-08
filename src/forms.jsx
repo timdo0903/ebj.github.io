@@ -71,6 +71,16 @@ function validateFormFiles(form, settings) {
   return { valid: true };
 }
 
+function createIdempotencyKey() {
+  if (window.crypto?.randomUUID) return window.crypto.randomUUID();
+  return `form-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+function shouldRetrySubmission(error) {
+  if (error.name === 'AbortError' || error.name === 'TypeError') return true;
+  return error.retryable === true;
+}
+
 function TurnstileWidget({ siteKey, onToken }) {
   const ref = React.useRef(null);
   const widgetId = React.useRef(null);
@@ -120,6 +130,7 @@ function useManagedForm({ formKey, successMessage, errorMessage, submittingMessa
   const [submitting, setSubmitting] = React.useState(false);
   const [settings, setSettings] = React.useState(DEFAULT_FORM_CONFIG);
   const [turnstileToken, setTurnstileToken] = React.useState('');
+  const idempotencyKey = React.useRef(createIdempotencyKey());
   const turnstile = (
     <TurnstileWidget
       siteKey={settings.turnstileSiteKey}
@@ -164,6 +175,7 @@ function useManagedForm({ formKey, successMessage, errorMessage, submittingMessa
     const timeoutMs = Number(currentSettings.requestTimeoutMs) || 20000;
     const retryBackoffMs = Number(currentSettings.retryBackoffMs) || 750;
     const formData = new FormData(form);
+    formData.set('idempotencyKey', idempotencyKey.current);
     if (turnstileToken) {
       formData.set('cf-turnstile-response', turnstileToken);
     }
@@ -189,10 +201,14 @@ function useManagedForm({ formKey, successMessage, errorMessage, submittingMessa
           } catch {
             detail = '';
           }
-          throw new Error(detail || `Submission failed with ${response.status}`);
+          const error = new Error(detail || `Submission failed with ${response.status}`);
+          error.status = response.status;
+          error.retryable = response.status === 408 || response.status === 429 || response.status >= 500;
+          throw error;
         }
 
         form.reset();
+        idempotencyKey.current = createIdempotencyKey();
         setTurnstileToken('');
         if (window.turnstile) {
           window.turnstile.reset();
@@ -201,7 +217,7 @@ function useManagedForm({ formKey, successMessage, errorMessage, submittingMessa
         setSubmitting(false);
         return;
       } catch (error) {
-        const canRetry = attempt < attempts - 1;
+        const canRetry = attempt < attempts - 1 && shouldRetrySubmission(error);
         if (!canRetry) {
           console.error('Form submission failed:', error);
           setStatus({ message: errorMessage, type: 'error' });

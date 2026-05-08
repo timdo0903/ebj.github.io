@@ -8,6 +8,10 @@ bucket_name = "ebj-form-submissions"
 
 [vars]
 ALLOWED_ORIGINS = "https://www.ecobrandjapan.com,https://ecobrandjapan.com"
+MAX_ATTACHMENT_BYTES = "10485760"
+MAX_TOTAL_BYTES = "20971520"
+NOTIFICATION_TIMEOUT_MS = "8000"
+TURNSTILE_TIMEOUT_MS = "5000"
 # Optional:
 # NOTIFY_EMAIL = "careers@ecobrandjapan.com"
 # FROM_EMAIL = "Eco Brand Japan <forms@ecobrandjapan.com>"

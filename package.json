@@ -6,7 +6,7 @@
     "build": "npm run build:client && npm run build:static",
     "build:static": "node tools/build-static-assets.mjs",
     "build:client": "node tools/build-client-js.mjs",
-    "test": "node test.js",
+    "test": "node test.js && node --test tools/test-worker.mjs",
     "optimize:images": "node tools/optimize-images.mjs",
     "optimize:images:dry": "node tools/optimize-images.mjs --dry-run"
   },
