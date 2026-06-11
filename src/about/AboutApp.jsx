@@ -19,6 +19,7 @@ function AboutApp() {
       <window.AboutAtelier />
       <window.AboutTeam />
       <window.AboutProcess />
+      <window.AboutCompanyProfile />
       <window.CTABlock
         eyebrow={isJp ? 'お問い合わせ' : 'Work with us'}
         title={isJp ? <>関係は、<em>対話から。</em></> : <>Two ways to <em>begin a relationship.</em></>}
