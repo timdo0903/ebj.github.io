@@ -17,7 +17,7 @@ function AboutCompanyProfile() {
         { label: 'Office', value: '4-12-25 Minamiazabu, Minato-ku, Tokyo 106-0047' },
         { label: 'Corporate Number', value: '0104-01-097558' },
         { label: 'Phone', value: '03-6912-2532' },
-        { label: 'License', value: 'Secondhand Goods Dealer License / Kobutsusho Kyoka / 古物商許可' },
+        { label: 'License', value: 'Secondhand Goods Dealer License - 古物商許可' },
       ];
 
   return (
