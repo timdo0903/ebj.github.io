@@ -1,3 +1,6 @@
+// Reopen the current hiring cycle by changing this value back to 'open'.
+const EN_CURRENT_HIRING_STATUS = 'closed';
+
 window.JOBS = {
   'inventory-logistics-specialist': {
     slug: 'inventory-logistics-specialist',
@@ -7,8 +10,8 @@ window.JOBS = {
     location: 'Tokyo, Japan',
     department: 'Operations',
     commitment: 'Permanent · On-site',
-    status: 'open',
-    statusNote: 'Applications are currently open. Submit your resume below to be considered.',
+    status: EN_CURRENT_HIRING_STATUS,
+    statusNote: 'This position has been filled for the current hiring cycle.',
     intro: "The Inventory & Logistics Specialist manages product movement from authentication through shipment. You will collaborate across teams to maintain accurate records, protect product quality and deliver exceptional customer experiences.",
     sections: [
       {
@@ -102,8 +105,8 @@ window.JOBS = {
     location: 'Tokyo, Japan',
     department: 'Creative',
     commitment: 'Permanent · On-site',
-    status: 'open',
-    statusNote: 'Applications are open for this role. Share your portfolio and resume below.',
+    status: EN_CURRENT_HIRING_STATUS,
+    statusNote: 'This position has been filled for the current hiring cycle.',
     intro: "As a Product Photographer you will shape how our brand is experienced visually. You'll document a wide range of luxury handbags and accessories, deliver market-ready imagery and collaborate on creative storytelling for campaigns featuring models.",
     sections: [
       {

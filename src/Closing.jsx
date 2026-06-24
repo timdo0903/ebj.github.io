@@ -40,7 +40,7 @@ function Closing() {
             <span>{isJp ? '相談する' : 'Begin a conversation'}</span>
             <span className="arrow"></span>
           </a>
-          <a className="btn-ghost" href={isJp ? '/ja/careers/' : '/careers/'}>{isJp ? '採用情報を見る' : 'View open roles'}</a>
+          <a className="btn-ghost" href={isJp ? '/ja/careers/' : '/careers/'}>{isJp ? '採用情報を見る' : 'View careers'}</a>
         </window.FadeUp>
       </div>
     </section>

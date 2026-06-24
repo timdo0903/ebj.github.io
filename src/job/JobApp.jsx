@@ -23,7 +23,7 @@ function JobApp() {
         <window.NavCareers />
         <div className="job-not-found">
           <h1>{isJp ? '募集情報が見つかりません' : 'Role not found'}</h1>
-          <p>{isJp ? 'このポジションは現在掲載されていません。採用情報ページをご確認ください。' : "That position isn't listed. Browse our open roles instead."}</p>
+          <p>{isJp ? 'このポジションは現在掲載されていません。採用情報ページをご確認ください。' : "That position isn't listed. Browse our careers page instead."}</p>
           <a className="btn-primary" href={isJp ? '/ja/careers/' : '/careers/'}>
             <span>{isJp ? '採用情報へ戻る' : 'Back to careers'}</span>
             <span className="arrow"></span>

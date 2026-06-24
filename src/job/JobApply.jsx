@@ -36,7 +36,7 @@ function JobApply({ job }) {
 	        <div className="actions">
 	          {!open && (
 	            <a className="btn-primary" href={isJp ? '/ja/careers/' : '/careers/'}>
-	              <span>{isJp ? '採用情報へ戻る' : 'Back to open roles'}</span>
+	              <span>{isJp ? '採用情報へ戻る' : 'Back to careers'}</span>
 	              <span className="arrow"></span>
 	            </a>
 	          )}

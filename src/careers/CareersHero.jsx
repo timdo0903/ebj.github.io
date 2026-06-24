@@ -4,7 +4,7 @@ function CareersHero() {
   return (
     <header className="careers-hero">
       <div className="meta">
-        <div className="pill">{isJp ? '募集中 · 2職種' : 'Now hiring · 2 roles open'}</div>
+        <div className="pill">{isJp ? '採用一時停止中' : 'Hiring paused'}</div>
         <div>{isJp ? '採用情報' : 'Careers'} · N°001</div>
       </div>
 
@@ -33,7 +33,7 @@ function CareersHero() {
           </p>
           <div style={{ marginTop: 48, display: 'flex', gap: 24, alignItems: 'center', flexWrap: 'wrap' }}>
             <a className="btn-primary" href="#open-roles">
-              <span>{isJp ? '募集中の職種を見る' : 'See open roles'}</span>
+              <span>{isJp ? '職種を見る' : 'View roles'}</span>
               <span className="arrow"></span>
             </a>
             <a className="btn-ghost" href="#why-us">{isJp ? '働く環境について' : 'Why work with us'}</a>

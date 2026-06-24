@@ -1,3 +1,6 @@
+// Reopen the current hiring cycle by changing this value back to 'open'.
+const JP_CURRENT_HIRING_STATUS = 'closed';
+
 window.JOBS_JP = {
   'inventory-logistics-specialist': {
     slug: 'inventory-logistics-specialist',
@@ -7,7 +10,7 @@ window.JOBS_JP = {
     location: '東京',
     department: 'オペレーション',
     commitment: '常勤 · オンサイト',
-    status: 'open',
+    status: JP_CURRENT_HIRING_STATUS,
     intro: '真贋確認後の商品管理から出荷まで、品物の流れを支えるポジションです。正確な記録、品質の保護、チーム間の連携を通じて、お客様に届くまでの体験を整えます。',
     sections: [
       {
@@ -66,7 +69,7 @@ window.JOBS_JP = {
     location: '東京',
     department: 'クリエイティブ',
     commitment: '常勤 · オンサイト',
-    status: 'open',
+    status: JP_CURRENT_HIRING_STATUS,
     intro: 'ラグジュアリーバッグやアクセサリーの魅力と状態を、正確に美しく伝える仕事です。商品撮影、編集、モデル撮影、キャンペーン素材まで、ブランドの見え方をつくります。',
     sections: [
       {
