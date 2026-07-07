@@ -94,47 +94,45 @@ window.JOBS = {
     ],
   },
 
-  'inventory-logistics-specialist': {
-    slug: 'inventory-logistics-specialist',
-    title: <>Inventory & <em>Logistics</em> Specialist</>,
-    plainTitle: 'Inventory & Logistics Specialist',
+  'inventory-specialist': {
+    slug: 'inventory-specialist',
+    title: <>Inventory <em>Specialist</em></>,
+    plainTitle: 'Inventory Specialist',
     type: 'Full-time',
     location: 'Tokyo, Japan',
     department: 'Operations',
     commitment: 'Permanent · On-site',
     status: EN_CURRENT_HIRING_STATUS,
     statusNote: 'This position has been filled for the current hiring cycle.',
-    intro: "The Inventory & Logistics Specialist manages product movement from authentication through shipment. You will collaborate across teams to maintain accurate records, protect product quality and deliver exceptional customer experiences.",
+    intro: "The Inventory Specialist keeps product records accurate from authentication through storage, stock checks and marketplace readiness. You will focus on inventory accuracy, condition tracking and product data, with logistics support required when the operation needs additional coverage.",
     sections: [
       {
         id: 'responsibilities',
         num: '02',
-        title: <>Main <em>duties</em> & responsibilities.</>,
+        title: <>Main <em>inventory</em> duties.</>,
         items: [
           'Authenticate luxury handbags and accessories using brand-specific standards.',
           'Investigate questionable items and stay current on counterfeit detection trends.',
-          'Record and reconcile inventory data, resolving discrepancies quickly.',
-          'Manage product flow, including returns, damages and stock adjustments.',
-          'Maintain clean, organised storage areas that support efficient picking.',
-          'Coordinate daily transfers between departments, warehouses and partners.',
-          'Prepare accurate domestic and international shipping documentation and labels.',
-          'Monitor courier performance, addressing delivery, customs or compliance issues.',
-          'Track freight spend and recommend cost-saving improvements.',
-          'Inspect inbound and outbound items to uphold quality and listing accuracy.',
-          'Maintain detailed inventory and shipment records, producing timely reports.',
-          'Share status updates with purchasing, sales and customer service teams.',
+          'Record product details, condition notes, locations and stock status accurately.',
+          'Reconcile inventory data and investigate discrepancies quickly.',
+          'Manage stock adjustments for returns, damages, transfers and other exceptions.',
+          'Maintain organised storage areas that support efficient stock checks and picking.',
+          'Inspect products to uphold quality standards and listing accuracy.',
+          'Prepare inventory reports and share status updates with purchasing, sales and operations teams.',
+          'Support product database maintenance, including corrections and follow-up checks.',
+          'Assist with transfers, shipping documentation and dispatch preparation when logistics coverage is needed.',
         ],
-        note: 'This overview reflects core responsibilities. Additional duties may be assigned as our business evolves.',
+        note: 'This role is primarily focused on inventory accuracy and product records. Logistics support may be assigned during busy periods or when operational coverage is needed.',
       },
       {
         id: 'requirements',
         num: '03',
         title: <>Qualifications & <em>requirements</em>.</>,
         items: [
-          'Proven experience in supply chain management, preferably in secondhand luxury goods.',
+          'Experience in inventory control, stock management, product operations or secondhand luxury goods.',
           'Strong organisation, accuracy and attention to detail.',
           'Proficiency in Microsoft Office and inventory tools · ERP (SAP), Notion and Slack a plus.',
-          'Ability to prioritise multiple tasks in a fast-paced environment.',
+          'Ability to prioritise stock checks, corrections and operational follow-ups in a fast-paced environment.',
           'Fluent English communication; JLPT N3 or above is a plus.',
           "Post-college or university degree (Bachelor's) is required.",
           'Valid Japan work visa with at least one year of eligibility remaining.',
@@ -147,7 +145,8 @@ window.JOBS = {
         items: [
           'Background in luxury consignment or resale.',
           'Luxury authentication certifications.',
-          'Understanding of international shipping procedures and customs.',
+          'Experience with inventory reconciliation, product databases or stockroom operations.',
+          'Understanding of logistics, transfers or shipping procedures.',
         ],
       },
       {
@@ -460,3 +459,5 @@ window.JOBS = {
     ],
   },
 };
+
+window.JOBS['inventory-logistics-specialist'] = window.JOBS['inventory-specialist'];
