@@ -2,6 +2,98 @@
 const EN_CURRENT_HIRING_STATUS = 'closed';
 
 window.JOBS = {
+  'logistics-specialist': {
+    slug: 'logistics-specialist',
+    title: <>Logistics <em>Specialist</em></>,
+    plainTitle: 'Logistics Specialist',
+    type: 'Full-time',
+    location: 'Tokyo, Japan',
+    department: 'Operations',
+    commitment: 'Permanent · On-site',
+    status: 'open',
+    intro: "The Logistics Specialist keeps products moving accurately and on time across receiving, storage, transfers and shipment. You will coordinate daily logistics work, resolve shipping issues and support inventory tasks when the operation needs extra coverage.",
+    sections: [
+      {
+        id: 'responsibilities',
+        num: '02',
+        title: <>Main <em>logistics</em> duties.</>,
+        items: [
+          'Coordinate daily inbound and outbound product movement between teams, warehouses and partners.',
+          'Prepare domestic and international shipping labels, documentation and handoff records.',
+          'Monitor courier pickups, delivery progress, customs issues and shipment exceptions.',
+          'Organise products for efficient picking, packing, inspection and dispatch.',
+          'Manage returns, damages, transfers and other product-flow exceptions with clear records.',
+          'Keep shipment logs and product movement records accurate and up to date.',
+          'Communicate status updates to purchasing, sales, customer service and warehouse partners.',
+          'Track recurring logistics issues and recommend practical improvements to reduce delays or costs.',
+          'Support inventory counts, stock checks and discrepancy investigations when needed.',
+          'Maintain clean, organised work and storage areas that support safe handling of luxury items.',
+        ],
+        note: 'This role is primarily focused on logistics. Inventory support may be assigned during busy periods or when operational coverage is needed.',
+      },
+      {
+        id: 'requirements',
+        num: '03',
+        title: <>Qualifications & <em>requirements</em>.</>,
+        items: [
+          'Experience in logistics, warehouse operations, e-commerce fulfilment or supply chain support.',
+          'Strong organisation, accuracy and attention to detail when handling product records.',
+          'Comfortable using Microsoft Office and operational tools; Notion, Slack or ERP experience is a plus.',
+          'Ability to prioritise multiple shipments, deadlines and issue follow-ups in a fast-paced environment.',
+          'Clear English communication; JLPT N3 or above is a plus.',
+          "Post-college or university degree (Bachelor's) is preferred.",
+          'Valid Japan work visa with at least one year of eligibility remaining.',
+        ],
+      },
+      {
+        id: 'preferred',
+        num: '04',
+        title: <>Preferred <em>experience</em>.</>,
+        items: [
+          'Background in luxury resale, secondhand goods or high-value product handling.',
+          'Understanding of international shipping procedures, courier requirements and customs documents.',
+          'Experience supporting stock checks, inventory reconciliation or product database updates.',
+        ],
+      },
+      {
+        id: 'physical',
+        num: '05',
+        title: <>Physical <em>requirements</em>.</>,
+        body: 'Comfortable standing, moving products and lifting 15-20 kg as needed.',
+      },
+      {
+        id: 'compensation',
+        num: '06',
+        title: <>Compensation & <em>benefits</em>.</>,
+        items: [
+          'Performance bonus eligibility after one year.',
+          'Reimbursed commuter costs from home to office.',
+          'Salary range of 270,000-300,000 yen with annual performance reviews and merit-based increases.',
+        ],
+      },
+      {
+        id: 'eligibility',
+        num: '07',
+        title: <>What you <em>need to know</em>.</>,
+        items: [
+          'Eligibility: Working Holiday Visa holders are not eligible to apply.',
+          'Visa renewal sponsorship after six months of proven performance.',
+        ],
+      },
+      {
+        id: 'interview',
+        num: '08',
+        title: <>Interview <em>process</em>.</>,
+        items: [
+          'Video conference (initial screen).',
+          'In-person interview.',
+          'Job offer.',
+        ],
+        note: 'Applicants living in Tokyo will be given priority. If you plan to relocate to the Greater Tokyo Area, please mention it in your cover letter.',
+      },
+    ],
+  },
+
   'inventory-logistics-specialist': {
     slug: 'inventory-logistics-specialist',
     title: <>Inventory & <em>Logistics</em> Specialist</>,
