@@ -24,10 +24,10 @@ function JobApply({ job }) {
           <p>
             {isJp
               ? (open
-                  ? '履歴書・職務経歴書と簡単なメッセージをお送りください。書類を確認のうえ、通過された方へ次のステップをご案内します。'
+                  ? '履歴書、カバーレター、簡単なメッセージをお送りください。書類を確認のうえ、通過された方へ次のステップをご案内します。'
                   : <>ご関心をお寄せいただきありがとうございます。現在この職種の新規応募は受け付けていません。今後の募集は採用情報ページをご確認ください。</>)
               : open
-              ? 'Submit your resume, portfolio if relevant, and a short note. Our hiring team will contact shortlisted candidates with next steps.'
+              ? 'Submit your resume, cover letter, and a short note. Our hiring team will contact shortlisted candidates with next steps.'
               : (job.plainTitle.toLowerCase().includes('buyer')
                   ? <>Thank you for your interest in the Luxury Buyer role. The position has been filled and we are no longer accepting applications. Please follow our <a href="https://www.linkedin.com/company/eco-brand-japan/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>LinkedIn page</a> or the careers page for future updates.</>
                   : <>Thank you for your enthusiasm about this opportunity. The role has been filled and we are not collecting new submissions. Please keep an eye on the careers page for future roles.</>)}
@@ -117,12 +117,12 @@ function JobApply({ job }) {
             </label>
             <div className="form-grid two">
               <label>
-                <span>{isJp ? '履歴書・職務経歴書' : 'Resume / CV'}</span>
+                <span>{isJp ? '履歴書' : 'Resume'}</span>
                 <input name="resume" type="file" accept=".pdf,.doc,.docx,.txt,.rtf" required />
               </label>
               <label>
-                <span>{isJp ? 'ポートフォリオなど任意書類' : 'Optional portfolio file'}</span>
-                <input name="portfolioFile" type="file" accept=".pdf,.zip,.jpg,.jpeg,.png,.webp" />
+                <span>{isJp ? 'カバーレター' : 'Cover Letter'}</span>
+                <input name="coverLetter" type="file" accept=".pdf,.doc,.docx,.txt,.rtf" required />
               </label>
             </div>
             {turnstile}

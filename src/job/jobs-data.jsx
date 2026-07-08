@@ -40,8 +40,8 @@ window.JOBS = {
           'Strong organisation, accuracy and attention to detail when handling product records.',
           'Comfortable using Microsoft Office and operational tools; Notion, Slack or ERP experience is a plus.',
           'Ability to prioritise multiple shipments, deadlines and issue follow-ups in a fast-paced environment.',
-          'Clear English communication; JLPT N3 or above is a plus.',
-          "Post-college or university degree (Bachelor's) is preferred.",
+          "Minimum Bachelor's degree.",
+          'Fluent English communication skills; JLPT N3 or above is a plus.',
           'Valid Japan work visa with at least one year of eligibility remaining.',
         ],
       },
@@ -68,7 +68,7 @@ window.JOBS = {
         items: [
           'Performance bonus eligibility after one year.',
           'Reimbursed commuter costs from home to office.',
-          'Salary range of 270,000-300,000 yen with annual performance reviews and merit-based increases.',
+          'Starting salary of 270,000 yen with annual performance reviews and merit-based increases.',
         ],
       },
       {
