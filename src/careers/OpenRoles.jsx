@@ -6,14 +6,14 @@ function OpenRoles() {
         { num: 'I', title: '物流スペシャリスト', type: '正社員 · 東京', blurb: '入荷、保管、移動、出荷までの日々の物流を正確に進め、必要に応じて在庫業務も支えます。', status: 'open', href: '/ja/job-detail/?role=logistics-specialist' },
         { num: 'II', title: '在庫スペシャリスト', type: '正社員 · 東京', blurb: '商品情報、保管場所、在庫状況を正確に管理し、必要に応じて物流業務もサポートします。', status: pausedSeasonalRoleStatus, href: '/ja/job-detail/?role=inventory-specialist' },
         { num: 'III', title: '商品フォトグラファー', type: '正社員 · 東京', blurb: '一点ごとの魅力と状態を、マーケットプレイスやマーケティング向けに撮影します。', status: pausedSeasonalRoleStatus, href: '/ja/job-detail/?role=product-photographer' },
-        { num: 'IV', title: 'ラグジュアリーバイヤー', type: '正社員 · 東京 / 出張あり', blurb: '信頼できるパートナーと連携し、ラグジュアリーコレクションを仕入れ、評価します。', status: 'closed', href: '/ja/job-detail/?role=buyers-position' },
+        { num: 'IV', title: 'ラグジュアリーバイヤー', type: '正社員 · 東京 / 出張あり', blurb: '信頼できるパートナーと連携し、国内外への出張を通じてラグジュアリーコレクションを仕入れます。', status: 'open', href: '/ja/job-detail/?role=buyers-position' },
         { num: 'V', title: 'ライブセラー / SNSオペレーター', type: 'パートタイム · 東京', blurb: 'ライブ配信と日々のコンテンツで、コミュニティを育てます。', status: 'closed', href: '/ja/job-detail/?role=live-seller-social-media-operator' },
       ]
     : [
         { num: 'I', title: 'Logistics Specialist', type: 'Full-time · Tokyo, Japan', blurb: 'Coordinate daily receiving, storage, transfers and shipments, with occasional inventory support as needed.', status: 'open', href: '/job-detail/?role=logistics-specialist' },
         { num: 'II', title: 'Inventory Specialist', type: 'Full-time · Tokyo, Japan', blurb: 'Safeguard product records, stock accuracy and storage flow, with logistics support required when needed.', status: pausedSeasonalRoleStatus, href: '/job-detail/?role=inventory-specialist' },
         { num: 'III', title: 'Product Photographer', type: 'Full-time · Tokyo, Japan', blurb: 'Capture the craftsmanship of every piece for marketplaces and marketing channels.', status: pausedSeasonalRoleStatus, href: '/job-detail/?role=product-photographer' },
-        { num: 'IV', title: 'Luxury Buyer', type: 'Full-time · Tokyo, Japan', blurb: 'Source, evaluate and authenticate luxury collections with trusted partners worldwide.', status: 'closed', href: '/job-detail/?role=buyers-position' },
+        { num: 'IV', title: 'Luxury Buyer', type: 'Full-time · Tokyo, Japan', blurb: 'Source, evaluate and authenticate luxury collections with regular domestic and international travel.', status: 'open', href: '/job-detail/?role=buyers-position' },
         { num: 'V', title: 'Live Seller & Social Media Operator', type: 'Part-time · Tokyo, Japan', blurb: 'Combine on-camera livestream selling with daily content to grow our community.', status: 'closed', href: '/job-detail/?role=live-seller-social-media-operator' },
       ];
 
@@ -26,8 +26,8 @@ function OpenRoles() {
       </div>
 
       <div className="roles-header">
-        <h2>{isJp ? <>物流ポジションを<em>募集中</em>です。</> : <>Now hiring for <em>logistics</em>.</>}</h2>
-        <p>{isJp ? '現在、物流スペシャリストの応募を受け付けています。その他の職種は今後の募集再開に備えて、職種内容を掲載しています。' : 'We are accepting applications for the Logistics Specialist role. Other role descriptions remain available in case hiring reopens in the future.'}</p>
+        <h2>{isJp ? <>物流・バイヤーポジションを<em>募集中</em>です。</> : <>Now hiring for <em>logistics and buying</em>.</>}</h2>
+        <p>{isJp ? '現在、物流スペシャリストとラグジュアリーバイヤーの応募を受け付けています。その他の職種は今後の募集再開に備えて、職種内容を掲載しています。' : 'We are accepting applications for the Logistics Specialist and Luxury Buyer roles. Other role descriptions remain available in case hiring reopens in the future.'}</p>
       </div>
 
       <div>

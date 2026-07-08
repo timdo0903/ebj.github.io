@@ -286,8 +286,7 @@ window.JOBS = {
     location: 'Tokyo, Japan',
     department: 'Buying',
     commitment: 'Permanent · On-site + travel',
-    status: 'closed',
-    statusNote: 'This position has been filled and we are not accepting new applications at this time.',
+    status: 'open',
     intro: "Join our Buying team in Tokyo and report to the Head of Buying. You will build seasonal buy plans, source inventory through trusted marketplace partners and ensure every purchase aligns to the customer needs and commercial goals of Eco Brand Japan.",
     sections: [
       {
@@ -308,7 +307,7 @@ window.JOBS = {
           'Comfort receiving regular feedback and iterating quickly.',
           'Experience thriving in changing environments with proven self-initiative.',
           'Collaborative mindset with the independence to own your workload.',
-          'Availability to travel domestically and internationally on a regular basis.',
+          'Availability for regular domestic and international travel for work, up to 60-70% of the time.',
           'Confident negotiator with persuasive storytelling and research-driven insights.',
           'Detail-oriented, research-focused approach and luxury brand knowledge (nice to have).',
           'Valid Japan work visa with at least one year of eligibility remaining.',
@@ -333,7 +332,7 @@ window.JOBS = {
         id: 'hours',
         num: '05',
         title: <>Hours & <em>travel</em>.</>,
-        body: 'Full-time, 40-hour role with regular travel within and beyond Tokyo. Office schedule: Monday–Friday, 9:30–18:30. Travel may require weekend work with compensatory days off to maintain a five-day work week. The six-month probation includes two months of office training, followed by four months of travel across Tokyo and other domestic regions depending on performance.',
+        body: 'Full-time, 40-hour role with required regular domestic and international travel for work, up to 60-70% of the time. Office schedule: Monday–Friday, 9:30–18:30 when not traveling. Travel may require weekend work with compensatory days off to maintain a five-day work week. The six-month probation includes two months of office training, followed by four months of travel across Tokyo and other domestic regions depending on performance.',
       },
       {
         id: 'education',
@@ -354,7 +353,6 @@ window.JOBS = {
           'Commission bonus eligibility after one year, paid monthly based on results.',
           'Reimbursed commuter costs from home to office.',
           'Company-covered travel expenses for assignments outside Greater Tokyo, including transport, hotels and meals.',
-          'Regular domestic and international travel opportunities after probation, up to 30–40% of time.',
         ],
       },
       {
