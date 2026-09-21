@@ -4,7 +4,7 @@ function CareersHero() {
   return (
     <header className="careers-hero">
       <div className="meta">
-        <div className="pill">{isJp ? '物流職 募集中' : 'Logistics role open'}</div>
+        <div className="pill">{isJp ? 'バイヤー職 募集中' : 'Luxury Buyer role open'}</div>
         <div>{isJp ? '採用情報' : 'Careers'} · N°001</div>
       </div>
 

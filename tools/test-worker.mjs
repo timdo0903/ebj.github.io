@@ -159,3 +159,18 @@ test('logs notification provider HTTP failures without failing storage', async (
     console.warn = originalWarn;
   }
 });
+
+test('rejects filled Logistics Specialist applications before storing uploads', async () => {
+  for (const fields of [
+    { role: 'Logistics Specialist', roleSlug: 'logistics-specialist' },
+    { role: '物流スペシャリスト', roleSlug: 'logistics-specialist', language: 'ja' },
+    { role: 'Logistics Specialist' },
+    { role: '物流スペシャリスト', language: 'ja' },
+  ]) {
+    const env = makeEnv();
+    const response = await worker.fetch(makeRequest({ formType: 'job-application', ...fields }), env);
+    assert.equal(response.status, 409);
+    assert.equal((await response.json()).ok, false);
+    assert.equal(env.FORM_UPLOADS.objects.size, 0);
+  }
+});

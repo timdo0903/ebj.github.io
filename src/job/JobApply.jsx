@@ -22,7 +22,7 @@ function JobApply({ job }) {
         <div>
           <h2>{isJp ? (open ? <>応募を<em>受け付けています。</em></> : <>この職種は<em>募集終了</em>しました。</>) : (open ? <>Apply <em>now</em>.</> : <>This role is <em>closed</em>.</>)}</h2>
           <p>
-            {isJp
+            {!open && job.statusNote ? job.statusNote : isJp
               ? (open
                   ? '履歴書、カバーレター、簡単なメッセージをお送りください。書類を確認のうえ、通過された方へ次のステップをご案内します。'
                   : <>ご関心をお寄せいただきありがとうございます。現在この職種の新規応募は受け付けていません。今後の募集は採用情報ページをご確認ください。</>)

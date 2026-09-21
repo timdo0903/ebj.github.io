@@ -10,7 +10,8 @@ window.JOBS_JP = {
     location: '東京',
     department: 'オペレーション',
     commitment: '常勤 · オンサイト',
-    status: 'open',
+    status: 'closed',
+    statusNote: '採用が決定したため、この職種の新規応募受付は終了しました。',
     intro: '商品の入荷、保管、移動、出荷までの流れを正確かつスムーズに進めるポジションです。日々の物流業務を中心に、配送トラブルの確認や記録管理を行い、必要に応じて在庫業務もサポートします。',
     sections: [
       {

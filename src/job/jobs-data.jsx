@@ -10,7 +10,8 @@ window.JOBS = {
     location: 'Tokyo, Japan',
     department: 'Operations',
     commitment: 'Permanent · On-site',
-    status: 'open',
+    status: 'closed',
+    statusNote: 'This position has been filled and applications are closed.',
     intro: "The Logistics Specialist keeps products moving accurately and on time across receiving, storage, transfers and shipment. You will coordinate daily logistics work, resolve shipping issues and support inventory tasks when the operation needs extra coverage.",
     sections: [
       {

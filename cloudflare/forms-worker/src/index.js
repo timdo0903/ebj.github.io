@@ -282,6 +282,18 @@ async function handleSubmit(request, env, origin) {
     return json({ ok: false, error: 'Missing application role.' }, 400, origin);
   }
 
+  if (fields.formType === 'job-application' && (
+    fields.roleSlug === 'logistics-specialist' ||
+    ['Logistics Specialist', '物流スペシャリスト'].includes(fields.role)
+  )) {
+    return json({
+      ok: false,
+      error: fields.language === 'ja'
+        ? '採用が決定したため、この職種の新規応募受付は終了しました。'
+        : 'The Logistics Specialist position has been filled and applications are closed.',
+    }, 409, origin);
+  }
+
   const id = submissionId(fields);
   const baseKey = [
     sanitizeSegment(fields.formType, 'submission'),
