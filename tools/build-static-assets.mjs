@@ -14,7 +14,7 @@ const defaultDescription =
 const args = new Set(process.argv.slice(2));
 const shouldBuildSocialPreview = args.has('--social-preview') || process.env.BUILD_SOCIAL_PREVIEW === '1';
 
-const cssFiles = ['styles.css', 'subpages.css', 'careers.css', 'contact-form.css', 'job.css'];
+const cssFiles = ['styles.css', 'homepage.css', 'subpages.css', 'careers.css', 'contact-form.css', 'job.css'];
 const pairedPaths = new Set(['/', '/about/', '/principles/', '/highlights/', '/contact/', '/careers/', '/job-detail/']);
 
 async function walk(dirPath) {
@@ -176,7 +176,7 @@ function escapeHtml(value) {
 
 function updateCssLinks(html) {
   return html.replace(
-    /href="\/(styles|subpages|careers|contact-form|job)(?:\.min)?\.css([^"]*)"/g,
+    /href="\/(styles|homepage|subpages|careers|contact-form|job)(?:\.min)?\.css([^"]*)"/g,
     'href="/$1.min.css$2"'
   );
 }
