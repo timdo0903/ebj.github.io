@@ -1,5 +1,13 @@
 function Hero() {
+  const imgRef = React.useRef(null);
   const isJp = window.SITE_LANG === 'jp';
+
+  React.useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      if (imgRef.current) imgRef.current.classList.add('loaded');
+    });
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   const copy = isJp
     ? {
@@ -35,8 +43,16 @@ function Hero() {
 
   return (
     <header className="hero" id="top">
+      <div className="hero-meta">
+        <div className="left">
+          <span style={{ color: 'var(--accent)' }}>•</span>&nbsp;&nbsp;{copy.left}
+        </div>
+        <div className="center">{copy.center}</div>
+        <div className="right">{copy.right}</div>
+      </div>
+
       <div className="hero-grid">
-        <div className="hero-intro">
+        <div>
           <h1 className="hero-headline">
             {copy.lines.map((line, index) => (
               <span key={index} className="reveal-line">
@@ -44,17 +60,10 @@ function Hero() {
               </span>
             ))}
           </h1>
-          <p className="hero-lede">{copy.lede}</p>
-          <div className="hero-cta-row">
-            <a className="btn-primary" href="#principles">
-              <span>{copy.primary}</span>
-              <span className="arrow" aria-hidden="true"></span>
-            </a>
-            <a className="btn-ghost" href="#highlights">{copy.secondary}</a>
-          </div>
         </div>
+
         <div className="hero-side">
-          <figure className="hero-image-wrap loaded">
+          <div ref={imgRef} className="hero-image-wrap">
             <img
               src="/catalog/highlights-web/portrait-leopard-wallet.webp"
               alt={copy.alt}
@@ -64,19 +73,22 @@ function Hero() {
               fetchPriority="high"
               style={{ objectPosition: 'center 25%' }}
             />
-            <figcaption className="hero-image-caption">{copy.caption}</figcaption>
-          </figure>
+            <div className="hero-image-caption">{copy.caption}</div>
+          </div>
+          <p className="hero-lede">{copy.lede}</p>
         </div>
       </div>
-      <div className="hero-foot">
-        <div className="hero-meta">
-          <div className="left">{copy.left}</div>
-          <div className="center">{copy.center}</div>
-          <div className="right">{copy.right}</div>
-        </div>
+
+      <div className="hero-cta-row">
+        <a className="btn-primary" href="#principles">
+          <span>{copy.primary}</span>
+          <span className="arrow" aria-hidden></span>
+        </a>
+        <a className="btn-ghost" href="#highlights">{copy.secondary}</a>
+
         <div className="hero-stats">
           <div className="hero-stat">
-            <div className="n">12<span>+</span></div>
+            <div className="n">12<span style={{ color: 'var(--accent)' }}>+</span></div>
             <div className="l">{copy.years}</div>
           </div>
           <div className="hero-stat">

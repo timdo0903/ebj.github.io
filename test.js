@@ -33,11 +33,7 @@ for (const file of ['index.html', 'ja/index.html', 'robots.txt', 'sitemap.xml', 
   if (!exists(file)) fail(`Missing required file: ${file}`);
 }
 
-const generatedStyles = [
-  'styles.min.css', 'refinements.min.css', 'homepage.min.css', 'subpages.min.css',
-  'careers.min.css', 'contact-form.min.css', 'job.min.css',
-];
-for (const file of generatedStyles) {
+for (const file of ['styles.min.css', 'subpages.min.css', 'careers.min.css', 'contact-form.min.css', 'job.min.css']) {
   if (!exists(file)) fail(`Missing generated CSS file: ${file}`);
 }
 
@@ -65,7 +61,7 @@ for (const absolutePath of htmlFiles) {
   const html = fs.readFileSync(absolutePath, 'utf8');
   const isRedirect = /http-equiv="refresh"/i.test(html);
 
-  if (/\/style\.css|\/styles\.css|\/homepage\.css|\/refinements\.css|\/subpages\.css|\/careers\.css|\/contact-form\.css|\/job\.css/.test(html)) {
+  if (/\/style\.css|\/styles\.css|\/subpages\.css|\/careers\.css|\/contact-form\.css|\/job\.css/.test(html)) {
     fail(`${relPath} references an unminified or legacy stylesheet.`);
   }
 
@@ -87,7 +83,6 @@ for (const absolutePath of htmlFiles) {
 
 const activeImageSources = [
   'src/Hero.jsx',
-  'src/HomeHero.jsx',
   'src/Gallery.jsx',
   'src/about/AboutAtelier.jsx',
   'src/highlights/highlights-data.js',
@@ -100,11 +95,7 @@ for (const file of activeImageSources) {
   }
 }
 
-const imageComponents = [
-  'src/Hero.jsx', 'src/HomeHero.jsx', 'src/Gallery.jsx',
-  'src/about/AboutAtelier.jsx', 'src/highlights/HighlightsGallery.jsx',
-];
-for (const file of imageComponents) {
+for (const file of ['src/Hero.jsx', 'src/Gallery.jsx', 'src/about/AboutAtelier.jsx', 'src/highlights/HighlightsGallery.jsx']) {
   const source = read(file);
   if (!/width=/.test(source) || !/height=/.test(source) || !/decoding=/.test(source)) {
     fail(`${file} is missing image dimension or decoding hints.`);
