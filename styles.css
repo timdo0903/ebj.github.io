@@ -1197,3 +1197,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Mobile layout fixes; retain the original visual design. */
+@media (max-width: 960px) {
+  .nav-mobile-panel {
+    max-height: calc(100vh - 92px);
+    max-height: calc(100dvh - 92px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .site-form { min-width: 0; grid-template-columns: minmax(0, 1fr); }
+  .site-form > *, .site-form label, .site-form input,
+  .site-form select, .site-form textarea, .contact-grid > .left { min-width: 0; }
+}
+@media (max-width: 640px) {
+  .nav-mobile-panel {
+    max-height: calc(100vh - 86px);
+    max-height: calc(100dvh - 86px);
+  }
+  .gallery-count { white-space: normal; overflow-wrap: anywhere; }
+}

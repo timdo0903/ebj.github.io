@@ -90,11 +90,21 @@ function TurnstileWidget({ siteKey, onToken }) {
 
     let cancelled = false;
     let intervalId = 0;
+    let currentSize = null;
 
     const render = () => {
-      if (cancelled || widgetId.current || !window.turnstile || !ref.current) return;
+      if (cancelled || !window.turnstile || !ref.current) return;
+      const size = ref.current.clientWidth < 300 ? 'compact' : 'normal';
+      if (widgetId.current !== null && currentSize === size) return;
+      if (widgetId.current !== null) {
+        window.turnstile.remove(widgetId.current);
+        widgetId.current = null;
+        onToken('');
+      }
+      currentSize = size;
       widgetId.current = window.turnstile.render(ref.current, {
         sitekey: siteKey,
+        size,
         callback: token => onToken(token || ''),
         'expired-callback': () => onToken(''),
         'error-callback': () => onToken(''),
@@ -106,10 +116,14 @@ function TurnstileWidget({ siteKey, onToken }) {
       intervalId = window.setInterval(render, 300);
     }
 
+    const resizeObserver = window.ResizeObserver ? new ResizeObserver(render) : null;
+    if (resizeObserver) resizeObserver.observe(ref.current);
+
     return () => {
       cancelled = true;
+      if (resizeObserver) resizeObserver.disconnect();
       if (intervalId) window.clearInterval(intervalId);
-      if (widgetId.current && window.turnstile) {
+      if (widgetId.current !== null && window.turnstile) {
         window.turnstile.remove(widgetId.current);
       }
       widgetId.current = null;
