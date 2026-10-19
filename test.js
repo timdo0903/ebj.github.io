@@ -34,7 +34,7 @@ for (const file of ['index.html', 'ja/index.html', 'robots.txt', 'sitemap.xml', 
 }
 
 const generatedStyles = [
-  'styles.min.css', 'homepage.min.css', 'subpages.min.css',
+  'styles.min.css', 'refinements.min.css', 'homepage.min.css', 'subpages.min.css',
   'careers.min.css', 'contact-form.min.css', 'job.min.css',
 ];
 for (const file of generatedStyles) {
@@ -65,7 +65,7 @@ for (const absolutePath of htmlFiles) {
   const html = fs.readFileSync(absolutePath, 'utf8');
   const isRedirect = /http-equiv="refresh"/i.test(html);
 
-  if (/\/style\.css|\/styles\.css|\/homepage\.css|\/subpages\.css|\/careers\.css|\/contact-form\.css|\/job\.css/.test(html)) {
+  if (/\/style\.css|\/styles\.css|\/homepage\.css|\/refinements\.css|\/subpages\.css|\/careers\.css|\/contact-form\.css|\/job\.css/.test(html)) {
     fail(`${relPath} references an unminified or legacy stylesheet.`);
   }
 

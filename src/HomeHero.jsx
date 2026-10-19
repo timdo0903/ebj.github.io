@@ -1,4 +1,4 @@
-// English homepage layout; the Japanese homepage uses the shared Hero component.
+// Compatibility entry point for cached English homepage HTML. Current homepages use Hero.jsx.
 function HomeHero() {
   return (
     <header className="hero" id="top">
