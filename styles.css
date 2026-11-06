@@ -983,6 +983,27 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: color .3s;
 }
 .foot ul a:hover { color: var(--accent); }
+.foot ul.foot-channels { flex-direction: row; flex-wrap: wrap; gap: 10px; max-width: 220px; }
+.foot ul.foot-channels a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  color: var(--fg);
+  transition: color .3s, border-color .3s;
+}
+.foot ul.foot-channels a:hover,
+.foot ul.foot-channels a:focus-visible { color: var(--accent); border-color: var(--accent); }
+.foot ul.foot-channels svg { width: 18px; height: 18px; fill: currentColor; }
+.foot-channel-mark {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: .02em;
+}
 
 .foot-bot {
   display: flex;

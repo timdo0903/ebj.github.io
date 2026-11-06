@@ -8,12 +8,6 @@ function ContactMain() {
   });
   const socials = [
     {
-      k: 'Instagram',
-      handle: '@brandcoparis',
-      note: isJp ? '撮影、アトリエの記録、新着アイテムなど。' : 'Editorial photography, atelier notes, new acquisitions. Updated most weeks.',
-      href: 'https://www.instagram.com/brandcoparis/',
-    },
-    {
       k: 'Facebook',
       handle: 'Brandco Paris',
       note: isJp ? 'グローバルブランドページ。お知らせや新着情報を掲載しています。' : 'Our global brand page. Announcements, features, new releases.',
@@ -36,6 +30,18 @@ function ContactMain() {
       handle: 'Brandco Paris',
       note: isJp ? 'アクセサリーや革小物を中心に掲載しています。' : 'Accessories and small leather goods at accessible price points.',
       href: 'https://jp.mercari.com/shops/profile/Fv7W5YWA78UVv8mjcHr4RM',
+    },
+    {
+      k: 'BUYMA',
+      handle: 'BrandCo Paris - Japan',
+      note: isJp ? 'BUYMAのパーソナルショッパーとして、厳選したアイテムを出品しています。' : 'Curated pieces listed through our BUYMA personal shopper storefront.',
+      href: 'https://www.buyma.com/buyer/13261341.html',
+    },
+    {
+      k: 'Rakuma',
+      handle: 'BrandCo Paris - Japan',
+      note: isJp ? '楽天ラクマのショップでも一部アイテムを販売しています。' : 'Selected pieces available through our Rakuten Rakuma shop.',
+      href: 'https://fril.jp/shop/0701602fe1221f6bb38bcc11adeb1671',
     },
     {
       k: 'Global site',
