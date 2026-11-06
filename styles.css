@@ -998,12 +998,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .foot ul.foot-channels a:hover,
 .foot ul.foot-channels a:focus-visible { color: var(--accent); border-color: var(--accent); }
 .foot ul.foot-channels svg { width: 18px; height: 18px; fill: currentColor; }
-.foot-channel-mark {
-  font-family: var(--serif);
-  font-size: 17px;
-  line-height: 1;
-  letter-spacing: .02em;
+.foot-channel-logo {
+  display: block;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
 }
+.foot-channel-logo--buyma { width: 20px; height: 15px; --logo: url("/images/channels/buyma.webp"); }
+.foot-channel-logo--rakuma { width: 32px; height: 7px; --logo: url("/images/channels/rakuma.webp"); }
+.foot-channel-logo--brandco { width: 25px; height: 14px; --logo: url("/images/channels/brandco.webp"); }
 
 .foot-bot {
   display: flex;

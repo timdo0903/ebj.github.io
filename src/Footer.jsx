@@ -1,5 +1,6 @@
-// Brand glyphs for Facebook, LinkedIn and Rakuten come from Simple Icons (CC0).
-// Marketplaces without a published glyph use a short text mark.
+// Facebook, LinkedIn and Rakuten glyphs come from Simple Icons (CC0); Mercari's "m" is
+// taken from its logo SVG. BUYMA, Rakuma and Brandco Paris are single-colour masks in
+// /images/channels/ so every icon follows the footer's text and hover colours.
 const FOOTER_CHANNELS = [
   {
     name: 'Facebook',
@@ -16,10 +17,15 @@ const FOOTER_CHANNELS = [
     href: 'https://www.rakuten.co.jp/brandcoparis/',
     path: 'M23.277 21.3L3.939 24 .722 21.3h22.555zM7.6 19.276H3.939V0h6.052a6.653 6.653 0 0 1 6.65 6.646c0 2.234-1.108 4.204-2.799 5.418l5.418 7.211h-4.585l-4.486-5.979H7.6v5.98zm0-9.64h2.392a2.992 2.992 0 0 0 2.989-2.989 2.994 2.994 0 0 0-2.989-2.986H7.6v5.975z',
   },
-  { name: 'Mercari', href: 'https://jp.mercari.com/shops/profile/Fv7W5YWA78UVv8mjcHr4RM', mark: 'M' },
-  { name: 'BUYMA', href: 'https://www.buyma.com/buyer/13261341.html', mark: 'B' },
-  { name: 'Rakuma', href: 'https://fril.jp/shop/0701602fe1221f6bb38bcc11adeb1671', mark: 'ラ' },
-  { name: 'Brandco Paris', href: 'https://www.brandcoparis.com/', mark: 'BP' },
+  {
+    name: 'Mercari',
+    href: 'https://jp.mercari.com/shops/profile/Fv7W5YWA78UVv8mjcHr4RM',
+    viewBox: '-2 12 102.6 80',
+    path: 'M69.8,24.1c-9,0-14.7,3.2-20.6,10.2c-5.6-6.6-12.2-10.1-21-10.1C11.5,24.1,0,36.6,0,53.3v36.2 h15.1V51.8c0-8,4.8-14,13.1-14s13.6,6,13.6,14v37.7h14.8V51.8c0-8,5-14,13.2-14s13.8,6,13.8,14v37.7h15.1V53.3 C98.6,36.6,86.5,24.1,69.8,24.1z',
+  },
+  { name: 'BUYMA', href: 'https://www.buyma.com/buyer/13261341.html', mask: 'buyma' },
+  { name: 'Rakuma', href: 'https://fril.jp/shop/0701602fe1221f6bb38bcc11adeb1671', mask: 'rakuma' },
+  { name: 'Brandco Paris', href: 'https://www.brandcoparis.com/', mask: 'brandco' },
 ];
 
 function Footer() {
@@ -68,9 +74,9 @@ function Footer() {
               <li key={c.name}>
                 <a href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.name} title={c.name}>
                   {c.path ? (
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={c.path} /></svg>
+                    <svg viewBox={c.viewBox || '0 0 24 24'} aria-hidden="true" focusable="false"><path d={c.path} /></svg>
                   ) : (
-                    <span className="foot-channel-mark" aria-hidden="true">{c.mark}</span>
+                    <span className={`foot-channel-logo foot-channel-logo--${c.mask}`} aria-hidden="true" />
                   )}
                 </a>
               </li>
