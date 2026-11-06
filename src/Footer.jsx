@@ -28,6 +28,27 @@ const FOOTER_CHANNELS = [
   { name: 'Brandco Paris', href: 'https://www.brandcoparis.com/', mask: 'brandco' },
 ];
 
+const FOOTER_SOCIAL = ['Facebook', 'LinkedIn'].map((n) => FOOTER_CHANNELS.find((c) => c.name === n));
+const FOOTER_STORES = ['Rakuten', 'Mercari', 'Brandco Paris', 'BUYMA', 'Rakuma'].map((n) => FOOTER_CHANNELS.find((c) => c.name === n));
+
+function FooterChannelIcons({ channels }) {
+  return (
+    <ul className="foot-channels">
+      {channels.map((c) => (
+        <li key={c.name}>
+          <a href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.name} title={c.name}>
+            {c.path ? (
+              <svg viewBox={c.viewBox || '0 0 24 24'} aria-hidden="true" focusable="false"><path d={c.path} /></svg>
+            ) : (
+              <span className={`foot-channel-logo foot-channel-logo--${c.mask}`} aria-hidden="true" />
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Footer() {
   const isJp = window.SITE_LANG === 'jp';
 
@@ -67,21 +88,15 @@ function Footer() {
           </ul>
         </div>
 
-        <div>
-          <h5>{isJp ? '外部リンク' : 'Channels'}</h5>
-          <ul className="foot-channels">
-            {FOOTER_CHANNELS.map((c) => (
-              <li key={c.name}>
-                <a href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.name} title={c.name}>
-                  {c.path ? (
-                    <svg viewBox={c.viewBox || '0 0 24 24'} aria-hidden="true" focusable="false"><path d={c.path} /></svg>
-                  ) : (
-                    <span className={`foot-channel-logo foot-channel-logo--${c.mask}`} aria-hidden="true" />
-                  )}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <div className="foot-channel-groups">
+          <div>
+            <h5>{isJp ? 'ソーシャル' : 'Social'}</h5>
+            <FooterChannelIcons channels={FOOTER_SOCIAL} />
+          </div>
+          <div>
+            <h5>{isJp ? 'オンラインストア' : 'Stores'}</h5>
+            <FooterChannelIcons channels={FOOTER_STORES} />
+          </div>
         </div>
       </div>
 

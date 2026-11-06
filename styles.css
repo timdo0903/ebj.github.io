@@ -983,7 +983,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: color .3s;
 }
 .foot ul a:hover { color: var(--accent); }
-.foot ul.foot-channels { flex-direction: row; flex-wrap: wrap; gap: 10px; max-width: 220px; }
+.foot ul.foot-channels { flex-direction: row; flex-wrap: wrap; gap: 10px; max-width: 152px; }
+.foot-channel-groups { display: flex; flex-direction: column; gap: 32px; }
 .foot ul.foot-channels a {
   display: inline-flex;
   align-items: center;
