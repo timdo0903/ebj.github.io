@@ -50,6 +50,11 @@ function ContactMain() {
       href: 'https://www.brandcoparis.com/',
     },
   ];
+  const pick = (names) => names.map((n) => socials.find((s) => s.k === n));
+  const channelGroups = [
+    { label: isJp ? 'ソーシャル · Brandco Paris' : 'Social · Brandco Paris', items: pick(['Facebook', 'LinkedIn']) },
+    { label: isJp ? 'オンラインストア' : 'Stores', items: pick(['Rakuten', 'Mercari', 'Global site', 'BUYMA', 'Rakuma']) },
+  ];
 
   return (
     <section className="contact-main">
@@ -120,29 +125,31 @@ function ContactMain() {
             </window.FadeUp>
           </div>
 
-          <div style={{ marginTop: 72 }}>
-            <div className="eyebrow" style={{ marginBottom: 20 }}>
-              <span className="dot"></span>{isJp ? '外部リンク · Brandco Paris' : 'Elsewhere · Brandco Paris'}
+          {channelGroups.map((group, gi) => (
+            <div key={group.label} style={{ marginTop: gi === 0 ? 72 : 48 }}>
+              <div className="eyebrow" style={{ marginBottom: 20 }}>
+                <span className="dot"></span>{group.label}
+              </div>
+              <div className="contact-channels">
+                {group.items.map((s, i) => (
+                  <a
+                    className="contact-channel"
+                    key={s.k}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="k">§ {String(i + 1).padStart(2, '0')} · {s.k}</div>
+                    <div className="v">
+                      <span>{s.handle}</span>
+                      <small>{s.note}</small>
+                    </div>
+                    <div className="arrow">→</div>
+                  </a>
+                ))}
+              </div>
             </div>
-            <div className="contact-channels">
-              {socials.map((s, i) => (
-                <a
-                  className="contact-channel"
-                  key={i}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="k">§ {String(i + 1).padStart(2, '0')} · {s.k}</div>
-                  <div className="v">
-                    <span>{s.handle}</span>
-                    <small>{s.note}</small>
-                  </div>
-                  <div className="arrow">→</div>
-                </a>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
 
         <aside className="contact-side">
